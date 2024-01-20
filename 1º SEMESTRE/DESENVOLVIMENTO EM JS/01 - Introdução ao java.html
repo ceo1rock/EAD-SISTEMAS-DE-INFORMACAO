@@ -1,0 +1,199 @@
+//INTRODUÇÃO AO JAVASCRIPT - AULA 01
+    TIPOS DE DADOS E VARIÁVEIS
+
+JavaScript é utilizada em sinergia com as linguagens HTML e CSS para o desenvolvimento de websites e outros tipos de aplicações web (F,LANAGAN, 2011). 
+Executada no client-side.
+Proposta por Brendan Eich (Netscape), em meados dos anos 1990.
+Surgiu como complemento para as linguagens que executavam em back-end.
+Inicialmente chamada de LiveScript,  renomeada para JavaScript, pois a empresa Netscape trabalhava em colaboração com a Sun Microsystems (detentora da linguagem Java), aproveitando assim do Hype da linguagem Java
+Java e JavaScript não são a mesma coisa! São duas linguagens de programação distintas.
+JavaScript foi criada para ser executada em navegadores, enquanto Java é uma linguagem compilada interpretada em máquina virtual
+JavaScript = JS - Forma Reduzida
+JavaScript e ECMAScript (ES) são usados como sinônimos,
+Entre 1996 e 1997, JavaScript foi adotada pela ECMA (European Computer Manufacturers Association)
+ECMAScript é uma especificação do padrão web.
+ECMA (European Computer Manufacturers Association), uma associação internacional responsável pela padronização de especificações web, responsável pelo ECMAScript.
+
+"Executando JavaScript:"
+Executado a partir de um navegador web. Pode ser usado em uma IDE, como VSCode ou Sublime Text. 
+Arquivos JavaScript são salvos na extensão “.js”, também é possível incluí-los diretamente em um arquivo HTML usando a tag <script>.
+
+"Sintaxe da linguagem"
+//Script é um conjunto de instruções que um computador pode seguir (DUCKETT, 2014)
+    Uso no script no body do HTML:
+<script src="script.js"></script>
+
+Exemplos de como fazer comentário:
+Barra bara:
+// - comenta uma linha
+
+Barra asterisco asterisco barra:
+/*
+
+*/ - "comenta uma parte do texto"
+
+Para usar esse script, é preciso de um arquivo html, usamos o arquivo "index 001.html"
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="meu_primeiro_script.js">
+        alert(“Ola, mundo!”)
+    </script>
+    </head>
+    <body></body>
+    </html>
+    
+    Exemplo de comando no scrpit:
+    alert(“Ola, mundo!”);
+
+    "Variáveis e tipos de dados:"
+São estruturas de dados que armazenam informações na memória. 
+Uma variável é como uma caixa. Você pode guardar uma informação e, depois, acessá-la quando necessário. 
+Se é um texto chamamos de strings ou cadeias de caracteres.
+Variáveis podem armazenar outros tipos de dados, como números, arrays, objetos e muitos outros tipos
+
+STRING = "TEXTO", declarada com apóstrofos ou aspas.
+var variavel = 'Ola mundo' // Variável variavel recebeu a string 'Ola mundo'
+
+NUMBER = Números/númerico, inteiro ou flutuantes
+var variavel = 3; // Variável variavel recebeu o número 3
+
+Boolean = true/false
+var variavel = true; // Variável variavel recebeu o dado/informação boleanda true
+
+Array = coleção de dados sequenciais // Em array usamos [], ele pode receber dados variados, podendo ser string,
+Ex.:
+var meuArray = ['um',2,'três',4];  
+
+Objeto = Coleção de dados organizados como chaves {} e valores que permite outros tipos de dados. // Usado para armazedas dados, funcões, grandes quantidades de dados não estruturados.
+Ex.: 
+var meuObjeto = {
+    1: 'Olá',
+    2: 'Tudo bem?',
+    3: function ()
+}
+
+Podemos declarar variáveis usando:
+let
+const
+var
+Todos as opções armazenam dados, mas a diferença está no escopo e na forma de acesso.
+
+
+"OPERADORES ARITMÉTICOS E DE COMPARAÇÃO:"
+
+alert( )       // é uma função, carregar uma caixa de diálogo no navegador
+console.log( ) // Exibe a mensagem no console do navegador
+
+    "Operadores aritméticos:"
+//Símbolos usados para operações matemáticas, lógicas e de comparação
++   // Soma
+-   // Subtração
+*   // Multiplicação
+    // Divisão
+**  // Exponencial/Potencia
+%   // Módulo (Retorna o resto da divisão)
+=   // Operador de atribuição
+
+    "Operadores de comparação:"
+// Operadores que permitem a realização de comparações lógicas entre expressões.
+==  // Igual
+=== // Igual e do mesmo tipo
+!=  // Diferente
+!== // Diferente e de tipos diferentes
+>   // Maior que
+<   // Menor que
+>=  // Maior e igual
+<=  // Menor e igual
+
+Uma comparação retornará uma variável do tipo booleana, que poderá ser true ou false.
+
+    "OPERADORES LÓGICOS:"
+Os operadores lógicos permitem a realização de operações lógicas, comparar duas ou mais expressões (com exceção do operador NOT, que reverte a expressão). São eles:
+
+AND, OR e NOT - e, ou não:
+
+&&  // AND - e
+||  // OR  - ou
+!   // NOT - não
+
+Para verificar se um número é par ou ímpar:
+Usamos o operador de módulo "%", que retorna o resultado de uma divisão inteira
+Se o número dividido por 2 tiver resto 0, será par.
+Se tiver resto 1, será ímpar
+
+"EX.:"
+x = 1;
+ 
+// expressões
+expressao_1 = (x % 2 == 0)  // é par? 
+expressao_2 = (x % 2 == 1)  // é ímpar?
+ 
+console.log(expressao_1)  // false
+console.log(expressao_2)  // true
+
+    "Operador AND (&&)"
+Quando duas expressões são válidas ao mesmo tempo.
+
+var x = 1;
+expressao_1 = (x % 2 == 0)  // é par? 
+expressao_2 = (x % 2 == 1)  // é ímpar?
+ 
+console.log(expressao_1 && expressao_2)
+
+    "Operador OR (||)" // alt+124
+Avalia se uma ou outra expressão é válida
+
+var x = 1;
+expressao_1 = (x % 2 == 0)  // é par? 
+expressao_2 = (x % 2 == 1)  // é ímpar?
+ 
+console.log(expressao_1 || expressao_2)  //true
+
+    "Operador NOT ! (não)"
+Inverte o resultado da expressão, símbolo: !
+
+var x = 1;
+expressao_1 = (x%2 == 0)  //É par? 1 é impar, inverte fica par,"TRUE"
+expressao_2 = (x%2 == 1) //É ímpar?1 é impar, inverte fica impar "FALSE"
+ 
+console.log(!expressao_1)  // true
+console.log(!expressao_2)  // false
+ 
+// combinado com AND e OR
+console.log(!(expressao_1 && expressao_2))  // true 
+console.log(!(expressao_1 || expressao_2))  // false
+
+___
+    "ESTUDO DE CASO:"
+
+    // determina aprovados para a segunda etapa
+function primeiraEtapa(acertos_na_prova, 
+                          semestres_cursados){
+  /*   
+  * Help: 
+  * acertos_na_prova recebe a quantidade de acertos na prova
+  * semestres_cursados: semestres cursados
+  */
+  // regras para aprovação
+  const total_de_questoes = 20 
+  const nota_minima_aprovacao = 0.7 
+  const minimo_semestres = 3
+ 
+  // calcula a nota %
+  let nota = acertos_na_prova / total_de_questoes
+  
+  // calcula se vai ser aprovado ou não
+  if((nota > nota_minima_aprovacao) || 
+         (semestres_cursados >= minimo_semestres)){
+    return "Aprovado";
+  }
+  else{
+    return "Reprovado";
+  }
+}
+
+Resposta:
+
+if((nota >= nota_minima_aprovacao) && (semestres_cursados >= minimo_semestres)) //nota tem que ser >= nota_minima_aprovacao && semestres cursado >= minimo_semestres

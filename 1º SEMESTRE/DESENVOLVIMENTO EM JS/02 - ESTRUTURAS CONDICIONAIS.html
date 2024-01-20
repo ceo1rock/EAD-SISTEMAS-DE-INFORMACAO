@@ -1,0 +1,213 @@
+<script>
+
+    "INTRODUÇÃO:"
+/*
+As Três principais estruturas condicionais: 
+(1) if
+(2) else... if 
+(3) else.
+
+
+Linguagens de programação interpretadas são capazes de receber conjuntos de comandos, denominados scripts, e processá-los sequencialmente, ou seja, linha a linha (pelo menos na programação procedural). 
+JavaScript fornece estruturas de controle, que permitem que partes específicas do código, denominadas blocos, sejam executadas apenas SE determinadas condições forem verdadeiras, caso contrário, o bloco de códigos delimitado pela estrutura condicional será ignorado, alterando, o fluxo do código. 
+
+Condicional if = executa um bloco de código, se a expressão entre () for verdadeira
+
+Condicional else... if = usada apenas se uma condição if for apresentada inicialmente
+
+Condição else = executará um bloco de código se nenhuma condição anteriormente apresentada for verdadeira
+*/
+
+"ESTRUTURA CONDICIONAL IF:"
+
+// BLOCO é um pedaço de código delimitado por chaves { }.
+
+BLOCO {
+    COMANDOS JAVASCRIPT;
+}
+
+// (Indentação é uma boa prática de programação.)
+
+
+//Em um bloco condicional if, todos os códigos presentes no bloco só serão executados SE a condição for verdadeira. Veja:
+
+
+if(true){
+console.log("Olá mundo!");
+}
+if(false){
+console.log("Esta mensagem não será executada");
+}
+
+Ao executar este código, veremos a mensagem: "Olá mundo!". Os comandos em um bloco só são executados se a condição for verdadeira. 
+
+Outros ex.:
+
+x = 1
+if (x % 2 == 0) {
+    console.log(x, "é um número par")
+}
+
+// Não irá aparecer nada no console, pois X é par. O bloco só executa condição verdadeira
+
+x = 1;
+// se x for um número ímpar
+if(x % 2 == 1){
+    console.log("A variável x é um número ímpar");
+}
+
+// O console irá exibir a mensagem.
+
+x = 5
+y = 3
+ 
+if((x < y)||(x % 2 == 1)){
+    console.log("x é maior do que y OU x é um número ímpar")
+} // Resposta: Irá exibir a mensagem no log, pois x é impar
+
+
+    "ESTRUTURA CONDICIONAL IF...ELSE:"
+    if(CONDIÇÃO){
+    COMANDOS ...
+}
+else{
+    COMANDOS... 
+}
+
+EXEMPLO:
+
+x = 1;
+if(x % 2 == 0){
+    console.log(x, "é par")
+} else {
+    console.log(x, "é ímpar")
+}
+
+/*
+Operador vírgula
+Ao usarmos o comando console.log( ), os valores são separados por vírgulas. 
+O operador vírgula permite que variáveis sejam intercaladas com strings, tornando as mensagens exibidas dinâmicas.
+*/
+
+    "Encadeando instruções if e else:"
+/* 
+É possível encadear várias instruções if e else para construir blocos de códigos mais complexos. 
+*/
+Exemplo:
+
+x = 1;
+if(x % 2 == 0){
+    if(x > 0){
+        console.log(x, "é um número par e positivo")
+    } else{
+        console.log(x, "é um número par e negativo")
+    }
+} else {    
+    if(x > 0){
+        console.log(x, "é um número ímpar e positivo")
+    } else{
+        console.log(x, "é um número ímpar e negativo")
+    }
+}
+
+
+
+var a = 10
+if (a % 2 == 0){
+    console.log( a, "é par!") // Irá exibir no console o valor de a e o conteúdo entre aspas, se verdadeiro
+}
+else{
+    console.log( a, "é impar!") // Irá exibir no console o valor de a e o conteúdo entre aspas, se verdadeiro
+}
+
+var b = 11
+if (b % 2 == 0){
+    console.log( b + " é par!") // + sinal de mais/"soma" as informações (number + string)
+}
+else{
+    console.log( b + " é impar!") // + sinal de mais/"soma" as informações (number + string)
+}
+
+    "ESTRUTURA CONDICIONAL IF...ELSE IF ... ELSE:"
+/*
+A instrução else só pode ser ligada a uma instrução if, não é possível encadear mais do que duas condições usando apenas essas duas instruções, por isso, o JavaScript fornece a instrução else if.
+
+A instrução else if pode ser intercalada em blocos if... else para permitir que mais condições sejam avaliadas (FLANAGAN, 2011):
+*/
+
+if (condicao){
+    ...
+}
+else if(condicao 2){
+    ...
+}
+else if(condicao 3){
+    ...
+}
+else if(condicao n){
+    ...
+}
+else{
+    ...
+}
+
+// Exemplo prático de uso.
+
+idade = 13
+
+if(idade >= 4 && idade < 6){
+    console.log("Pré-escola");
+}
+else if(idade >= 6 && idade < 15){
+    console.log("Ensino fundamental");
+}
+else if(idade >= 15 && idade < 18){
+    console.log("Ensino médio");
+}
+else{
+   console.log("Aluno está fora do padrão escolar.")
+}
+console.log("FIM")
+
+/* 
+RESPOSTA:
+    Ensino fundamental
+    FIM
+*/
+
+/*
+    ESTUDO DE CASO
+As regras iniciais aprovavam apenas estudantes com uma nota mínima de 70% na prova e com, pelo menos, três semestres de um curso superior.
+Nota maior ou igual a 70% da prova. 
+Alteração no código: 
+Emitir a mensagem: “Você foi incluído em nosso banco de currículos”.
+*/
+
+// determina aprovados para a segunda etapa
+function primeiraEtapa(acertos_na_prova, 
+                          semestres_cursados){
+  /*   
+  * Help: 
+  * acertos_na_prova recebe a quantidade de acertos na prova
+  * semestres_cursados: semestres cursados
+  */
+  // regras para aprovação
+  const total_de_questoes = 20 
+  const nota_minima_aprovacao = 0.7 
+  const minimo_semestres = 3
+ 
+  // calcula a nota %
+  let nota = acertos_na_prova / total_de_questoes
+  
+  // calcula se vai ser aprovado ou não
+  if((nota >= nota_minima_aprovacao) && (semestres_cursados >= minimo_semestres)){
+    return "Aprovado";
+  }
+  else if(nota>= nota_minima_aprovação) && (semestres_cursados<minimo_semestres){
+    return "Você foi incluído em nosso banco de currículos";
+  }else{
+    return "Reprovado"
+  }
+}
+
+</script>

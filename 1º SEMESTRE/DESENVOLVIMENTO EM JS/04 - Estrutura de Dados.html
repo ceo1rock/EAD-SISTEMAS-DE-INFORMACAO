@@ -1,0 +1,292 @@
+<script>"ESTRUTURAS DE DADOS"
+Arrays, objetos e funções.
+
+    "INTRODUÇÃO:"/*
+Estruturas de dados sequenciais permitem o armazenamento de conjuntos de dados em uma variável.
+    Dois principais tipos, em JavaScript:
+        Arrays: são coleções de valores ordenados sequencialmente.
+        Objetos: são coleções de dados agrupados por chave-valor. 
+Funções: são blocos de códigos em que são declarados inicialmente, mas executados apenas quando chamados dentro do código, permitem o recebimento de valores como parâmetros de entrada, além do envio de informações de volta para o fluxo principal do código.*/
+
+// Exemplo de Array:
+meu_primeiro_array = ["abacate", "biscoito", "casa"];
+// O array recebeu uma coleção com três elementos: 
+// abacate   posição 0 
+// biscoito  posição 1
+// casa.     posição 2
+// Foram separados por vírgula e podem ser de diversos tipos, desde strings a valores numéricos. 
+// Podemos acessar cada elemento da seguinte forma:
+console.log(meu_primeiro_array[0])  // abacate
+console.log(meu_primeiro_array[1])  // biscoito
+console.log(meu_primeiro_array[2])  // casa
+/* O primeiro elemento é encontrado na posição 0 do array e não na posição 1; em JavaScript (e em muitas outras linguagens), a contagem começa da posição 0. */
+
+// Para obtermos o tamanho total de elementos em um array usamos a propriedade length:
+console.log(meu_primeiro_array.length)  // 3
+
+//  As propriedades são características de um objeto JavaScript, logo, não precisam ser declaradas seguidas de parênteses (diferentemente dos métodos, que requerem parênteses).
+// Se quisermos buscar um conjunto de elementos desse array (subarray), podemos usar o método slice( ).
+/* Informa como entradas desse método: 
+(1) a posição de início 
+(2) a posição final (será considerada a posição anterior a esse índice para composição do subarray). */
+
+ARRAY.slice(início, posição posterior ao fim)
+
+// Ex.:
+dois_primeiros_elementos = meu_primeiro_array.slice(0,2)  
+console.log(dois_primeiros_elementos)  // [ 'abacate', 'biscoito' ]
+ 
+dois_ultimos_elementos = meu_primeiro_array.slice(1,3)  
+console.log(dois_ultimos_elementos)  // [ 'biscoito', 'casa' ]
+
+// Pode ser criado arrays vazios.
+novo_array = []
+
+// Podemos preencher esse array usando a função push( ), que receberá como argumento o valor correspondente ao novo elemento.
+novo_array.push("alicate")
+console.log(novo_array)  //[ 'alicate' ]
+ 
+// adicionando 2 novos itens
+novo_array.push("bola")
+novo_array.push("cavalo")
+console.log(novo_array)  // [ 'alicate', 'bola', 'cavalo' ]
+
+// Por outro lado, podemos remover elementos usando o método pop( ):
+valor_removido = novo_array.pop() // remove o último elemento
+console.log(valor_removido)       // cavalo
+console.log(novo_array)           // [ 'alicate', 'bola' ]
+// O método pop( ) remove o último elemento e retorna o valor, que deve ser armazenado em uma nova variável. 
+
+// Para apagar o primeiro elemento, é utilizar o método shift( ):
+console.log(novo_array)  // [ 'alicate', 'bola' ]
+novo_array.shift()       // apaga o primeiro elemento
+console.log(novo_array)  // [ 'bola' ]
+
+// Adicionar elementos no começo usando unshift( ):
+novo_array.unshift("avestruz")
+console.log(novo_array)  // [ 'avestruz', 'bola' ]
+
+// Remover elementos específicos de um array, é preciso saber sua posição. Usar o método indexOf( ) em combinação com o método splice( ):
+
+lista = ["a", "b", "c", "d", "e"] // nova lista com 5 elementos
+indice_de_c = lista.indexOf("c")  // descobre o índice de "c"
+console.log(indice_de_c)          // 2
+console.log(lista[indice_de_c])   // confirmando que o item está certo (retorna c)
+lista.splice(indice_de_c, 1)      // removendo apenas o elemento "c"
+console.log(lista)                // [ 'a', 'b', 'd', 'e' ]
+// O método indexOf( ) retorna o índice de um determinado elemento.
+// O método splice( ) remove elementos a partir de uma determinada posição passada como primeiro argumento; e o segundo argumento indica quantos elementos queremos remover (no caso, apenas 1).
+
+// Para ordenar um array, usar o método sort( ):
+lista_numerica = [42, 16, 8, 15, 23, 4]
+lista_numerica.sort()        // ordenando alfabeticamente
+console.log(lista_numerica)  // [ 15, 16, 23, 4, 42, 8 ] // Ordenação foi feita com base no código ASCII. 
+
+// Para ordenar numericamente, use:
+lista_numerica.sort((a, b) => a - b)
+console.log(lista_numerica)            // [ 4, 8, 15, 16, 23, 42 ]
+
+// O símbolo “=>” é uma arrow function(funções de seta). São uma nova notação do JavaScript, introduzida no ECMAScript versão 6(ES6) para se declarar funções. 
+
+    "CONCEITO E MANIPULAÇÃO DE ARRAY:"
+// Arrays são conjuntos de dados sequenciais armazenados em uma única variável, e os valores dentro de um array são denominados elementos. 
+// Os valores em arrays são declarados entre colchetes []
+// Separados por vírgulas ,
+// Os elementos podem ser acessados a partir da sua posição, denominada índice 
+
+
+VIDEOAULA: CONCEITO E MANIPULAÇÃO DE ARRAY
+
+
+    "FUNÇÕES:"
+/* Funções/function() são blocos de códigos que não são imediatamente executados quando um script é interpretado; são executados ou invocados quando ocorre uma chamada pelo nome da função seguido de parênteses.
+
+Funções já vistas: (funções nativas do JS)
+alert( ) // função nativa (built-in), exibe uma caixa de diálogo na tela.
+métodos slice( ) 
+métodos splice( )
+métodos push( ) 
+métodos pop( )
+O métodos são usados para manipulação de arrays, são funções aplicadas no contexto de um objeto específico, chamadas ao digitar o nome da variável seguido de um ponto, o nome do método e parênteses */
+
+// Estrutura da função
+function NOME-DA-FUNÇÃO(parâmetros de entrada){
+    comandos
+}
+
+// chamada da função
+NOME-DA-FUNÇÃO(ARGUMENTOS DE ENTRADA)
+
+/*Funções são blocos de código, que contêm uma série de comandos pré-desenvolvidos, usados para se reduzir o tempo gasto, para a resolução de um problema. 
+Exemplo:
+Ordenar um array, um exemplo de como resolver: 
+Analisar cada elemento da lista e compará-lo com todos os outros para ver qual o menor e, assim, movê-lo para o começo da lista. 
+Essa estratégia de ordenação é denominada "selection sort" e não é o melhor algoritmo para essa tarefa, pois sempre fará comparações de todos contra todos, tendo uma complexidade O(n²). 
+Há muitas formas de se declarar funções; por exemplo: elas podem ser declaradas com a palavra reservada function
+*/
+function soma(a, b){
+    return a+b     // esta linha não é executada até a função ser chamada
+}
+resultado = soma(2, 3)// chamada da função (argumentos de entrada: 2 e 2)
+console.log(resultado)    // 5 
+console.log(soma(10, 10)) // 20
+/*Essa função soma dois números. 
+Recebeu dois parâmetros: a e b. 
+Dentro do bloco: retorna os valores das somas de a e b. 
+O bloco da função não é executado imediatamente, será executado quando for feita a chamada, que pode ser feita quando e quantas vezes precisar
+// Funções são estruturas que permitem o reaproveitamento de código.
+Na segunda chamada da função, enviamos dois argumentos, que foram aplicados aos parâmetros declarados na função. 
+No exemplo, o parâmetro “a” recebeu o primeiro argumento enviado (2), enquanto “b” recebeu o segundo argumento (3).
+A palavra "return" permite que o resultado da soma seja retornado ao mesmo ponto da chamada, e o uso de "return" é opcional. 
+Poderíamos, apenas imprimir o resultado da soma diretamente na função, e as funções poderiam, ainda, não possuir parâmetros, entretanto, na chamada da função, deve-se sempre incluir os parênteses.*/
+
+function soma(a, b){
+    return a+b          
+}
+// poderia ser declarada usando-se arrow functions:
+soma = (a, b) => a+b
+
+    "OBJETOS:"
+// Objetos são um tipo de dado fundamental para a linguagem JavaScript; eles armazenam coleções de chaves e valores denominados propriedades. 
+// O conceito de objetos JavaScript é equivalente ao conceito de “hash”, “dicionário” ou “array associativo” em outras linguagens de programação (FLANAGAN, 2011).
+
+    "Criando objetos:"
+// Você pode criar um objeto utilizando o comando new Object( ), entretanto, há formas mais simples utilizando chaves. Veja como a sintaxe pode ser construída:
+
+meu_primeiro_objeto = { "chave": "valor" }
+// Note que chaves e valores são separados por dois pontos. Além disso, é possível, ainda, inserir múltiplos pares de chave e valor, desde que estejam separados por vírgula:*/ 
+
+objeto = {
+    "chave1":"valor",
+    "chave2":"valor",
+    "chave3":"valor"
+}
+//Note que a chave deve ser única.
+
+    "Consultando uma chave"
+// Há duas formas de se acessar valores individualmente em um objeto:
+
+// 1 - Usando ponto (nome-objeto.propriedade): nesse caso, deve-se chamar o nome do objeto seguido da propriedade que se deseja acessar.
+
+// Usando colchetes (nome-objeto[‘propriedade’]): nesse caso, deve-se chamar o nome do objeto seguido da propriedade desejada entre colchetes e aspas.
+
+objeto = {
+    "chave1":1,
+    "chave2":2,
+    "chave3":3
+}
+ 
+// 1ª forma de acesso 
+valor_chave_1 = objeto.chave1 
+console.log("O valor da chave1 é", valor_chave_1)  // O valor da chave1 é 1
+ 
+// 2ª forma de acesso
+valor_chave_2 = objeto['chave2']
+console.log("O valor da chave2 é", valor_chave_2) // O valor da chave1 é 2
+// No exemplo, as chaves apontam para valores numéricos e os objetos aceitam dados de todos os tipos, como valores booleanos, strings, números, arrays e, até mesmo, outros objetos. 
+
+// Exemplo:
+objeto = {
+    "chave1":{ "camada1_1":5 },
+    "chave2":['abacate', 'bola', 'cavalo']
+}
+
+//Aqui, temos um objeto com duas chaves. A primeira chave recebe, como valor, outro objeto que possui uma única chave “camada1_1”, e para acessar o valor nessa chave específica, pode-se executar o seguinte código:
+
+// Acessando o valor da chave "camada1-1"
+valor_1 = objeto.chave1.camada1_1
+console.log(valor_1)  //5
+
+// Na chave2, nosso objeto recebe um array com três valores. Não podemos usar a notação de ponto nesse caso, pois arrays são acessados usando-se o índice, assim sendo, podemos usar a notação de colchetes.
+// No exemplo a seguir, usamos esse tipo de notação para coletar o segundo elemento do array da chave2 (note que o segundo elemento é indexado na posição 1):
+
+// Imprimindo o 2º elemento do array da chave2
+valor_2 = objeto.chave2[1]
+console.log(valor_2)  // bola
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "Percorrendo um objeto"
+// Podemos percorrer um objeto inteiro com o auxílio de um laço de repetição. Observe o exemplo a seguir:
+
+objeto = {    
+    "chave1":{ "camada1_1":5 },
+    "chave2":['abacate', 'bola', 'cavalo']
+}
+for(i in objeto){
+    chave = i             // coleta a chave
+    valor = objeto[i]     // pega o valor correspondente a chave
+    console.log(chave, "->", valor) // imprime chave e valor atual
+}
+// Esse código imprimirá no console:
+
+chave1 -> { camada1_1: 5 }
+chave2 -> [ 'abacate', 'bola', 'cavalo' ]
+// Note que usamos a palavra reservada "in" para recuperar todas as chaves no objeto. A cada rodada do laço for, uma nova chave será avaliada pelo bloco.
+
+
+
+
+
+
+
+
+
+
+
+
+
+VIDEOAULA: OBJETOS
+
+"ESTUDO DE CASO:"
+
+/* Crie um sistema/script que determinasse o horário de entrevistas para candidatos à vaga de estágio, selecione um horário que o candidato fará a entrevista. 
+Lista com os 24 nome, deve agendados em ordem alfabética.
+Horário de incio às 9h e termino às 17h. 
+Cada entrevista deve ter, no máximo, 15 minutos e pausa de 5 mim. Não devem ser marcadas entrevistas entre 12h e 14h.
+
+"José da Silva",
+"Antônio de Sá",
+"Felipe Augusto",
+"Carla Moreira",
+"Pedro Malta",
+"Maria Sousa",
+"Marta da Silva",
+"Fausto Augusto",
+"Silvio Sávio",
+"Maísa Silva",
+"Lucas Lopes",
+"Zenildo Santos",
+"Bruno Lucas",
+"Luana Melo",
+"Felipe Santos",
+"Flávio Miguel",
+"Lauro Maria",
+"Juca dos Santos",
+"Luciana Carla",
+"Felipe Silva",
+"André Manuel",
+"Pedro Parker",
+"Ana Maria",
+"Thiago Melo"
+*/
+
+"RESOLUÇÃO DO ESTUDO DE CASO:"
+
+/*Podemos construir esse código adaptando o exemplo apresentado no estudo de caso passado. Observe:
+
+Note que podemos declarar a lista de indivíduos como um array (linha 6 a 31). Na hora de imprimir os resultados, devemos apontar a posição do array e subtrair um, e isso é necessário uma vez que usamos nosso contador para começar a contagem do um (primeira entrevista ocorre às 9:00), enquanto o array é ordenado a partir da posição zero.
+Ao executar esse código, você verá o seguinte resultado:
+
+</script> linhas: 352
