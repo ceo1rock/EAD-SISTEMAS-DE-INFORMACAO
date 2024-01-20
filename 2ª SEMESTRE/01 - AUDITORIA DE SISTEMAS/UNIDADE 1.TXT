@@ -1,0 +1,20 @@
+Os objetivos gerais da auditoria de sistemas para Lyra (2008) são:
+
+Integridade;
+
+Confidencialidade;
+
+Privacidade;
+
+Acuidade; 
+
+Disponibilidade; 
+
+Auditabilidade;
+
+Versatilidade; 
+
+Manutenabilidade.
+
+
+https://www.youtube.com/watch?v=QvCoSfSTw0k
