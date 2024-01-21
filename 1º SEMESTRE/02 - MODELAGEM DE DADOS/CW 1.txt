@@ -1,0 +1,129 @@
+CW 1 
+UNIDADE 1 SEÇÃO 1
+
+Banco de Dados
+Conjunto de dados ou informações relacionadas entre si.
+	Um banco de dados ou base de dados é um conjunto de arquivos integrados que são usados pelos sitemas de aplicação de uma determinada empresa. O termo faz referência ao armazenamento de dados.
+
+SGBD
+Sistema Gerenciador de Banco de Dados
+Um SGBD é um conjunto de softwares que possuem a finalidade de gerenciar as informações de um banco de dados. Devem organizar, acessar, controlar e proteger as informações contidas no banco de dados. O SGBD pode ser distribuído por diversos computadores, no mesmo local ou até em locais diferentes (espaços, cidades, países).
+
+FUNÇÕES
+PRINT 1.1.1
+
+CARACTERISTICAS
+PRINT 1.1.2
+
+FUNCIONALIDADES
+PRINT 1.1.3
+
+
+
+CW 1 
+UNIDADE 1 SEÇÃO 2
+
+Clique no botões e saiba mais sobre cada elemento.
+
+DADOS
+Os  dados armazenados nos bancos de dados serão compartilhados entre os diversos usuários dos sistemas.  É em função deste armazenamento que algumas regras de modelagem deverão ser rigorosamente seguidas.
+
+HARDWARE
+O hardware é um elemento importante, pois determina como e onde os dados serão processados e armazenados.
+
+SOFTWARE
+O Sistema Gerenciador de Banco de Dados é o software essencial de um banco de dados.  É o mais importante por isolar o acesso dos dados pelos usuários leigos, do acesso ao seu armazenamento no hardware. Existem, ainda, os softwares de aplicação, que são ambientes próprios do SGBD, ou linguagens de programação, que permitem criar uma interface amigável entre o usuário e o SGBD.
+
+USUÁRIOS
+Os usuários de banco de dados são os atores (as pessoas) que realizam operações de manipulação na base de dados: programadores de aplicação (programadores do software), usuários sofisticados (analistas de sistemas e projetista do banco de dados ), usuários especialistas (desenvolvedores), usuários navegantes (comuns ou leigos). Possuem  várias formas de acessos aos dados e às permissões.
+
+CW 1
+1.3
+
+OLTP
+On-line Transaction Processing
+ou Processamento de Transações em Tempo Real
+São operações realizadas no SGBD que permitem realizar consultas na base de dados de forma repetitiva, a nível operacional e administrativo. O OLTP permite consultas do dia a dia da empresa.
+
+SAIBA MAIS:
+OLTP
+Permite consultas do dia a dia da empresa.As transações realizadas no banco de dados utilizam comandos do SQL (Structured Query Language ou Linguagem de Consulta Estruturada) como: INSERT, UPDATE e DELETE. Estas transações são realizadas em tempo real e não armazenam um histórico das consultas realizadas no banco de dados, dificultando o auxílio à tomada de decisões.
+Exemplo: Uma secretária faz a matrícula de um aluno do sistema de uma determinada faculdade, inserindo as informações do discente (inserção). Caso o aluno se matricule num curso e se arrependa querendo trocá-lo, a secretaria poderá modificar (consulta de alteração).
+
+
+OLAP
+On-line Analytical Processing
+ou Processamento Analítico On-line
+É o processo de análise dos dados dos sistemas transacionais OLTP, que permite a múltipla análise da informação, possibilitando que gestores possam tomar decisões mais assertivas.
+SAIBA MAIS:
+OLAP
+Processo interativo de criar, gerenciar, analisar e gerar relatórios sobre os dados de banco de dados. Os dados coletados são armazenados em uma tabela multidimensional (ou arrays multidimensionais) para posterior análise de algoritmos e softwares específicos. Para fazer as análises, os dados são coletados do OLTP e isso acontece de acordo com a necessidade da empresa. O OLAP é a capacidade de analisar grandes volumes de informações dentro de um Data Warehouse, também faz referência às ferramentas analíticas utilizadas no BI para a visualização das informações gerenciais e dá suporte para as funções de análises do negócio organizacional.
+
+Exemplo: No final no bimestre, o diretor desta mesma faculdade precisa de um relatório com o perfil dos alunos nos últimos três anos. No relatório, serão analisados: idade, curso, semestres cancelados e situação financeira. Essas  informações servirão para a tomada de decisão de oferta de novos cursos e para definição do perfil de aluno desejado.
+
+Políticas de Segurança
+Clique em cada botão para saber como as empresas precisam se prevenir, estabelecendo uma política de backup, de segurança de acesso ao banco de dados e de permissões e acessos às tabelas.
+
+Backup
+PRINT - 1.3.1
+
+Senhas
+PRINT - 1.3.2
+
+Permissões
+PRINT - 1.3.3
+
+Vídeo de Encerramento(TRANSCRIÇÃO)
+Nos ultimos anos, os bancos de dados vem se tornando peças chave no SUCESSO de grandes EMPRESAS.
+Esse sucesso acontece que se descobriu que a ANALISE DAS INFORMAÇÕES do consumo do clinetes podem AUMENTAR O LUCRO das compania por isso, manter essas INFORMAÇÕES ATUALIZADAS e organizadas acaba sendo muito valioso
+
+Um BANCO DE DADOS é um CONJUNTO DE DADOS ou informações relacionadas entre si que atenden um CONJUNTO DE SISTEMAS, alem disso esse banco é é administrado pelo SISTEMA GERENCIADOR DE BANCO DE DADOS(SGBD) esse sistema, nada mais é que um CONJUNTO DE SOFTWARES que possuem a finalidade de:
+ORGANIZAR
+ACESSAR
+CONTROLAR
+PROTEGER AS INFORMAÇÕES
+
+o SGBD também tem a função de:
+PROTEGER E RECUPERAR dados em qualquer caso de emergencia, como por exemplo: 
+PROBLEMAS DE HARDWARE
+PROBLEMAS DE SOFTWARE
+ACESSO NÃO AUTORIZADO 
+
+Atualmente, o sistema gerenciador de maior destaque são:
+ORACLE
+SQL Server
+MYSql
+PostgreSQL
+
+Para ter tanto controle sobre as informações, os sistemas precisam ser CONFIÁVEIS, por isso eles demandam um conjunto de: 
+REQUISITOS chamados de ACID
+A - Atomicidade 
+C - Consistencia
+I - Isolamento
+D - Durabilidade
+
+Essas condições são determinantes para o bom funcionamento de um SGDB.
+
+Além disso, para que tudo isso funcione é preciso que alguém tem o controle total sobre o sistema, este usúario é o ADMINISTRADOR DO BANCO DE DADOS, ou DBA, sua função é instalar, CONFIgurar e fazer a MANUTENÇÃO DO SGBD, além de estabelecer REGRAS de ACESSO AOS DADOS.
+Outra funcionalidade é essencial de um SGBD é o suporte para realização de CONSULTAS REPETITIVAS na base de dados, esse suporte é proporcionado pelo OLTP(Online Transaction Processing).
+Já o OLAP(Online Analytical Processing) permite que sejam feitas CONSULTAS ANALÍTICAS mais esporadias que revelam INFORMAÇÕES DETALHADAS sobre os dados.
+
+Um tipo de OLAP(Online Analytical Processing) é o 
+DATA MINING ou
+(MINERAÇÃO DE DADOS)
+Essa pratica ANALISA grandes BANCOS DE DADOS de forma semi-automatica descobrindo NOVAS INFORMAÇÕES em função de REGRAS OU PADRÕES de dados.
+
+Bancos de dados são essencias no dia a dia de uma empresa, eles são uteis não só para ORGANIZAÇÃO de informações, mas também para aumentar  LUCRATIVIDADE , por isso é muito importante continuar pesqwuisando sobre o assunto.
+
+
+
+
+
+
+
+
+
+
+
+
+

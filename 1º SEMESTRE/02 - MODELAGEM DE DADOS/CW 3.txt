@@ -1,0 +1,155 @@
+CW 3
+
+UNIDADE 3 SEÇÃO 1
+
+ESTRATÉGIAS DE MODELAGEM
+PRINT - UNIDADE 3 SEÇÃO 1.1 (SETAS)
+
+Algumas NORMAS precisam ser adotadas durante a criação do modelo lógico do banco de dados, na criação do diagrama de entidade-relacionamentos.
+Clique para relembrar as principais normas:
+
+Em casos de relacionamento 1 para N:
+A chave primária do lado 1 sempre deverá estar na tabela do lado N como uma chave estrangeira.
+
+Em casos de relacionamentos N para N:
+O relacionamento passa a ser implementado como tabela própria e que possui campos específicos, relacionados entre as duas tabelas que deram origem a esta nova tabela, que se chama tabela associativa.
+
+As tabelas devem ter o número de chaves primária reduzido ao mínimo possível:
+Ou seja, sempre que possível, uma tabela deverá ter somente um identificador único, evitando chaves alternativas.
+
+Veja um exemplo simplificado de dicionário de dados:
+PRINT - UNIDADE 3 SEÇÃO 1.2
+PRINT - UNIDADE 3 SEÇÃO 1.3
+
+Após diversos contatos com a imobiliária, foram estabelecidos os 5 REQUISITOS que deveriam ser atendidos pelo banco de dados.
+Clique em cada um deles para saber mais.
+1
+Cada imóvel deverá ter registrado: seu tipo (casa ou apartamento), quantidade de quartos e banheiros, se o imóvel possui vista para o mar, preço da diária.
+
+2
+As informações dos proprietários e dos inquilinos deverão ser armazenadas separadamente. Os proprietários podem ter vários imóveis que podem ser alugados para vários inquilinos.
+
+3
+Além das informações sobre o município ao qual o imóvel pertence, deverá também ser informado o nome da praia mais importante (próxima) ao imóvel.
+
+4
+Os móveis são todos os itens que compõem a mobília. Os itens mais verificados são: cama, geladeira, freezer, televisor, ar-condicionado, entre outros. Neste caso, é importante que seja informada a quantidade de cada item.
+
+5
+Deverá ser realizado e registrado um contrato que deverá ser exclusivo para os aluguéis com os inquilinos e os imóveis alugados.
+
+DER Imobiliária
+O diagrama de entidade-relacionamentos demonstra uma solução inicial para a modelagem do banco de dados da imobiliária.
+Para melhor entendimento do diagrama da imobiliária, considere os seguintes itens, clicando nos botões a seguir.
+
+ENTIDADES
+PRINT - UNIDADE 3 SEÇÃO 1.4
+
+NOTAÇÃO
+PRINT - UNIDADE 3 SEÇÃO 1.5
+
+CARDINALIDADE
+PRINT - UNIDADE 3 SEÇÃO 1.6
+
+PK - FK
+PRINT - UNIDADE 3 SEÇÃO 1.7
+
+DICIONÁRIO DE DADOS
+O dicionário de dados da tabela Imóvel pode ser observado a seguir:
+
+
+UNIDADE 3 SEÇÃO 2
+
+Uma classe pode ser conceituada como um tipo de dado.
+Ela é formada por dados e comportamentos, dividida em três partes: nome, atributos e métodos, conforme a imagem a seguir.
+Clique em cada parte para saber mais.
+NOME:
+PRINT - UNIDADE 3 SEÇÃO 2.1
+
+ATRIBUTOS:
+PRINT - UNIDADE 3 SEÇÃO 2.2
+
+MÉTODOS:
+PRINT - UNIDADE 3 SEÇÃO 2.3
+
+DIAGRAMA DE CLASSES:
+É comum que a pessoa que realizará a manutenção não seja a mesma que criou o banco de dados e é nesta hora que a documentação dos campos é fundamental para acelerar o processo de manutenção.
+
+DIAGRAMA DE OBJETOS
+‍Diagrama utilizado para demostrar como, na realidade, as informações do objeto ficam armazenadas na classe.
+
+PRINT - UNIDADE 3 SEÇÃO 2.4
+
+Veja um exemplo de diagrama e as heranças.
+PRINT - UNIDADE 3 SEÇÃO 2.5
+
+
+GENERALIZAÇÃO-ESPECIALIZAÇÃO
+PRINT - UNIDADE 3 SEÇÃO 2.6
+
+GENERALIZAÇÃO-ESPECIALIZAÇÃO PARCIAL
+PRINT - UNIDADE 3 SEÇÃO 2.7
+
+GENERALIZAÇÃO-ESPECIALIZAÇÃO TOTAL
+PRINT - UNIDADE 3 SEÇÃO 2.8
+
+MODELO CONCEITUAL
+Para melhor entendimento do modelo conceitual com Generalização e Especialização, considere as seguintes entidades, clicando nos botões a seguir.
+
+FUNCIONÁRIO
+PRINT - UNIDADE 3 SEÇÃO 2.09
+
+PROFESSOR
+PRINT - UNIDADE 3 SEÇÃO 2.10
+
+ALUNO
+PRINT - UNIDADE 3 SEÇÃO 2.11
+
+DISCIPLINA
+PRINT - UNIDADE 3 SEÇÃO 2.12
+
+PESSOA
+PRINT - UNIDADE 3 SEÇÃO 2.13
+
+DIAGRAMA DE CLASSES
+
+O diagrama de classes pode ser utilizado como ferramenta gráfica para criar o modelo lógico de banco de dados.
+Clique na imagem para visualizar melhor o DER com a Notação UML
+
+PRINT - UNIDADE 3 SEÇÃO 2.14
+
+ASTAH
+PRINT - UNIDADE 3 SEÇÃO 3.2
+
+WORKBENCH
+PRINT - UNIDADE 3 SEÇÃO 3.3
+
+DRAW.IO
+PRINT - UNIDADE 3 SEÇÃO 3.4
+
+LUCIDCHART
+PRINT - UNIDADE 3 SEÇÃO 3.5
+
+São 5 REQUISITOS para realizar o banco de dados.
+Clique em cada um deles para saber mais.
+1
+É necessário anotar o endereço da família em situação de risco e seu bairro.
+
+2
+Deve haver um cadastro de cada membro de uma família, seus dados pessoais e uma foto são fundamentais.
+
+3
+A família poderá ser classificada por tipo: em risco, alto risco, extremo risco.
+
+4
+Deve haver uma tabela para cadastro das emergências classificadas como: inundação, vendaval, desmoronamentos, entre outras opções.
+
+5
+Uma família pode sofrer com diversas emergências e uma emergência pode atingir diversas famílias. É necessário armazenar a data da emergência e os danos causados pela emergência ocorrida.
+
+DIAGRAMA ENTIDADE-RELACIONAMENTOS
+Para criar o Diagrama de Entidade-Relacionamentos, foi utilizada a ferramenta CASE on-line Lucidchart
+UNIDADE 3 SEÇÃO 3.6
+
+VÍDEO DE ENCERRAMENTO
+UNIDADE 3 SEÇÃO 3.7

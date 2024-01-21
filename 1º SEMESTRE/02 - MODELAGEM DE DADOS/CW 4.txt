@@ -1,0 +1,103 @@
+CW 4
+
+UNIDADE 4 SEÇÃO 1
+CONCEITOS DE NORMALIZAÇÃO DE DADOS
+Os danos que a redundância pode causar e que geram mais problemas é a repetição da mesma informação em várias tabelas, ocasionando, além de duplicidade, possíveis erros em relatórios. E pior que a repetição é a inconsistência no banco de dados, que nada mais é do que a mesma informação sendo cadastrada de forma errônea.
+
+A seguir, observe as três tabelas: Cliente, Fornecedor e Funcionário.
+PRINT - UNIDADE 4 SEÇÃO 1.1
+
+Clique aqui e saiba mais
+Repare que todas as tabelas possuem um campo em comum: Cidade. Se deixarmos do jeito que está, a mesma Cidade pode ser cadastrada três vezes e em tabelas diferentes.  Além disso o cadastro pode acabar sendo feito de diferentes formas, por exemplo, a cidade de Joinville pode ser cadastrada como: “Joinville”, “Joinvile” ou ainda “Jlle”.  São três formas de cadastros que darão problemas quando precisarmos consultar no banco de dados: “mostrar todos os funcionários da cidade de Joinville”. Caso tenha sido cadastrado de forma errada a cidade, esses funcionários ficarão fora do relatório gerado.
+
+Redundância controlada
+
+Às vezes, é interessante manter uma informação redundante no banco de dados. Por questões de desempenho de alguma pesquisa ou software, a redundância controlada pode ocorrer. Ela é recomendada quando o campo recebe uma grande quantidade de consultas e poucas alterações. É uma redundância que sabemos que existe, mas é necessária.
+
+Observe que, na tabela Funcionário, há o código do departamento (CodDepartamento) e o nome do departamento (NomeDepartamento), fato este que causa a redundância.
+PRINT - UNIDADE 4 SEÇÃO 1.2
+
+Tabela Produto não normalizada
+
+Na tabela Produto não normalizada, observe que nos campos TipoProduto e Fornecedor a mesma informação foi inserida erroneamente, entre os registros.
+PRINT - UNIDADE 4 SEÇÃO 1.3
+
+
+Tabela Produto normalizada
+
+Veja, a seguir, a normalização com a criação de novas tabelas e campos como chaves estrangeiras. Clique nas abas e veja cada etapa.
+
+TABELA:
+PRODUTO
+PRINT - UNIDADE 4 SEÇÃO 1.4
+
+
+DER – Produto – TipoProduto - Fornecedor
+
+Diagrama de Entidade-Relacionamento entre as três tabelas:
+Produto – Fornecedor e TipoProduto
+PRINT - UNIDADE 4 SEÇÃO 1.5
+
+
+DEPENDÊNCIA FUNCIONAL
+A dependência funcional consiste em uma restrição entre dois ou mais conjuntos de atributos de uma mesma tabela ou relacionamento (ALVES, 2014).
+
+Um exemplo de dependência funcional é a tabela Aluno.
+Nela temos a matrícula e o nome do aluno.
+O nome do aluno depende diretamente da matrícula do aluno.
+
+Para melhor entendimento do esquema de relacionamento, explore a galeria a seguir.
+PRINT - UNIDADE 4 SEÇÃO 1.6
+PRINT - UNIDADE 4 SEÇÃO 1.7
+PRINT - UNIDADE 4 SEÇÃO 1.8
+PRINT - UNIDADE 4 SEÇÃO 1.9
+PRINT - UNIDADE 4 SEÇÃO 1.10
+
+A dependência funcional pode ser classificada em: transitiva ou indireta, total ou parcial.
+
+Clique em cada um dos tipos para saber mais.
+TRANSITIVA OU INDIRETA:
+PRINT - UNIDADE 4 SEÇÃO 1.11
+
+
+UNIDADE 4 SEÇÃO 2
+
+Tabela Funcionário não normalizada
+PRINT - UNIDADE 4 SEÇÃO 2.1
+
+Tabela Funcionário na 1FN
+PRINT - UNIDADE 4 SEÇÃO 2.2
+
+Tabela Funcionário na 2FN
+PRINT - UNIDADE 4 SEÇÃO 2.3
+
+DER – Funcionários na 1 FN e na 2FN
+
+Diagrama Entidade-Relacionamentos resultante após aplicarmos a 1FN e a 2FN. Antes tínhamos somente uma única tabela, chamada de Funcionário, agora temos três tabelas.
+PRINT - UNIDADE 4 SEÇÃO 2.4
+
+
+UNIDADE 4 SEÇÃO 3
+
+Tabela Cliente não normalizada na 2FN
+
+A tabela Cliente está na 1FN e precisa que a 2FN seja aplicada.
+
+Explore a galeria e saiba mais.
+PRINT - UNIDADE 4 SEÇÃO 3.1
+PRINT - UNIDADE 4 SEÇÃO 3.2
+
+Tabela Funcionário normalizada na 2FN
+PRINT - UNIDADE 4 SEÇÃO 3.3
+
+Tabela Funcionário com Campo Multivalorado
+PRINT - UNIDADE 4 SEÇÃO 3.4
+
+DER das Tabelas Normalizadas
+PRINT - UNIDADE 4 SEÇÃO 3.5
+
+VÍDEO DE ENCERRAMENTO
+VÍDEO - UNIDADE 4 SEÇÃO 3.6
+
+
+

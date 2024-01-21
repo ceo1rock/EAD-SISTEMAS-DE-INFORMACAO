@@ -1,0 +1,163 @@
+CW 2 
+
+UNIDADE 2 SEÇÃO 1
+
+MODELAGEM CONCEITUAL
+
+Segundo Coronel e Rob(2011), o modelo conceitual traz algumas vantagens importantes: fornece a visão de nível macro, de forma simplificada e independente de hardware e de software, não sendo necessária a realização de adaptações em função de determinado SGBD ou equipamentos que serão adotados posteriormente.
+
+MODELAGEM LÓGICA 
+O modelo lógico se transforma em um modelo mais abstrato (conceitual) para um modelo com mais detalhes de implementação, ou seja, mais próximo do que será de fato implementado. Cougo(1997) define como modelo lógico de dados aquele "em que os objetos, suas características e seus relacionamentos sejam representados de acordo com as regras de implementação e limites impostos por alguma tecnologia de determinado SGBD.
+
+MODELO LÓGICO (SIMPLIFICADO)
+PRINT - UNIDADE 2 SEÇÃO 1.1
+
+MODELO FÍSICO IMPLEMENTADO NO MICROSOFT ACCESS
+PRINT - UNIDADE 2 SEÇÃO 1.2
+
+
+UNIDADE 2 SEÇÃO 2
+
+PETER CHEN
+PRINT - UNIDADE 2 SEÇÃO 2.1
+
+JAMES MARTINS
+PRINT - UNIDADE 2 SEÇÃO 2.2
+
+De acordo com Coronel e Rob (2011), as tabelas possuem algumas características. Explore a galeria para conhecê-las:
+
+1 - A tabela é vista como uma estrutura composta de linhas e colunas (bidimensional).
+
+2 - Cada linha ou registro representa uma única ocorrência da entidade no interior do conjunto da entidade.
+
+3 - Cada coluna da tabela representa um atributo e possui nome diferente (dos demais atributos da mesma tabela).
+
+4 - Cada intersecção entre linha e coluna representa um único valor (é o dado da tabela).
+
+5 - Todos os valores em uma coluna devem possuir o mesmo formato.
+
+6 - A ordem das coluna e das linhas é insignificante para um SGBD.
+
+7 - Cada tabela deve representar um atributo ou uma combinação de atributos que identifique exclusivamente cada linha (chamado de chave, que será estudado mais adiante).
+
+
+Entidades Fortes
+Aluno, Curso, Cliente, Empresa, Paciente. Na análise de requisitos é facilmente encontrada, visto que são substantivos fortes e significativos.
+
+Entidades Fracas ou Dependentes
+A tabela Dependente só há porque existe a tabela Funcionário, pois, para que exista um dependente cadastrado, é preciso que tenha um funcionário que “possui” esse dependente. Se não existisse a tabela Funcionário, certamente não existiria a tabela Dependente.
+
+Entidades Agregadas
+Aluno e Professor possuem em comum dados do endereço; para evitar repetições, podemos criar uma nova entidade agregada chamada Endereço para guardar os endereços.
+
+Entidades Subordinadas
+Podemos ter dois tipos de clientes: Pessoa Física e Pessoa Jurídica. Ambos têm campos em comum que ficariam na entidade supertipo Cliente e, nas entidades Pessoa Física e Pessoa Jurídica, somente estariam os campos específicos de cada tipo de cliente.
+
+RELACIONAMENTO UNÁRIO:
+uma entidade se relaciona com ela mesma.
+
+RELACIONAMENTO BINÁRIO:
+é um relacionamento que liga dois tipos diferentes de entidades. É o evento mais comum dos tipos de relacionamentos.
+
+RELACIONAMENTO TERNÁRIO:
+é um relacionamento em que três entidades estão conectadas por um mesmo relacionamento.
+
+RELACIONAMENTO QUATERNÁRIO:
+é um relacionamento em que quatro tabelas estão conectadas.
+
+RELACIONAMENTO N-ÁRIO
+é um relacionamento acima de quatro tabelas envolvidas. Este tipo de relacionamento é o menos aconselhável visto que a possibilidade de redundâncias no banco pode ser maior.
+
+UM-PARA-UM
+PRINT - UNIDADE 2 SEÇÃO 2.4
+
+UM PARA MUITO(1..N)
+PRINT - UNIDADE 2 SEÇÃO 2.5
+
+MUITOS-PARA-MUITOS (N PARA N)
+PRINT - UNIDADE 2 SEÇÃO 2.6
+
+
+UNIDADE 2 SEÇÃO 3
+
+DEFINIÇÕES
+Korth, Silberschatz e Sudarshan (2012) afirmam algumas definições no modelo relacional:
+
+RELAÇÃO 
+O termo relação é designado para se referir a uma tabela
+
+TUPLA
+Para a linha é utilizado o termo tupla, referindo-se a uma determinada linha da tabela
+
+ATRIBUTO
+O atributo é conhecido como a coluna de uma tabela
+
+INSTÂNCIA DE RELAÇÃO
+O termo instância de relação é designado a um determinado conjunto de tuplas ou a um determinado número de registros (algumas linhas selecionadas de uma tabela)
+
+CHAVE PRIMARIA
+PRINT - UNIDADE 2 SEÇÃO 3.1
+Na forma textual, a chave primária deve sempre ficar em evidência, em negrito, sublinhada e com sinal # na sua frente. Observe como ficaria a tabela Cliente da figura, Cliente (#CPF, Nome, RG, Dt Nasc, Cidade). A ordem dos campos não prejudica em nada os campos das tabelas, porém, para fins didáticos e para facilitar a identificação, nos exemplos, a chave primária ficará sempre como o primeiro campo da tabela.
+
+CHAVE COMPOSTA
+PRINT - UNIDADE 2 SEÇÃO 3.2
+A forma textual da tabela Cliente demonstrada na figura ficaria da seguinte forma:Cliente (#RG, # Órgão Expedidor, Nome, CPF, DT Nasc).
+
+CHAVE SURROGADA
+PRINT - UNIDADE 2 SEÇÃO 3.3
+A forma textual da tabela Encomenda: Encomenda (#Código, Encomenda, Quantidade, Preço Unitário).
+
+CHAVE ESTRANGEIRA
+PRINT - UNIDADE 2 SEÇÃO 3.4
+Com o relacionamento entre as tabelas Cliente e Cidade, teremos a seguinte forma textual entre as duas tabelas: Cliente (#CodCidade, Cidade)Cidade (#CPF, Nome, DT Nasc, &CodCidade)
+
+INTEGRIDADE REFERENCIAL
+Segundo Coronel e Rob (2011), a integridade referencial tem como exigência básica a sua existência em uma outra tabela, como chave primária. Estabelecer a integridade referencial é justamente garantir que, ao relacionar uma tabela com outra, haverá a garantia de que a chave estrangeira tenha sido cadastrada (primeiramente) como chave primária de outra tabela que compõe o relacionamento. E, para estabelecer a integridade referencial precisamos seguir alguns passos. Clique nos botões para conhecê-los:
+
+1º Passo
+Observar no diagrama os relacionamentos. Procure por cardinalidades do tipo N nas tabelas.
+
+2º Passo
+Existe um ou mais cardinalidades do tipo N? Se sim, haverá chaves estrangeiras. Podem haver vários Ns nas tabelas e, consequentemente, várias chaves estrangeiras.
+
+3º Passo
+A tabela do lado 1 deverá receber novos campos, para criar o relacionamento. Insira a chave primária da tabela correspondente ao relacionamento do lado N.
+
+NOTAÇÃO DE PETER CHEN
+Na figura podemos observar um relacionamento 1 para N sendo representado em três notações diferentes.
+PRINT - UNIDADE 2 SEÇÃO 3.5
+
+NOTAÇÃO DE BACHMAN / SETAS
+A notação de Bachman é utilizada em muitos softwares para a criação de modelos lógicos de um banco de dados. Este modelo sofreu algumas alterações e se transformou na notação de Setas, adotada por vários softwares.
+PRINT - UNIDADE 2 SEÇÃO 3.6
+
+NOTAÇÃO DE JAMES MARTIN
+A notação de James Martin e seu famoso diagrama de “Pé de Galinha” também é muito popular entre as ferramentas de criação de modelos gráficos de esquemas de banco de dados.
+PRINT - UNIDADE 2 SEÇÃO 3.7
+
+
+MODELO ENTIDADE-RELACIONAMENTO
+Clique nos botões para conhecer os passos para a elaboração do modelo entidade-relacionamentos
+
+
+Passo 1
+PRINT - UNIDADE 2 SEÇÃO 3.08
+
+Passo 2
+PRINT - UNIDADE 2 SEÇÃO 3.09
+
+Passo 3
+PRINT - UNIDADE 2 SEÇÃO 3.10
+
+Passo 4
+PRINT - UNIDADE 2 SEÇÃO 3.11
+
+Passo 5
+PRINT - UNIDADE 2 SEÇÃO 3.12
+
+Passo 6
+PRINT - UNIDADE 2 SEÇÃO 3.13
+
+VÍDEO DE ENCERRAMENTO
+VÍDEO - UNIDADE 2 SEÇÃO 3.14
+
