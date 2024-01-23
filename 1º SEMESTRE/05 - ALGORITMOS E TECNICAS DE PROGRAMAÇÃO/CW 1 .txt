@@ -1,0 +1,213 @@
+CW 1 
+UNIDADE 1 SEÇÃO 1
+
+Representação dos algoritmos
+Clique nos botões para entender como o algoritmo é representado em três partes.
+Entrada
+Dados (ingredientes para o preparo do arroz).
+
+Processamento
+Execução (cozimento do arroz).
+
+Saída
+Solução/Objetivo atingido (finalização do arroz - momento que será servido).
+
+
+Outro exemplo é o algoritmo para calcular o máximo divisor comum, o famoso “mdc”:
+1. Dividir um número “a” por “b”, onde o resto é representado por “r”
+2. Substituir a por b
+3. Substituir b por r
+4. Continuar a divisão de a por b até que um não possa ser mais dividido, então “a” é considerado o mdc.
+De acordo com a solução, o resultado fica: mdc (480,130) = 10
+PRINT - UNIDADE 1 SEÇÃO 1.1
+
+
+Diagrama de Blocos (Fluxograma)
+Diagrama de blocos é um conjunto de símbolos gráficos, no qual cada um desses símbolos representa ações específicas a serem executadas pelo computador. Determina a linha de raciocínio utilizada pelo programador para resolver problemas.  Os símbolos dos diagramas de bloco foram padronizados pela ANSI (Instituto Norte Americano de Padronização).
+Clique na imagem para conhecer os principais símbolos.
+PRINT - UNIDADE 1 SEÇÃO 1.2
+
+
+UNIDADE 1 SEÇÃO 2
+“A linguagem de programação pode ser entendida como um conjunto de palavras (vocabulário) e um conjunto de regras gramaticais (para relacionar essas palavras) usados para instruir o sistema de computação a realizar tarefas específicas e com isso, criar os programas. Cada linguagem tem o seu conjunto de palavras-chave e sintaxes” (Marçula, 2013 p. 170).
+Da mesma forma que entendemos as linguagens naturais, essas utilizadas por todos no dia a dia, a linguagem de programação é a comunicação de ideias entre o computador e as pessoas (Tucker, 2010).
+
+As primeiras linguagens de computadores utilizadas foram as linguagens de máquina e a linguagem assembly, a partir da década de 1940. Desde então, muitas linguagens foram aparecendo e, como é natural, muitas não sobreviveram, como é o caso da linguagem Algol.
+
+Algumas linguagens de programação consideradas de baixo nível fizeram parte da história da computação, mas, com certeza, tiveram as suas contribuições para o desenvolvimento de novas linguagens. Clique nos botões para conhecê-las.
+
+Linguagem de máquina
+Pode ser escrita dentro de um editor hexadecimal. Baseada no sistema binário, uma instrução de máquina é considerada conjunto de bits (0s e 1s), ou seja, um programa em linguagem de máquina é uma ampla sequência de algarismos binários (Monteiro, 2010).
+
+Linguagem Assembly
+Uma forma mais viável de conseguir ler a linguagem de máquina, lembrando que a linguagem Assembly é voltada para máquina, ou seja, trabalha diretamente nas memórias e registros do computador, elas são executadas diretamente pelo processador (Tucker, 2010).
+
+Clique nos botões e conheça onde os profissionais da área de programação atuam.
+
+Programador Desktop
+Trabalham com sistemas internos. Podem ser desenvolvedores para ambientes: MAC, Linux ou Windows.
+
+Programador Web
+São profissionais voltados para programação web.
+
+Programador Mobile
+Atuam em uma das áreas que mais crescem no momento, no que concerne programação.
+
+Programador de Jogos
+Desenvolvem as lógicas, programam sistemas para plataformas digitais, como dispositivos mobile, vídeos games e desktops.
+
+
+UNIDADE 1 SEÇÃO 3
+Um programa é uma sequência de código organizada de tal forma que permita resolver um determinado problema.
+
+PARA CRIAR UM PROGRAMA
+É necessário seguir as seguintes regras:
+
+• Definir e analisar o problema a ser solucionado.
+
+• Criar um algoritmo ou um diagrama de fluxo.
+
+• Realizar o pseudocódigo.
+
+PARA EXECUTAR UM PROGRAMA
+É importante estar atento à sequência que os dados percorrem:
+
+• Entrada de dados: realiza as coletas de dados.
+
+• Processamento: os dados são transformados em informação.
+
+• Saída: na qual todas as informações geradas pelo processamento de dados são apresentadas em um periférico.
+
+
+
+
+Algoritmo
+Nome_Programa  
+      Declaração das variáveis
+Início
+       Ações
+      .
+      .
+Fim.
+
+Linguagem C
+Definição das bibliotecas
+Início do programa (main)
+Início das funções
+    Declaração das variáveis
+    Instrução
+       .
+       .
+Termino das funções.
+
+Clique aqui para saber mais
+
+Vale lembrar!
+
+Em algoritmos, a forma de escrever (maiúsculas e minúsculas) não acarretará em erros, porém, em linguagem de programação C, é preciso diferenciar as palavras em letras maiúsculas e minúsculas.
+
+
+
+
+Variáveis
+As variáveis são locais reservados na memória para armazenamento dos dados, cada uma possui um nome próprio para sua identificação. Clique e conheça os tipos mais usados:
+
+INTEIRO
+Armazena os números inteiros (negativos ou positivos). Em linguagem C é definida por “int”, em algoritmos é definida por “inteiro”.
+
+REAL
+Permite armazenar valores de pontos flutuantes e com frações. Em linguagem C, é definido por “float” e, quando precisa do dobro de dados numéricos, é utilizado o tipo “double” ou “long double”. Em algoritmo, pode ser usado simplesmente a palavra “real”.
+
+CARACTERE
+Caracteriza caracteres, números e símbolos especiais. São delimitadas por aspas simples (‘). Em linguagem C, é definida por “char”. Em algoritmo, é utilizado a palavra “caractere”.
+
+
+Operadores
+Clique nos tipos para conhecer os principais operadores utilizados em algoritmos e em Linguagem C.
+
+OPERADORES ARITMÉTICOS
+Operadores Binários
+‍
++ soma
+- subtração
+* multiplicação
+/ divisão
+% resto de divisão
+
+Operadores Unários
+
+a = -a (troca de sinal
+
+OPERADORES DE INCREMETO E DECREMENTO
+“++” (incremento)  
+“- -“ (decremento)
+
+Exemplos:
+
+a = a + 1; utilizando incremento ficaria desta maneira: ++a
+a = a – 1; utilizando o decremento ficaria desta maneira: - -a
+
+OPERADORES RELACIONAIS
+Linguagem C <     > 	<= 	       >= 	      ==    !=
+Algoritmos  < 	  > 	<= 	       >=             =     <> 
+Descrição   menor maior menor ou igual maior ou igual igual diferente
+
+OPERADORES LÓGICOS
+Linguagem C && 			|| 		       !
+Algoritmos  E  			OU 		       NÃO
+Descrição Lógico E - conjunção  Lógico OU - disjunção  Lógico NÃO - Negação
+
+
+OPERADORES DE ATRIBUIÇÃO
+Linguagem C =
+Algoritmos ←
+
+Exemplos com linguagem C:
+
+soma = valor1 + valor2
+valor = 5
+
+Exemplos com algoritmo:
+
+soma ← valo1 + valor2
+valor ← 5
+
+
+
+
+
+Função printf()
+É um comando de saída, o qual possui um vínculo com a biblioteca stdio.h.
+É utilizada quando se pretende obter uma resposta na tela do computador.
+
+A sua síntese é definida por:
+
+printf (“expressão de controle”, listas de argumentos);
+
+Exemplo:
+
+printf (“O valor encontrado foi  %d”, valor1);
+
+Saiba mais sobre formatações utilizadas na função printf()
+PRINT - UNIDADE 1 SEÇÃO 1.3
+PRINT - UNIDADE 1 SEÇÃO 1.4
+
+Função scanf()
+É um comando de entrada, isto é, são informações que possibilitam a entrada de dados pelo teclado, assim, a informação será armazenada em um determinado espaço da memória, como o nome e tipo específico da variável. 
+A sintaxe é definida por uma expressão de controle (sempre entre aspas duplas) e pela lista de argumento.
+
+A sintaxe da função scanf() é definida por:
+scanf(“expressão de controle”, lista de argumentos);
+
+Exemplo:
+scanf (“%d”, &valor);
+No exemplo, o computador entrará com um valor decimal e retornará o valor da variável “valor”.
+O “&” é utilizado na função scanf() na lista de argumentos, sua função é retornar o conteúdo da variável, ou seja, retorna o endereço do operando.
+Saiba mais sobre formatações utilizadas na função scanf()
+PRINT - UNIDADE 1 SEÇÃO 1.5
+
+Vídeo de encerramento - FUNCIONANDO OK
+
+
+
+
