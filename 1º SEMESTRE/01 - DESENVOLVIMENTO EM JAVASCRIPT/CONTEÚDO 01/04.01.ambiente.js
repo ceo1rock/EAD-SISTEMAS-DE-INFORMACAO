@@ -101,3 +101,46 @@ console.log(resultado)
 
 const soma2 = (a,b) => a+b
 console.log(soma2(2,2))
+
+    "OBJETOS:"
+        "Criando objetos:"
+meu_primeiro_objeto = { "chave": "valor" }
+
+objeto = {
+    "chave1":1,
+    "chave2":2,
+    "chave3":3,
+    "chave4":4
+}
+
+"Consultando uma chave"
+// 1ª forma de acesso 
+valor_chave_1 = objeto.chave1 
+console.log("O valor da chave1 é", valor_chave_1)  // O valor da chave1 é 1
+ 
+// 2ª forma de acesso
+valor_chave_2 = objeto['chave2']
+console.log("O valor da chave2 é", valor_chave_2) // O valor da chave1 é 2
+
+cadastro_cliente = { 
+    "nome": 'João',
+    "telefone": 31912341234,
+    "cidade": 'Ipatinga'
+}
+var nome = cadastro_cliente.nome
+console.log(`O nome é ${nome}`)
+
+var telefone = cadastro_cliente.telefone
+console.log(`O Telefone é ${telefone}`)
+
+// Exemplo contendo objeto recebendo objeto e objeto recebendo array:
+objeto = {
+    "chave1":{ "camada1_1":5 },
+    "chave2":['abacate', 'bola', 'cavalo']
+}
+
+valor_1 = objeto.chave1.camada1_1
+console.log(valor_1)  //5
+
+valor_2 = objeto.chave2[1]
+console.log(valor_2)  // bola

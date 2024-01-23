@@ -149,31 +149,31 @@ soma = (a, b) => a+b
     "OBJETOS:"
 // Objetos são um tipo de dado fundamental para a linguagem JavaScript; eles armazenam coleções de chaves e valores denominados propriedades. 
 // O conceito de objetos JavaScript é equivalente ao conceito de “hash”, “dicionário” ou “array associativo” em outras linguagens de programação (FLANAGAN, 2011).
-
     "Criando objetos:"
-// Você pode criar um objeto utilizando o comando new Object( ), entretanto, há formas mais simples utilizando chaves. Veja como a sintaxe pode ser construída:
+// Você pode criar um objeto utilizando o comando new Object( ), entretanto, há formas mais simples utilizando chaves. Exemplo de sintaxe:
 
 meu_primeiro_objeto = { "chave": "valor" }
-// Note que chaves e valores são separados por dois pontos. Além disso, é possível, ainda, inserir múltiplos pares de chave e valor, desde que estejam separados por vírgula:*/ 
-
+// Note que chaves e valores são separados por dois pontos.
+// Podemos inserir múltiplos pares de chave e valor, desde que estejam separados por vírgula:
 objeto = {
     "chave1":"valor",
     "chave2":"valor",
-    "chave3":"valor"
+    "chave3":"valor",
+    "chave4":"valor"
 }
 //Note que a chave deve ser única.
 
     "Consultando uma chave"
 // Há duas formas de se acessar valores individualmente em um objeto:
+// 1 - Usando ponto (nome-objeto.propriedade): Deve-se chamar o nome do objeto seguido da propriedade que se deseja acessar.
 
-// 1 - Usando ponto (nome-objeto.propriedade): nesse caso, deve-se chamar o nome do objeto seguido da propriedade que se deseja acessar.
-
-// Usando colchetes (nome-objeto[‘propriedade’]): nesse caso, deve-se chamar o nome do objeto seguido da propriedade desejada entre colchetes e aspas.
+// 2 - Usando colchetes (nome-objeto[‘propriedade’]): Deve-se chamar o nome do objeto seguido da propriedade desejada entre colchetes e aspas.
 
 objeto = {
     "chave1":1,
     "chave2":2,
-    "chave3":3
+    "chave3":3,
+    "chave4":4
 }
  
 // 1ª forma de acesso 
@@ -183,24 +183,20 @@ console.log("O valor da chave1 é", valor_chave_1)  // O valor da chave1 é 1
 // 2ª forma de acesso
 valor_chave_2 = objeto['chave2']
 console.log("O valor da chave2 é", valor_chave_2) // O valor da chave1 é 2
-// No exemplo, as chaves apontam para valores numéricos e os objetos aceitam dados de todos os tipos, como valores booleanos, strings, números, arrays e, até mesmo, outros objetos. 
+// As chaves apontam para valores numéricos e os objetos aceitam dados de todos os tipos, como valores booleanos, strings, números, arrays e, até mesmo, outros objetos. 
 
-// Exemplo:
+// Exemplo contendo objeto recebendo objeto e objeto recebendo array:
 objeto = {
     "chave1":{ "camada1_1":5 },
     "chave2":['abacate', 'bola', 'cavalo']
 }
 
-//Aqui, temos um objeto com duas chaves. A primeira chave recebe, como valor, outro objeto que possui uma única chave “camada1_1”, e para acessar o valor nessa chave específica, pode-se executar o seguinte código:
+// A primeira chave recebe outro objeto, que possui uma única chave “camada1_1”, e para acessar o valor nessa chave específica, pode-se executar o seguinte código:
 
-// Acessando o valor da chave "camada1-1"
 valor_1 = objeto.chave1.camada1_1
 console.log(valor_1)  //5
 
-// Na chave2, nosso objeto recebe um array com três valores. Não podemos usar a notação de ponto nesse caso, pois arrays são acessados usando-se o índice, assim sendo, podemos usar a notação de colchetes.
-// No exemplo a seguir, usamos esse tipo de notação para coletar o segundo elemento do array da chave2 (note que o segundo elemento é indexado na posição 1):
-
-// Imprimindo o 2º elemento do array da chave2
+// Na chave2, objeto recebe um array com três valores, usamos esse tipo de notação para coletar o segundo elemento do array da chave2:
 valor_2 = objeto.chave2[1]
 console.log(valor_2)  // bola
 
@@ -217,34 +213,34 @@ console.log(valor_2)  // bola
 
 
 
-    "Percorrendo um objeto"
+
+
+
+
+
+
+
+
+
+
+
+"Percorrendo um objeto"
 // Podemos percorrer um objeto inteiro com o auxílio de um laço de repetição. Observe o exemplo a seguir:
 
 objeto = {    
-    "chave1":{ "camada1_1":5 },
-    "chave2":['abacate', 'bola', 'cavalo']
+"chave1":{ "camada1_1":5 },
+"chave2":['abacate', 'bola', 'cavalo']
 }
 for(i in objeto){
-    chave = i             // coleta a chave
-    valor = objeto[i]     // pega o valor correspondente a chave
-    console.log(chave, "->", valor) // imprime chave e valor atual
+chave = i             // coleta a chave
+valor = objeto[i]     // pega o valor correspondente a chave
+console.log(chave, "->", valor) // imprime chave e valor atual
 }
 // Esse código imprimirá no console:
 
 chave1 -> { camada1_1: 5 }
 chave2 -> [ 'abacate', 'bola', 'cavalo' ]
 // Note que usamos a palavra reservada "in" para recuperar todas as chaves no objeto. A cada rodada do laço for, uma nova chave será avaliada pelo bloco.
-
-
-
-
-
-
-
-
-
-
-
 
 
 VIDEOAULA: OBJETOS
