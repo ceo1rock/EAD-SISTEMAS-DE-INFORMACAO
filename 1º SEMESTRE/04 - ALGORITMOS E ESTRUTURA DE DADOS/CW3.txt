@@ -1,0 +1,50 @@
+CW3
+
+UNIDADE 3 SEÇÃO 1
+
+Dessa forma, a Tabela de Espalhamento tem como ideia principal separar os elementos em subconjuntos de acordo com as características-chaves do próprio elemento. Dessa forma, a busca de um elemento é baseada na verificação do subconjunto pertencente ao elemento e assim eliminar os demais subconjuntos, como se fosse realizando um filtro de pesquisas, como na imagem.
+PRINT - UNIDADE 3 SEÇÃO 1.1
+
+
+As Tabelas de Espalhamento, apesar de ter uma identificação grande com as Listas Ligadas, em termos de ideologia, elas são estruturas de dados diferentes em seus aspectos e funcionamentos. Clique nas abas e conheça as diferenças.
+
+ACESSO OS DADOS:
+	Tabelas de Espalhamento: acesso direto.
+
+	Listas Ligadas: acesso sequencial.
+
+INSERÇÃO DE DADOS:
+	Tabelas de Espalhamento: insere com base na Função de Espalhamento por subconjuntos.
+
+	Listas Ligadas: pode-se inserir dados no início, meio ou final da Lista.
+
+Remoção de dados:
+	Tabelas de Espalhamento: remove com base na Função de Espalhamento por subconjuntos.
+
+	Listas Ligadas: a remoção pode ser realizada no início, meio ou final da Lista.
+
+Informações duplicadas:
+	Tabelas de Espalhamento: utiliza métodos para controle de colisão, podendo utilizar uma Lista Ligada como auxiliar para armazenamento.
+
+	Listas Ligadas: não há controle de duplicidade de informação.
+
+Pesquisa de dados
+	Tabelas de Espalhamento: acesso direto aos dados pesquisados devido à Função de Espalhamento.
+
+	Listas Ligadas: pesquisa sequencial, e a pesquisa é realizada chave a chave.
+
+
+UNIDADE 3 SEÇÃO 2
+Explore a galeria e veja a aplicação no conjunto {75, 46, 7, 34, 13}:
+Conforme a tabela, no vetor haverá um elemento para cada valor do resultado e cada um dos elementos do vetor é um índice de uma lista ligada, que terá os valores dentro do intervalo definido pela função.
+PRINT - UNIDADE 3 SEÇÃO 2.1
+
+Segundo Silva (2007), como resultado da aplicação da função sobre o vetor dado acima, teremos a seguinte estrutura:
+PRINT - UNIDADE 3 SEÇÃO 2.2
+
+Ao serem inseridos os elementos do vetor na lista, a função verifica a estrutura para identificar em qual índice será inserido um novo valor, com base na Função de Espalhamento, de forma que a lista fique ordenada (SILVA, 2007). Para criar uma única lista ordenada, basta unir as listas geradas.
+PRINT - UNIDADE 3 SEÇÃO 2.3
+
+
+
+

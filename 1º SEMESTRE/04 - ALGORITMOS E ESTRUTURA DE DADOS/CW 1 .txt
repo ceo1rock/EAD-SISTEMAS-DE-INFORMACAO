@@ -1,0 +1,45 @@
+CW 1 
+
+UNIDADE 1 SEÇÃO 1
+
+O nó de lista é composto por duas informações, uma informação armazenada e um ponteiro que indica o próximo elemento da lista.
+PRINT - UNIDADE 1 SEÇÃO 1.1
+
+UNIDADE 1 SEÇÃO 2
+
+Relembre
+Uma lista nula (vazia) é uma lista sem nenhum nó, assim, o ponteiro para o próximo elemento possui valor nulo (Tenenbaum, 2007).
+
+
+Adicionar elementos no início da lista
+Explore a galeria e conheça como adicionar um novo elemento no início da lista.
+7 - No exemplo temos um novo valor inserido no final da lista.
+PRINT - UNIDADE 1 SEÇÃO 2.1
+
+
+Remover o primeiro elemento da lista
+Caso o primeiro elemento da lista seja o elemento a ser retirado, devemos atualizar o valor da lista com o ponteiro para o segundo elemento e assim, liberar o espaço alocado do elemento retirado.
+PRINT - UNIDADE 1 SEÇÃO 2.2
+
+
+UNIDADE 1 SEÇÃO 3
+
+Definição de lista duplamente ligada
+Nessa estrutura de dados cada nó apresenta um elemento com informações, um ponteiro direcionando para o próximo elemento e um ponteiro direcionando para o elemento anterior. Dessa forma, é possível acessar tanto o próximo elemento como o elemento anterior da lista e percorrer a lista na ordem inversa, do final até o início.
+PRINT - UNIDADE 1 SEÇÃO 3.1
+
+Adicionar elementos no início da lista duplamente ligada
+Explore a galeria e veja como adicionar um novo elemento no início da lista duplamente ligada.
+Adição de um novo elemento no início da lista.
+PRINT - UNIDADE 1 SEÇÃO 3.2
+
+
+Adicionar elementos no meio da lista duplamente ligada
+Explore a galeria e veja como adicionar um novo elemento no meio da lista duplamente ligada.
+Adição de um novo elemento no meio da lista.
+PRINT - UNIDADE 1 SEÇÃO 3.3
+
+Remover elementos da lista duplamente ligada
+Explore a galeria a seguir e veja as opções de remoção de elementos da lista duplamente ligada.
+Encontrado o elemento que deseja remover, basta apontar o elemento anterior a ele para o próximo e o próximo para o anterior, permitindo, assim, que o elemento no meio da lista possa ser removido do encadeamento.
+PRINT - UNIDADE 1 SEÇÃO 3.4

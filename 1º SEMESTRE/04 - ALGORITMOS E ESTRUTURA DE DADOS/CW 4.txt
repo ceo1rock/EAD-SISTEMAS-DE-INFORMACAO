@@ -1,0 +1,4 @@
+CW 4
+UNIDADE 4 SEÇÃO 2
+Outro exemplo é a criação de um sumário de um livro. O sumário é criado com uma listagem de informações referente aos assuntos que serão tratados no livro, como podemos observar:
+PRINT UNIDADE 4 SEÇÃO 2.1

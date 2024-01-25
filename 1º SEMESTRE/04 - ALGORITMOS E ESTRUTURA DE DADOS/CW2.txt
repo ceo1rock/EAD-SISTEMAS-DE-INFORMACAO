@@ -1,0 +1,16 @@
+CW2
+
+UNIDADE 2 SEÇÃO 1
+
+Regras para operação de pilhas
+A Torre de Hanói é um brinquedo pedagógico que representa uma pilha e é muito utilizado em estrutura de dados. Clique na imagem e veja mais informações sobre a Torre de Hanói.
+PRINT - UNIDADE 2 SEÇÃO 1
+
+
+UNIDADE 2 SEÇÃO 2
+Conforme Drozdek (2016), outras operações que podem ser implementadas na pilha são:
+• Limpar a pilha, utilizando a função clear().
+• Verificar se a pilha está vazia, com base na função isEmpty().
+Na imagem podemos observar uma sequência de operações para inserir um novo elemento na pilha com a função push( ) e remoção do elemento com a função pop( ).
+PRINT - UNIDADE 2 SEÇÃO 2.1
+
