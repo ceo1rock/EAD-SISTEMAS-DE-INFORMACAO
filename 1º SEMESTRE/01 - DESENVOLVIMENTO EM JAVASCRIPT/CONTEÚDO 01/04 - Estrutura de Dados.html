@@ -200,33 +200,8 @@ console.log(valor_1)  //5
 valor_2 = objeto.chave2[1]
 console.log(valor_2)  // bola
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"Percorrendo um objeto"
-// Podemos percorrer um objeto inteiro com o auxílio de um laço de repetição. Observe o exemplo a seguir:
-
+    "Percorrendo um objeto"
+// Percorrer um objeto inteiro com o auxílio de um laço de repetição:
 objeto = {    
 "chave1":{ "camada1_1":5 },
 "chave2":['abacate', 'bola', 'cavalo']
@@ -234,21 +209,17 @@ objeto = {
 for(i in objeto){
 chave = i             // coleta a chave
 valor = objeto[i]     // pega o valor correspondente a chave
-console.log(chave, "->", valor) // imprime chave e valor atual
+console.log(chave, "--->", valor) // imprime chave e valor atual
 }
 // Esse código imprimirá no console:
 
-chave1 -> { camada1_1: 5 }
-chave2 -> [ 'abacate', 'bola', 'cavalo' ]
-// Note que usamos a palavra reservada "in" para recuperar todas as chaves no objeto. A cada rodada do laço for, uma nova chave será avaliada pelo bloco.
-
-
-VIDEOAULA: OBJETOS
+chave1 ---> { camada1_1: 5 }
+chave2 ---> [ 'abacate', 'bola', 'cavalo' ]
+// Foi usado a palavra reservada "in" para recuperar todas as chaves no objeto. A cada rodada do laço for, uma nova chave será avaliada pelo bloco.
 
 "ESTUDO DE CASO:"
-
 /* Crie um sistema/script que determinasse o horário de entrevistas para candidatos à vaga de estágio, selecione um horário que o candidato fará a entrevista. 
-Lista com os 24 nome, deve agendados em ordem alfabética.
+A lista com os 24 nome, deve agendados em ordem alfabética.
 Horário de incio às 9h e termino às 17h. 
 Cada entrevista deve ter, no máximo, 15 minutos e pausa de 5 mim. Não devem ser marcadas entrevistas entre 12h e 14h.
 

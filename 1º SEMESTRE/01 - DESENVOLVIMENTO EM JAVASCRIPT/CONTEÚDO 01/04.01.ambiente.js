@@ -128,7 +128,7 @@ cadastro_cliente = {
     "cidade": 'Ipatinga'
 }
 var nome = cadastro_cliente.nome
-console.log(`O nome é ${nome}`)
+console.log(`O nome é ${nome} e da cidade ${cidade}`)
 
 var telefone = cadastro_cliente.telefone
 console.log(`O Telefone é ${telefone}`)
