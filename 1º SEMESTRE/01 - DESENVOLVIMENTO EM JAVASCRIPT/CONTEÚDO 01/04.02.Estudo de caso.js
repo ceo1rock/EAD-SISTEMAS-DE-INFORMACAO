@@ -2,7 +2,7 @@ var hora = 9
 var minutos = 15
 var total_entrevistas = 0
 const saida = 17
-entrevistado = [
+entrevistados = [
     "José da Silva",
     "Antônio de Sá",
     "Felipe Augusto",
@@ -28,18 +28,19 @@ entrevistado = [
     "Ana Maria",
     "Thiago Melo"
 ]
+entrevistados.sort()
+
 for(hora; hora < saida; hora++){
     if((hora == 12)||(hora==13)){
         continue
     }
-    for(j = 0; j < 60; j = j+minutos){
-        total_entrevistas++;
-        entrevistado++;      
-        if(j == 0){
-            console.log(`Entrevista # ${total_entrevistas} => ${hora} : ${j}0`)
+    for(min = 0; min < 60; min = min+minutos){
+        total_entrevistas++; 
+        if(min == 0){
+            console.log(hora+":"+min+"0","- Entrevista de", entrevistados[total_entrevistas]) // sinal de +(concatenção) não deixa espaço
         }
         else{
-            console.log(`Entrevista # ${total_entrevistas} => ${hora} : ${j}`)
+            console.log(hora,":",min," - Entrevista de", entrevistados[total_entrevistas]) // virgula gera um espaço
         }
     }
 }
