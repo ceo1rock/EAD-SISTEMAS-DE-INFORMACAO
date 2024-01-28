@@ -29,6 +29,7 @@ entrevistados = [
     "Thiago Melo"
 ]
 entrevistados.sort()
+console.log(entrevistados)
 
 for(hora; hora < saida; hora++){
     if((hora == 12)||(hora==13)){

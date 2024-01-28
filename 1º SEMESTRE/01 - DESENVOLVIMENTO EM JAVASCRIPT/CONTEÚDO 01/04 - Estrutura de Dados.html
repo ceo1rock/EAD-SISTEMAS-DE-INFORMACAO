@@ -218,11 +218,10 @@ chave2 ---> [ 'abacate', 'bola', 'cavalo' ]
 // Foi usado a palavra reservada "in" para recuperar todas as chaves no objeto. A cada rodada do laço for, uma nova chave será avaliada pelo bloco.
 
 "ESTUDO DE CASO:"
-/* Crie um sistema/script que determinasse o horário de entrevistas para candidatos à vaga de estágio, selecione um horário que o candidato fará a entrevista. 
-A lista com os 24 nome, deve agendados em ordem alfabética.
-Horário de incio às 9h e termino às 17h. 
-Cada entrevista deve ter, no máximo, 15 minutos e pausa de 5 mim. Não devem ser marcadas entrevistas entre 12h e 14h.
-
+// Crie um sistema/script que determine o horário das entrevistas, selecione um horário para cada candidato. A lista deve ser em alfabética.
+// Horário de incio às 9h e termino às 17h. 
+// Cada entrevista deve ter, no máximo, 15 minutos e pausa de 5 mim. Não devem ser marcadas entrevistas entre 12h e 14h.
+    "LISTA:"
 "José da Silva",
 "Antônio de Sá",
 "Felipe Augusto",
@@ -247,13 +246,17 @@ Cada entrevista deve ter, no máximo, 15 minutos e pausa de 5 mim. Não devem se
 "Pedro Parker",
 "Ana Maria",
 "Thiago Melo"
-*/
 
-"RESOLUÇÃO DO ESTUDO DE CASO:"
-
-/*
-
-Note que podemos declarar a lista de indivíduos como um array. Na hora de imprimir os resultados, devemos apontar a posição do array e subtrair um, e isso é necessário uma vez que usamos nosso contador para começar a contagem do um (primeira entrevista ocorre às 9:00), enquanto o array é ordenado a partir da posição zero.
-Ao executar esse código, você verá o seguinte resultado:
-
-</script> linhas: 352
+    "RESOLUÇÃO DO ESTUDO DE CASO:"
+</script>
+<script src="04.02.Estudo de caso.js">
+/* Estabelecer os horários de entrada e de saída, minutos (tempo da entrevista + da pausa). 
+Declarar a lista de indivíduos como um array. 
+Usa o laço for do horário de entrada até o horário de saída
+Remover o horário de almoço com continue.
+Fazer o cálculo de minutos.
+Dentro do segundo laço, incrementamos o contador de entrevistas e,
+Imprimimos o horário da entrevista com o array da lista. 
+Fazer um comando condicional para verificar se os minutos seriam iguais a 0, pois queríamos que fossem impressos dois valores “00”.
+Na hora de imprimir os resultados, apontar a posição do array e subtrair um, e isso é necessário uma vez que usamos nosso contador para começar a contagem do um (primeira entrevista ocorre às 9:00), enquanto o array é ordenado a partir da posição zero.*/
+</script>
