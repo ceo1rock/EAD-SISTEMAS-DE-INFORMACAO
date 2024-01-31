@@ -12,6 +12,7 @@
 // É considerado a API fundamental para manipular documentos HTML. 
 // Na hierarquia DOM, elementos são representados como uma árvore, e em um documento HTML, as tags representam os nós da árvore. O elemento de nível superior é denominado elemento pai, enquanto os elementos internos são chamados de elementos filhos e os elementos de mesmo nível são chamados de irmãos, conforme Figura 1, que ilustra a árvore DOM de um documento web. As tags HTML representam os nós
 "Árvore DOM:"
+</script> <script SRC = "01.01 - Figura 1.jpg">
 
 /*
 <!DOCTYPE html>
@@ -31,9 +32,8 @@
 */
 
     "Introdução a eventos no DOM"
-No DOM, a janela e os guias de um navegador são representados pelo objeto window, que possui a propriedade document, que representa o conteúdo da janela (FLANAGAN, 2011). Com JavaScript, é possível navegar pela árvore DOM, manipulando elementos e eventos. Em um arquivo HTML, inclua o seguinte código:
+/* No DOM, a janela e os guias de um navegador são representados pelo objeto window, que possui a propriedade document, que representa o conteúdo da janela (FLANAGAN, 2011). Com JavaScript, é possível navegar pela árvore DOM, manipulando elementos e eventos. Em um arquivo HTML, inclua o seguinte código:
 
-Código 2 | Arquivo HTML
 <!DOCTYPE html>
 <html>
     <head>
@@ -44,8 +44,8 @@ Código 2 | Arquivo HTML
     <body onload="window.alert('Olá, mundo!')"></body>
  
 </html>
-Fonte: elaborado pelo autor.
-Note que, ao executar esse código, surge uma simples mensagem “Olá, mundo!” (conforme Figura 2) em uma caixa de diálogo gerada pelo comando alert( ).
+
+Ao executar esse código, exibirá a mensagem “Olá, mundo!” em uma caixa de diálogo gerada pelo comando alert( ).
 
 Figura 2 | Alerta gerado por um evento onload
 
