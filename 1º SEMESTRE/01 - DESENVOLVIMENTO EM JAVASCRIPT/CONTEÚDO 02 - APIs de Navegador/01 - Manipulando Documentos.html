@@ -45,19 +45,20 @@
  
 </html>
 
-Ao executar esse código, exibirá a mensagem “Olá, mundo!” em uma caixa de diálogo gerada pelo comando alert( ).
+Ao executar esse código, exibirá a mensagem “Olá, mundo!” em uma caixa de diálogo gerada pelo comando "alert( )".
+Poderia ter sido por um script, com o comando alert( ), nesse modulo vamos usar conceitos da manipulação do DOM. 
+Utilizamos um atributo HTML para disparar um evento "onload", que é executado no momento que a tag é carregada, como aplicamos à tag body, o evento será disparado imediatamente quando a tag for carregada. 
+Um evento ocorre quando algum “gatilho” é disparado, "onload" é um exemplo de gatilhos, pois é disparado quando algo é carregado, mas há muitos outros tipos. 
+Os mais comuns são os eventos que envolvem ações do mouse, ações do teclado, ações realizadas em formulários("submit") ou eventos de janela (ex. rolar/"scroll" ou load da page). 
+No exemplo apresentado, utilizamos um evento de janela ("window"), e, no caso, o método escolhido foi o "alert()". 
+Uma lista completa de eventos e recursos pode ser encontrada aqui: https://mzl.la/3q3kw64. */
 
-Figura 2 | Alerta gerado por um evento onload
+    "Manipulando o DOM: escrevendo em um documento"
+// Para manipular um documento HTML por meio do DOM, usar o objeto "document" no JavaScript. Utilizar JavaScript para gravar informações diretamente no documento, para isso, criamos um documento HTML, que vamos chamr de “index.html”, e outro arquivo JavaScript, que vamos chamar de “script.js”:
+</script><script SRC = "01.04 - index.html">
+</script><script SRC = "01.05 - script.js"></script>
 
-Fonte: elaborada pelo autor.
-Note que não seria nada diferente criar um simples script com um comando alert( ) embutido, entretanto, aqui, utilizamos vários conceitos da manipulação do DOM. 
-Primeiro, utilizamos um atributo HTML para disparar um evento onload, que é executado no momento que a tag é carregada, ou seja, como aplicamos à tag body, o evento será disparado imediatamente quando a tag for carregada. Podemos imaginar um evento como uma ação que ocorre quando algum “gatilho” é disparado, e o onload é um dos exemplos mais simples de gatilhos, pois é disparado quando alguma coisa é carregada, mas há muitos outros tipos. Os mais comuns são os eventos que envolvem ações do mouse (como quando clicamos com o mouse em algum lugar: onclick), ações do teclado (quando pressionamos uma tecla: keypress), ações realizadas em formulários (como quando clicamos no botão de envio de um formulário: submit) ou eventos de janela (como rolar na página, scroll, ou mesmo os eventos que envolvem o simples carregamento, load). No exemplo apresentado, utilizamos um evento de janela (window), e, no caso, o método escolhido foi o alert(), que exibe uma mensagem em uma caixa de diálogos. Uma lista completa de eventos e recursos pode ser encontrada aqui: https://mzl.la/3q3kw64.
-
-Manipulando o DOM: escrevendo em um documento
-Podemos manipular o conteúdo de um documento HTML por meio do DOM, usando o objeto document no JavaScript. Uma manipulação simples seria utilizar JavaScript para gravar informações diretamente no documento, e, para isso, criamos um documento HTML, que vamos chamr de “index.html”, e outro arquivo JavaScript, que vamos chamar de “script.js”:
-
-Código 3
-index.html
+01.04 - index.html:
 <!DOCTYPE html>
 <html>
     <head>
@@ -67,14 +68,11 @@ index.html
     </head>
     <body></body>
 </html>
-script.js
+
+01.05 - script.js: 
 document.write("Olá, mundo!")
-Ao abrirmos o arquivo HTML no navegador, aparecerá a seguinte mensagem (Figura 3):
-
-Figura 3 | Mensagem exibida no navegador
-
-Fonte: elaborada pelo autor.
-Note que a mensagem não estava inicialmente presente no documento HTML, mas quando acessamos a ferramenta inspecionar no navegador (e clicamos na aba “Elementos”) podemos perceber que o texto está, agora, presente dentro da tag Body. Observe a Figura 4.
+<script>
+/* Note que a mensagem não estava inicialmente presente no documento HTML, mas quando acessamos a ferramenta inspecionar no navegador (e clicamos na aba “Elementos”) podemos perceber que o texto está, agora, presente dentro da tag Body. Observe a Figura 4.
 
 Figura 4 | Código visualizado na ferramenta inspecionar do Chrome (pressione F12). Note que a tag body estava vazia no código que declaramos inicialmente, e ela foi preenchida pelo script
 
