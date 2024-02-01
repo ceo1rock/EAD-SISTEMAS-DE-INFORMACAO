@@ -64,38 +64,38 @@ Uma lista completa de eventos e recursos pode ser encontrada aqui: https://mzl.l
     <head>
         <title>DOM</title>
         <meta charset="utf-8">
-        <script src="script.js"></script>
+        <script src="01.05 - script.js"></script>
     </head>
-    <body></body>
+    <body>Tudo bem?</body>
 </html>
 
 01.05 - script.js: 
 document.write("Olá, mundo!")
 <script>
-/* Note que a mensagem não estava inicialmente presente no documento HTML, mas quando acessamos a ferramenta inspecionar no navegador (e clicamos na aba “Elementos”) podemos perceber que o texto está, agora, presente dentro da tag Body. Observe a Figura 4.
+/* Note que a mensagem não estava inicialmente presente no documento HTML, mas quando acessamos a ferramenta inspecionar no navegador, podemos perceber que o texto está dentro da tag Body.
 
-Figura 4 | Código visualizado na ferramenta inspecionar do Chrome (pressione F12). Note que a tag body estava vazia no código que declaramos inicialmente, e ela foi preenchida pelo script
+Nesse exemplo, usamos o método "write( )" para gravar uma mensagem diretamente no corpo do documento, no script usamos o comando "document.write()" irá gravar antes. 
 
-Fonte: elaborada pelo autor.
-Nesse exemplo, usamos o método write( ) para gravar uma mensagem diretamente no corpo do documento (local definido pelo objeto document), e note que, se houver qualquer coisa no documento, o comando document.write() irá gravar antes. Por exemplo, digamos que desejamos alterar o arquivo HTML:
-
-<body>Tudo bem?</body>
-Ao recarregarmos a página, veremos a figura a seguir:
-
-Figura 5 | Mensagem gerada pelo script é gravada antes da mensagem que já estava no <body>
-
-Fonte: captura de tela elaborada pelo autor.
-Podemos definir locais específicos para que as alterações ocorram, mas, antes, você precisa conhecer os métodos de seleção de elementos no DOM, que veremos no próximo bloco.
+Podemos definir locais específicos para que as alterações ocorram, é preciso conhecer os métodos de seleção de elementos no DOM. */
 
 VIDEOAULA: INTRODUÇÃO AO DOM
-Nesta aula, você irá conhecer a árvore DOM (Document Object Model). 
-Bons estudos!
 
-Videoaula: Introdução ao DOM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
-
-
 MÉTODOS E ELEMENTOS DOM
 Vimos, anteriormente, que é possível manipular um documento HTML usando JavaScript pelo objeto document. Como exemplo, usamos o método write() para gravar uma mensagem na tela, entretanto, da forma feita, as mensagens só poderiam ser gravadas no início do texto. JavaScript fornece uma série de métodos para selecionar e manipular partes específicas de documento web. Por exemplo: podemos selecionar elementos específicos do DOM por meio de quatro funções:
 
