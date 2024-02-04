@@ -78,125 +78,48 @@ Nesse exemplo, usamos o método "write( )" para gravar uma mensagem diretamente 
 
 Podemos definir locais específicos para que as alterações ocorram, é preciso conhecer os métodos de seleção de elementos no DOM. */
 
+
+
 VIDEOAULA: INTRODUÇÃO AO DOM
 
 
 
+    "MÉTODOS E ELEMENTOS DOM"
+/* É possível manipular um documento HTML usando JavaScript pelo objeto "document". Usamos o método "write()" para gravar uma mensagem na tela, da forma feita, as mensagens só poderiam ser gravadas no início do texto. Podemos selecionar elementos específicos do DOM por meio de quatro funções:
+    "getElementById": seleciona um único elemento com base em seu identificador único (id).
+    "getElementsByTagName": seleciona todos os elementos de tags de mesmo nome especificado.
+    "getElementsByClassName": seleciona todos os elementos que possuem determinada classe (class).
+    "querySelectorAll": seleciona elementos a partir de um seletor CSS.
 
+Figura 2 | Modelo de site bem simples composto por quatro seções: 
+(1) cabeçalho (vermelho), 
+(2) seção principal de conteúdo (azul)
+(3) barra lateral (verde)
+(4) rodapé (cinza)
 
+Códigos HTML (responsável pelo arcabouço da página) e CSS (responsável pelos estilos) que geram essa página:*/
 
+</script><script src = "01.07 - index.html">
+<link rel="stylesheet" href="01.08 - estilo.css">
+</script>
 
-
-
-
-
-
-
-
-
-
- 
-MÉTODOS E ELEMENTOS DOM
-Vimos, anteriormente, que é possível manipular um documento HTML usando JavaScript pelo objeto document. Como exemplo, usamos o método write() para gravar uma mensagem na tela, entretanto, da forma feita, as mensagens só poderiam ser gravadas no início do texto. JavaScript fornece uma série de métodos para selecionar e manipular partes específicas de documento web. Por exemplo: podemos selecionar elementos específicos do DOM por meio de quatro funções:
-
-getElementById: seleciona um único elemento com base em seu identificador único (id).
-getElementsByTagName: seleciona todos os elementos de tags de mesmo nome especificado.
-getElementsByClassName: seleciona todos os elementos que possuem determinada classe (class).
-querySelectorAll: seleciona elementos a partir de um seletor CSS.
-Para exploração desses métodos, vamos utilizar um modelo de site bem simples, como podemos visualizar na Figura 6:
-
-Figura 6 | Modelo de site bem simples composto por quatro seções: (1) cabeçalho (vermelho), (2) seção principal de conteúdo (azul), (3) barra lateral (verde) e (4) rodapé (cinza)
-
-Fonte: captura de tela elaborada pelo autor.
-A seguir, serão apresentados os códigos HTML (responsável pelo arcabouço da página) e CSS (responsável pelos estilos) que geram essa página:
-
-Index.html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>DOM</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="estilo.css">
-  <script src="script.js"></script>
-</head>
-<body>
-  <!-- Cabeçalho da página -->
-  <header>
-      <div id="logo">
-        <a>Meu site</a>
-      </div>
- 
-  </header>
- 
-  <!-- principal região -->
-  <main>
-    
-    <!-- Seção à esquerda --> 
-    <section>
-       <h1>Home</h1>
-       <p class="texto">Bem-vindo ao meu site.</p>
-       <p class="texto">Tudo bem?</p> 
-    </section>
- 
-    <!-- menu lateral direito -->
-    <aside>
-      <p>Barra lateral.</p>
-    </aside>
- 
-  </main>
- 
-  <!-- Rodapé -->
-  <footer>
-    Todos os direitos reservados.
-  </footer>
- 
-</body>
-</html>
-estilo.css
-/* remove margens inseridas pelo navegador */
-*{ margin:0; } 
- 
-/* TAGS */
-header{ 
-    height: 100px; /* altura */
-    background-color: red; /* fundo: vermelho */
-}
-section{ 
-    height: 200px; /* altura */
-    width: 70%; /* largura */
-    background-color: blue; /* fundo: azul */
-    float:left; /* alinhar à esquerda */
-}
-aside{ 
-    height: 200px; /* altura */
-    width: 30%; /* largura */
-    background-color: green; /* fundo: verde */
-    float:right; /* alinhar à direita */
-}
-footer{
-    clear:both; /* corrige problemas de alinhamento */
-    height: 30px; /* altura */
-    background-color: grey;/* fundo cinza */
-    text-align: center; /* texto centralizado */
-}
- 
-/* ID */
-#logo{
-    color:white; /* cor texto: branco */
-    font-size: larger; /* fonte maior */
-    text-align: center; /* texto-centralizado */
-}
- 
-/* CLASS */
-.texto{
-    color: yellow; /* cor amarelo */
-}
-Não é o objetivo desta aula discutir como esses códigos HTML e CSS foram implementados e sim como acessá-los e manipulá-los usando JavaScript. Por isso, foram utilizados vários tipos distintos de tags e cores nas seções para ilustrar como manipular o DOM usando JavaScript.
-O getElementById é usado para selecionar um elemento com base no seu ID. No exemplo, temos apenas um elemento com ID configurado, denominado “logo’, então, coletá-lo. Para tanto, crie um arquivo chamado “script.js”:
+/* Foram utilizados vários tipos distintos de tags e cores nas seções para ilustrar como manipular o DOM usando JavaScript.
+O getElementById é usado para selecionar um elemento com base no seu ID. 
+Ex.:*/
 
 var logo = document.getElementById('logo')
 console.log(logo)
-Ao executarmos esse código, vemos, no console, o valor null, e isso ocorre porque declaramos o script antes do elemento (lembre-se de que o JavaScript lerá linha a linha, logo, se o script for carregado antes do elemento, ele não conseguirá encontrá-lo), no entanto, podemos resolver isso alterando a posição de chamada do script (movendo-o da tag para o , por exemplo) ou usar um evento onload para esperar que todo arquivo HTML esteja carregado para que o script possa começar a executar. Preste atenção em como podemos usar esse tipo de evento em um arquivo JS:
+
+/* Esse código, exibe no console o valor null, porque declaramos o script antes do elemento (JavaScript lê linha a linha, o script foi carregado antes do elemento), podemos resolver isso alterando a posição de chamada do script (movendo-o da tag para o????
+
+
+
+
+
+
+
+
+, por exemplo) ou usar um evento onload para esperar que todo arquivo HTML esteja carregado para que o script possa começar a executar. Preste atenção em como podemos usar esse tipo de evento em um arquivo JS:
 
 window.onload = ()=>{
     var logo = document.getElementById('logo')

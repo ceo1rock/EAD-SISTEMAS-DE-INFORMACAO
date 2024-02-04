@@ -1,0 +1,38 @@
+/* remove margens inseridas pelo navegador */
+*{ margin:0; } 
+ 
+/* TAGS */
+header{ 
+    height: 100px; /* altura */
+    background-color: red; /* fundo: vermelho */
+}
+section{ 
+    height: 200px; /* altura */
+    width: 70%; /* largura */
+    background-color: blue; /* fundo: azul */
+    float:left; /* alinhar à esquerda */
+}
+aside{ 
+    height: 200px; /* altura */
+    width: 30%; /* largura */
+    background-color: green; /* fundo: verde */
+    float:right; /* alinhar à direita */
+}
+footer{
+    clear:both; /* corrige problemas de alinhamento */
+    height: 30px; /* altura */
+    background-color: grey;/* fundo cinza */
+    text-align: center; /* texto centralizado */
+}
+ 
+/* ID */
+#logo{
+    color:white; /* cor texto: branco */
+    font-size: larger; /* fonte maior */
+    text-align: center; /* texto-centralizado */
+}
+ 
+/* CLASS */
+.texto{
+    color: yellow; /* cor amarelo */
+}
