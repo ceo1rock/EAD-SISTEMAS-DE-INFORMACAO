@@ -83,7 +83,6 @@ Podemos definir locais específicos para que as alterações ocorram, é preciso
 VIDEOAULA: INTRODUÇÃO AO DOM
 
 
-
     "MÉTODOS E ELEMENTOS DOM"
 /* É possível manipular um documento HTML usando JavaScript pelo objeto "document". Usamos o método "write()" para gravar uma mensagem na tela, da forma feita, as mensagens só poderiam ser gravadas no início do texto. Podemos selecionar elementos específicos do DOM por meio de quatro funções:
     "getElementById": seleciona um único elemento com base em seu identificador único (id).
@@ -110,27 +109,20 @@ Ex.:*/
 var logo = document.getElementById('logo')
 console.log(logo)
 
-/* Esse código, exibe no console o valor null, porque declaramos o script antes do elemento (JavaScript lê linha a linha, o script foi carregado antes do elemento), podemos resolver isso alterando a posição de chamada do script (movendo-o da tag para o????
-
-
-
-
-
-
-
-
-, por exemplo) ou usar um evento onload para esperar que todo arquivo HTML esteja carregado para que o script possa começar a executar. Preste atenção em como podemos usar esse tipo de evento em um arquivo JS:
+/* Esse código, exibe no console o valor "null", porque declaramos o script antes do elemento, podemos resolver isso alterando a posição de chamada do script. 
+Ou usar um evento onload para esperar que todo arquivo HTML esteja carregado para que o script possa começar a executar. 
+Preste atenção em como podemos usar esse tipo de evento em um arquivo JS:*/
 
 window.onload = ()=>{
     var logo = document.getElementById('logo')
     console.log(logo)
 }
-Agora, observe o resultado no console:
+// Resultado no console:
+<div id="logo">
+    <a>Meu SIte</a>
+    </div>
 
-Figura 7 | Conteúdo de um elemento coletado por getElementById
-
-Fonte: captura de tela elaborada pelo autor.
-Veja que, ao carregarmos o objeto para uma variável, todo o conteúdo da tag é selecionado e armazenado nela. Uma vez que o objeto é armazenado em uma variável, podemos fazer alterações aplicando um novo valor à propriedade innerText. Veja:
+//Ao carregarmos o objeto para uma variável, todo o conteúdo da tag é selecionado e armazenado nela. Uma vez que o objeto é armazenado em uma variável, podemos fazer alterações aplicando um novo valor à propriedade innerText. Veja:
 
 window.onload = ()=>{
     var logo = document.getElementById('logo')
@@ -138,14 +130,27 @@ window.onload = ()=>{
     logo.innerText = "Mudando o título"
     console.log(logo)
 }
-Veja que, ao executarmos esse código, o título da página é substituído, conforme Figura 8:
 
-Figura 8 | Substituindo um título
+//Ao executarmos esse código, o título da página é substituído
+// Dentro desse elemento, havia uma tag que foi removida, e isso aconteceu porque a propriedade innerText permite a alteração apenas do texto. Podemos fazer alterações que permitam a incorporação de códigos HTML usando a propriedade innerHTML:
 
-Fonte: captura de tela elaborada pelo autor.
-Note que, dentro desse elemento, havia uma tag que foi removida, e isso aconteceu porque a propriedade innerText permite a alteração apenas do texto. Podemos fazer alterações que permitam a incorporação de códigos HTML usando a propriedade innerHTML:
+
+
+
+
+
+
+
+
+
 
 logo.innerHTML = "<a>Mudando o título</a>"
+
+
+
+
+
+
 O método getElementsByTagName permite coletar todos os elementos com um mesmo nome de tag. Por exemplo: em nosso código, temos várias tags <p>, e podemos coletá-las usando:
 
 window.onload = ()=>{
