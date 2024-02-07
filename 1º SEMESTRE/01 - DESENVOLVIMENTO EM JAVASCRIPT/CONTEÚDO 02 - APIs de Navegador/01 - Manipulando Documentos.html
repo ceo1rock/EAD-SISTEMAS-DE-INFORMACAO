@@ -80,7 +80,7 @@ Podemos definir locais específicos para que as alterações ocorram, é preciso
 
 
 
-VIDEOAULA: INTRODUÇÃO AO DOM
+"VIDEOAULA: INTRODUÇÃO AO DOM"
 
 
     "MÉTODOS E ELEMENTOS DOM"
@@ -134,24 +134,9 @@ window.onload = ()=>{
 //Ao executarmos esse código, o título da página é substituído
 // Dentro desse elemento, havia uma tag que foi removida, e isso aconteceu porque a propriedade innerText permite a alteração apenas do texto. Podemos fazer alterações que permitam a incorporação de códigos HTML usando a propriedade innerHTML:
 
-
-
-
-
-
-
-
-
-
-
 logo.innerHTML = "<a>Mudando o título</a>"
 
-
-
-
-
-
-O método getElementsByTagName permite coletar todos os elementos com um mesmo nome de tag. Por exemplo: em nosso código, temos várias tags <p>, e podemos coletá-las usando:
+// O método "getElementsByTagName" permite coletar todos os elementos com um mesmo nome de tag. Por exemplo: em nosso código, temos várias tags <p>, e podemos coletá-las usando:
 
 window.onload = ()=>{
     var tags_p = document.getElementsByTagName('p')
@@ -160,57 +145,71 @@ window.onload = ()=>{
 }
 Note que, ao executarmos esse código, o JavaScript retorna um objeto do tipo HTMLCollection, assim como temos na Figura 9.
 
-Figura 9 | Coletando vários elementos
+//Coletando vários elementos:
+    "Console:"
 
-Fonte: captura de tela elaborada pelo autor.
-Podemos manipulá-lo usando um laço de repetição:
+HTMLCollection(3) [p.texto, p.texto, p ]
+    0: p.texto
+    1: p.texto
+    2: p
+        length: 3
+    [[Prototype]]: HTMLCollection
+
+// Podemos manipulá-lo usando um laço de repetição:
 
 window.onload = ()=>{
     var tags_p = document.getElementsByTagName('p')
- 
     for(tag of tags_p){
         console.log(i)
     }
 }
-Note que precisamos usar a palavra reservada of para indicar que queremos navegar pelos itens da variável em questão. Observe o resultado:
+// Note que precisamos usar a palavra reservada of para indicar que queremos navegar pelos itens da variável em questão. Observe o resultado:
 
-Figura 10 | Navegando por resultados de uma consulta getElementsByTagName
+Navegando por resultados de uma consulta getElementsByTagName
+"Console irá exibir:"
+<p class="texto"> Bem-vindo ao meu site,</p>
+<p class ="texto">Tudo bem?</p>
+<p>Barra lateral.</p>
 
-Fonte: captura de tela elaborada pelo autor.
-getElementsByClassName
-Podemos usar o código a seguir para selecionar elementos com base no nome da classe:
+    "getElementsByClassName"
+// Código para selecionar elementos com base no nome da classe:
 
 window.onload = ()=>{
     var class_texto = document.getElementsByClassName('texto')
- 
     for(i of class_texto){
         console.log(i)
     }
 }
-Note que, assim como o getElementsByTagName, o método getElementsByClassName retorna uma lista de objetos que podemos manipular usando laços. No exemplo, temos apenas duas tags que recebem a classe “texto”. Veja o que será impresso no console:
 
-Figura 11 | Usando getElementsByClassName
+// Assim como o "getElementsByTagName", o método getElementsByClassName retorna uma lista de objetos que podemos manipular usando laços. No exemplo, temos apenas duas tags que recebem a classe “texto”. 
+"Veja o que será impresso no console:"
 
-Fonte: captura de tela elaborada pelo autor.
-O querySelectorAll permite a realização de buscas avançadas com base em seletores CSS:
+<p class="texto"> Bem-vindo ao meu site,</p>
+<p class ="texto">Tudo bem?</p>
+
+// O "querySelectorAll" permite buscas avançadas em seletores CSS:
 
 window.onload = ()=>{
     var p_em_aside = document.querySelectorAll('aside p')
- 
     console.log(p_em_aside[0])
 }
-No código acima, recuperamos todas as tags que estão dentro de uma tag (seletor “aside p”). Note que esse método também retorna uma lista de itens, mas, dessa vez, optamos por coletar o primeiro elemento diretamente, usando colchetes e indicando o índice 0.
+//No código acima, recuperamos todas as tags que estão dentro de uma tag (seletor “aside p”). Esse método também retorna uma lista de itens, mas, dessa vez, optamos por coletar o primeiro elemento diretamente, usando colchetes e indicando o índice 0.
 
-VIDEOAULA: MÉTODOS E ELEMENTOS DOM
-Nesta aula, você vai aprender a selecionar elementos do DOM com base no ID, na class, na tag e no seletor CSS usando os métodos JavaScript. Bons estudos!
 
-Videoaula: Métodos e elementos DOM
+
+
+
+
+"Videoaula: Métodos e elementos DOM"
+
+
+
 
  
 
 
-DOM CSS
-O CSS é a linguagem usada para configuração de estilos da página, como cores, fontes, altura largura de blocos, entre outras inúmeras funcionalidades. Por padrão, as cores são definidas no arquivo CSS e incorporadas à página na tag , todavia, podemos alterar os estilos após o carregamento usando códigos JavaScript. Em aplicações reais, a alteração de estilos pós-carregamento é de vital importância. 
+    "DOM CSS"
+// O CSS é a linguagem usada para configuração de estilos da página, como cores, fontes, altura largura de blocos, entre outras inúmeras funcionalidades. Por padrão, as cores são definidas no arquivo CSS e incorporadas à página na tag , todavia, podemos alterar os estilos após o carregamento usando códigos JavaScript. Em aplicações reais, a alteração de estilos pós-carregamento é de vital importância. 
 Por exemplo: imagine que você está desenvolvendo uma página de cadastro de produtos e que ela foi construída a partir de requisições assíncronas, em que, ao enviar o produto, não é necessário recarregar a página. Em certas situações, isso poderá ajudar a melhorar a performance do site com um gigantesco número de acessos, uma vez que os servidores não vão precisar enviar todas as informações novamente, entretanto, como o usuário do sistema saberá que o envio foi feito? 
 A solução mais simples para isso é exibir uma mensagem ao usuário de que o envio foi realizado com sucesso. Em geral, isso é feito em um box com fundo verde e um sinal indicando o sucesso no envio. Esses componentes visuais são construídos usando-se CSS, entretanto, podemos carregá-los para a página usando os métodos e as propriedades da linguagem JavaScript. Observe a sintaxe de como isso pode ser feito:
 
