@@ -209,9 +209,11 @@ window.onload = ()=>{
 
 
     "DOM CSS"
-// O CSS é a linguagem usada para configuração de estilos da página, como cores, fontes, altura largura de blocos, entre outras inúmeras funcionalidades. Por padrão, as cores são definidas no arquivo CSS e incorporadas à página na tag , todavia, podemos alterar os estilos após o carregamento usando códigos JavaScript. Em aplicações reais, a alteração de estilos pós-carregamento é de vital importância. 
-Por exemplo: imagine que você está desenvolvendo uma página de cadastro de produtos e que ela foi construída a partir de requisições assíncronas, em que, ao enviar o produto, não é necessário recarregar a página. Em certas situações, isso poderá ajudar a melhorar a performance do site com um gigantesco número de acessos, uma vez que os servidores não vão precisar enviar todas as informações novamente, entretanto, como o usuário do sistema saberá que o envio foi feito? 
-A solução mais simples para isso é exibir uma mensagem ao usuário de que o envio foi realizado com sucesso. Em geral, isso é feito em um box com fundo verde e um sinal indicando o sucesso no envio. Esses componentes visuais são construídos usando-se CSS, entretanto, podemos carregá-los para a página usando os métodos e as propriedades da linguagem JavaScript. Observe a sintaxe de como isso pode ser feito:
+// O CSS é a linguagem usada para configuração de estilos/designer da página. O designer é definido pelo CSS e incorporadas à página na tag, podemos alterar os estilos após o carregamento usando códigos JavaScript. 
+// Em aplicações reais, a alteração de estilos pós-carregamento é de vital importância. 
+Por exemplo: imagine que você está desenvolvendo uma página de cadastro de produtos e que ela foi construída a partir de requisições assíncronas, em que, ao enviar o produto, não é necessário recarregar a página. Em certas situações, isso poderá ajudar a melhorar a performance do site com um gigantesco número de acessos, uma vez que os servidores não vão precisar enviar todas as informações novamente. 
+"Como o usuário do sistema saberá que o envio foi feito?"
+A solução mais simples para isso é exibir uma mensagem ao usuário de sucesso. Isso é feito em um box com fundo verde e um sinal indicando o sucesso no envio. Esses componentes visuais são construídos usando-se CSS, entretanto, podemos carregá-los para a página usando os métodos e as propriedades da linguagem JavaScript. Observe a sintaxe de como isso pode ser feito:
 
 [elemento-selecionado].style.[propriedade-css] = [novo-valor]
 Para ilustrar isso, vamos alterar o estilo de alguns dos componentes da página criada anteriormente. No exemplo a seguir, vamos alterar a cor de fundo da tag de vermelho para roxo.
