@@ -209,18 +209,22 @@ window.onload = ()=>{
 
 
     "DOM CSS"
-// O CSS é a linguagem usada para configuração de estilos/designer da página. O designer é definido pelo CSS e incorporadas à página na tag, podemos alterar os estilos após o carregamento usando códigos JavaScript. 
+// O CSS é a linguagem usada para configuração de estilo/designer da página. O designer é incorporadas à página pela tag, podemos alterar os estilos após o carregamento usando códigos JavaScript. 
 // Em aplicações reais, a alteração de estilos pós-carregamento é de vital importância. 
-Por exemplo: imagine que você está desenvolvendo uma página de cadastro de produtos e que ela foi construída a partir de requisições assíncronas, em que, ao enviar o produto, não é necessário recarregar a página. Em certas situações, isso poderá ajudar a melhorar a performance do site com um gigantesco número de acessos, uma vez que os servidores não vão precisar enviar todas as informações novamente. 
+"Exemplo:" 
+//No desenvolvendo uma página para cadastro de produtos, ela foi construída a partir de requisições assíncronas, em que, ao enviar o produto, não é necessário recarregar a página, isso ajuda a melhorar a performance do site, uma vez que os servidores não vão precisar enviar todas as informações novamente. 
 "Como o usuário do sistema saberá que o envio foi feito?"
-A solução mais simples para isso é exibir uma mensagem ao usuário de sucesso. Isso é feito em um box com fundo verde e um sinal indicando o sucesso no envio. Esses componentes visuais são construídos usando-se CSS, entretanto, podemos carregá-los para a página usando os métodos e as propriedades da linguagem JavaScript. Observe a sintaxe de como isso pode ser feito:
+// A solução mais simples para isso é exibir uma mensagem de sucesso. Esses componentes visuais são construídos usando-se CSS. Podemos carregá-los para a página usando os métodos e as propriedades da linguagem JavaScript. 
+"Observe a sintaxe de como isso pode ser feito:"
 
 [elemento-selecionado].style.[propriedade-css] = [novo-valor]
-Para ilustrar isso, vamos alterar o estilo de alguns dos componentes da página criada anteriormente. No exemplo a seguir, vamos alterar a cor de fundo da tag de vermelho para roxo.
 
-window.onload = ()=>{
- 
-    // selecionando o objeto
+/*Exemplificação:
+Alterar o estilo dos componentes da página criada anteriormente. 
+Alterar a cor de fundo da tag de vermelho para roxo.*/
+
+window.onload = ()=>{ 
+    // selecionando o objeto:
     var selecionado = document.getElementsByTagName('header');
  
     // pegando apenas o primeiro resultado
@@ -228,23 +232,25 @@ window.onload = ()=>{
  
     // alterando a cor do fundo para roxo
     selecionado.style.backgroundColor = 'purple';
- 
+
 }
-Figura 12 | Páginas antes e depois de executar o script
-Antes
 
-Depois
-
-Fonte: captura de tela elaborada pelo autor.
-Note que a propriedade CSS responsável por alterar a cor de fundo é background-color, entretanto, nós utilizamos backgroundColor, e isso foi necessário pois o JavaScript não permite “-“ nos nomes das variáveis. Por isso, para alterar propriedades CSS compostas, como background-color, text-align, font-size, entre outras, é necessário remover o hífen e colocar em maiúscula a primeira letra da segunda palavra (por exemplo: backgroundColor, textAlign, fontSize); além disso, uma vez feita a seleção, é possível aplicar várias propriedades ao mesmo elemento, como:
+//A propriedade CSS para alterar a cor de fundo é "background-color", porém foi utilizado "backgroundColor", pois o JavaScript não permite "-" nos nomes das variáveis. Para alterar propriedades CSS compostas é necessário remover o hífen e colocar em maiúscula a primeira letra da segunda palavra
+"Exemplo:" 
+PROPRIEDADE CSS     USO NO JS
+background-color:   backgroundColor
+text-align:         textAlign
+font-size           fontSize
+// Uma vez feita a seleção, é possível aplicar várias propriedades ao mesmo elemento, como:
 
 // aplicando várias propriedades
 selecionado.style.fontSize = '80px'; // aumentar fonte
 selecionado.style.color = 'black'; // texto em preto
 selecionado.style.width = '50%'; // largura = 50%
-Figura 13 | A fonte do título foi aumentada e a largura do bloco reduzida pela metade. Note que o comando que altera a cor para o preto não funcionou
 
-Fonte: captura de tela elaborada pelo autor.
+
+
+
 Note que a propriedade que altera a cor do texto não funcionou na prática (ainda que tenha sido aplicada à tag ), e isso se deve ao fato de o texto estar embutido dentro de outra tag (uma div). Além disso, há uma propriedade CSS aplicada diretamente a essa div que altera a cor para o branco. 
 Para resolver esse problema, podemos fazer uma nova seleção partindo da seleção feita anteriormente. No código a seguir, criaremos uma nova variável chamada “texto_selecionado”, e essa variável será responsável por armazenar o resultado de uma busca pelo elemento de ID “logo” (ou seja, o texto “Meu site”).
 
