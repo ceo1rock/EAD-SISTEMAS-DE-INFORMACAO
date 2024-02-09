@@ -17,32 +17,32 @@
 
 // Esse código declara um elemento HTML do tipo Canvas, e podemos imaginar o Canvas como uma área reservada para inserção de algum desenho. Nesse exemplo, nossa área tem tamanho de 400px de altura por 400px de largura.
 // O Canvas deve estar declarado dentro da tag , e aplicar uma id para tag, que passou a ser denominada “desenho”.
+</script><script SRC = "02.04 - index.html"></script>
 
+02.01 - index.html
 <!DOCTYPE html>
 <html>
 <head>
   <title>DOM</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="estilo.css"> 
+  <link rel="stylesheet" href="02.02 - estilo.css"> 
 </head>
 <body>  
   <canvas id="desenho" width="400" height="400"></canvas>
-  <script src="script.js"></script>
+  <script src="02.03 - script.js"></script>
 </body>
 </html>
 
-<html>
-Ao abrir esse código em seu navegador, verá uma tela em branco. 
-Criar um arquivo CSS para inserir margens ao redor da área de desenho do canvas
+<script>
 
+//Ao abrir esse código em seu navegador, verá uma tela em branco. 
+// Criar um arquivo CSS para inserir margens ao redor da área de desenho do canvas
 
-estilo.css
+02.02 - estilo.css: // Canvas vazio. Bordas inseridas por CSS
 canvas{
     border: 1px grey solid;
 }
-Figura 1 | Canvas vazio. Bordas inseridas por CSS
 
-Fonte: captura de tela elaborada pelo autor.
 Ao carregar a página, é possível ver que uma leve linha acinzentada contorna a região ao redor da área de desenho. Agora, podemos fazer desenhos na tela, e para manipular o Canvas, é necessário utilizar JavaScript. Além disso, note que a declaração do script externo é feita no fim do arquivo, imediatamente antes da tag . 
 Vamos, então, construir nosso script que fará um desenho dentro da área delimitada pelo Canvas e que renderizará um simples quadrado de 100px de altura por 100px de largura. Observe o código a seguir e a Figura 2:
 
