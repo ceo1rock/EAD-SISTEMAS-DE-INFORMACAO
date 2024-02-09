@@ -78,10 +78,7 @@ Nesse exemplo, usamos o método "write( )" para gravar uma mensagem diretamente 
 
 Podemos definir locais específicos para que as alterações ocorram, é preciso conhecer os métodos de seleção de elementos no DOM. */
 
-
-
 "VIDEOAULA: INTRODUÇÃO AO DOM"
-
 
     "MÉTODOS E ELEMENTOS DOM"
 /* É possível manipular um documento HTML usando JavaScript pelo objeto "document". Usamos o método "write()" para gravar uma mensagem na tela, da forma feita, as mensagens só poderiam ser gravadas no início do texto. Podemos selecionar elementos específicos do DOM por meio de quatro funções:
@@ -195,18 +192,7 @@ window.onload = ()=>{
 }
 //No código acima, recuperamos todas as tags que estão dentro de uma tag (seletor “aside p”). Esse método também retorna uma lista de itens, mas, dessa vez, optamos por coletar o primeiro elemento diretamente, usando colchetes e indicando o índice 0.
 
-
-
-
-
-
 "Videoaula: Métodos e elementos DOM"
-
-
-
-
- 
-
 
     "DOM CSS"
 // O CSS é a linguagem usada para configuração de estilo/designer da página. O designer é incorporadas à página pela tag, podemos alterar os estilos após o carregamento usando códigos JavaScript. 
@@ -235,7 +221,7 @@ window.onload = ()=>{
 
 }
 
-//A propriedade CSS para alterar a cor de fundo é "background-color", porém foi utilizado "backgroundColor", pois o JavaScript não permite "-" nos nomes das variáveis. Para alterar propriedades CSS compostas é necessário remover o hífen e colocar em maiúscula a primeira letra da segunda palavra
+//A propriedade CSS para alterar a cor de fundo é "background-color", foi utilizado "backgroundColor", pois o JavaScript não permite "-" nos nomes das variáveis. Para alterar propriedades CSS compostas é necessário remover o hífen e colocar em maiúscula a primeira letra da segunda palavra
 "Exemplo:" 
 PROPRIEDADE CSS     USO NO JS
 background-color:   backgroundColor
@@ -248,53 +234,40 @@ selecionado.style.fontSize = '80px'; // aumentar fonte
 selecionado.style.color = 'black'; // texto em preto
 selecionado.style.width = '50%'; // largura = 50%
 
-
-
-
-Note que a propriedade que altera a cor do texto não funcionou na prática (ainda que tenha sido aplicada à tag ), e isso se deve ao fato de o texto estar embutido dentro de outra tag (uma div). Além disso, há uma propriedade CSS aplicada diretamente a essa div que altera a cor para o branco. 
-Para resolver esse problema, podemos fazer uma nova seleção partindo da seleção feita anteriormente. No código a seguir, criaremos uma nova variável chamada “texto_selecionado”, e essa variável será responsável por armazenar o resultado de uma busca pelo elemento de ID “logo” (ou seja, o texto “Meu site”).
-
+/* A propriedade que altera a cor do texto não funcionou pois o texto estar embutido dentro de outra tag (uma div). Há uma propriedade CSS aplicada diretamente a essa div que altera a cor para o branco. 
+Para resolver fazemos uma nova seleção, apartir da seleção feita anteriormente. */
+"RESOLUÇÃO:"
 // selecionando a div de id #logo
 var texto_selecionado=selecionado.querySelectorAll('#logo')[0]
  
 // muda a cor do texto para preto
 texto_selecionado.style.color = 'black';
-Observe, na Figura 14, que, agora, a cor da fonte do título foi alterada, passando a ser preta.
 
-Figura 14 | A cor do título passou a ser preta
-
-Fonte: captura de tela elaborada pelo autor.
-Por fim, repare no código a seguir:
+// Por fim, repare no código a seguir:
 
 var texto_selecionado=selecionado.querySelectorAll('#logo')[0]
-Nele, há dois pontos de destaque:
 
-('#logo'): o símbolo “#” antes do nome buscado indica que estamos procurando um ID; se estivéssemos buscando uma classe, esse símbolo seria substituído por um ponto “.”;
-[0]: é importante refrisar que, mesmo que a busca retorne apenas um elemento, o método querySelectorAll retorna uma lista de itens, por isso, devemos indicar que queremos apenas o elemento no índice zero.
-Com os conhecimentos apresentados até aqui, você já é capaz de realizar quaisquer alterações no CSS usando JavaScript. Por conta própria, teste algumas outras propriedades CSS e manipule-as usando JavaScript. Bons estudos!
+"Nele, há dois pontos:"
+
+('#logo'): // símbolo "#" antes do nome buscado, procura por uma "ID"; se estivéssemos buscando uma "classe", usa um ponto/".".
+[0]: // Mesmo que a busca retorne apenas um elemento, o método querySelectorAll retorna uma lista de itens, deve indicar pelo índice o elemento que busca.
 
 VIDEOAULA: DOM CSS
-Nesta aula, você vai aprender a manipular o CSS usando JavaScript. Bons estudos!
 
-Videoaula: DOM CSS
-
- 
-
-
-ESTUDO DE CASO
-Você foi contratado para trabalhar em uma agência de publicidade que também atua como desenvolvedora de sites: a Empresa A. Nas últimas semanas, você tem recebido muitas atividades para concluir, em especial, a pedido do time de recursos humanos. De fato, toda a equipe da empresa tem ouvido falar de você e, por isso, outros setores querem a sua ajuda.
-O time de desenvolvimento finalmente percebeu que você estava pronto para um novo desafio e o colocou para trabalhar em um projeto de um cliente importante: uma agência de moda ou a Empresa B. Atualmente, nossa agência cuida da publicidade da Empresa B, portanto, é de nosso interesse que o website siga os valores e as estratégias definidas pelo setor de marketing. A Empresa B é uma organização jovem e moderna e tem seu portfólio baseado na coleção da estação, por isso, decidiu que a cor de fundo do site deverá se basear na estação atual. 
-Nosso time de designers definiu quatro tons para as quatro estações:
-
+"ESTUDO DE CASO"
+Crie um site que a cor de fundo mude de acordo com a estação atual. 
+Cores de acordo com a estação:
 Primavera: #ffd6ef
 Verão: #fdf080 
 Outono: #c0dd5d 
 Inverno: #9dbce3
-Esses números hexadecimais representam códigos de cores no padrão RGB (red, green, blue) e irão formar as seguintes cores:
 
-Figura 15 | Cores para as estações. Topo-esquerda: primavera #ffd6ef; topo-direita: verão: #fdf080; rodapé-esquerda: outono: #c0dd5d; rodapé-direita: inverno: #9dbce3
+Cores para as estações. 
+Topo-esquerda: primavera #ffd6ef; 
+topo-direita: verão: #fdf080; 
+rodapé-esquerda: outono: #c0dd5d; 
+rodapé-direita: inverno: #9dbce3
 
-Fonte: elaborada pelo autor.
 O sistema do site foi construído usando-se o framework CodeIgniter em PHP, mas você não precisa se preocupar com a tecnologia usada no back-end, você apenas editará um script chamado “cores.js”, que será incluído na página. 
 As estações mudam próximas a essas datas:
 
@@ -302,15 +275,18 @@ As estações mudam próximas a essas datas:
 21 de dezembro: verão.
 20 de março: outono.
 21 de junho: inverno.
-Entretanto, esse valor muda a cada ano, e é preferível para a empresa fazer a alteração de cores alguns dias antes, para os clientes ficarem cientes da nova estação que está por vir. Por isso, considere apenas os meses para as trocas de cores (setembro, dezembro, março e junho).
-Seu desafio, agora, é construir um código fonte que altera a cor de fundo da página de acordo com a estação do ano. Para isso, utilize o seu editor de código e um navegador para testar as implementações.
+É preferível fazer a alteração na mudança de meses.
 
-Dica
-Você pode obter a data em JavaScript usando a função Date(). No caso, você deve instanciar um novo objeto para receber Date(). Dessa forma: var data = new Date();
-Dia, mês e ano podem ser coletados do novo objeto usando-se os métodos getDate(), getMonth() e getFullYear(), respectivamente (apenas para getMonth, é necessário somar um, pois ele retorna meses de 0 a 11).
+Dica:
+Você pode obter a data em JavaScript usando a função Date(). Você deve instanciar um novo objeto para receber Date(). 
+Dessa forma: 
+var data = new Date();
+// Dia, mês e ano podem ser coletados do novo objeto usando-se os métodos getDate(), getMonth() e getFullYear(), respectivamente (ele retorna meses de 0 a 11).
 
-RESOLUÇÃO DO ESTUDO DE CASO
-Para solucionar esse desafio, primeiro, devemos obter a data atual, pegar o número correspondente ao mês e, em seguida, verificar qual o mês atual para definir a cor que será aplicada à página. Por fim, podemos alterar a cor de fundo da página modificando a propriedade background-color usando o seletor do body. Veja como implementar isso:
+    "RESOLUÇÃO DO ESTUDO DE CASO"
+/*Para solucionar obter a data atual, pegar o número correspondente ao mês e, em seguida, verificar qual o mês atual para definir a cor que será aplicada à página. 
+Por fim, alterar a cor de fundo da página modificando a propriedade background-color usando o seletor do body. */
+"Veja como implementar isso:"
 
 // data atual
 var data = new Date();
@@ -343,24 +319,11 @@ else if(((mes >= 1)&&(mes < outono))||(mes==12)){
     cor = "#fdf080";
 }
  
- 
 // alterando a cor do background
 document.body.style.backgroundColor = cor;
-Coletamos o mês atual na linha 4 e precisamos somar 1 ao valor do mês, pois o JavaScript retorna uma lista numérica iniciada de 0 a 11, logo, o mês de janeiro estaria na posição 0, o mês de fevereiro na posição 1 e assim sucessivamente. Das linhas 7 a 11, indicamos o número do mês de cada estação, e das linhas 15 a 30, definimos qual a cor correspondente a cada mês. Veja que o maior desafio foi encontrado nos meses correspondentes ao verão, pois deveria pegar os meses de dezembro, janeiro e fevereiro (ou seja, 12, 1 e 2), por isso, usamos as regras: mês >= 1 e mês < 3 ou mês igual a 12 e, por fim, alteramos a cor do background na linha 34.
 
-Resolução do Estudo de Caso
+Coletamos o mês atual
+Indicamos o número do mês de cada estação
+Definir qual a cor correspondente a cada mês. 
 
- 
-
-
-Saiba mais
-Seletores CSS 
-Aprenda mais sobre seletores CSS acessando este artigo. Disponível em: https://mzl.la/3r1W1p5. Acesso em: 17 dez. 2021.
-Elementos DOM HTML JavaScript
-Conheça os elementos para manipulação de HTML com JavaScript. Disponível em: https://bit.ly/3f8lvvB. Acesso em: 17 dez. 2021.
-Eventos e DOM
-Acesse o conteúdo do link a seguir e aprenda um pouco mais sobre manipulação de eventos e do DOM usando JavaScript.
-Disponível em: https://bit.ly/3JYI4Ru. Acesso em: 17 dez. 2021.
-jQuery
-jQuery é um dos frameworks JavaScript mais populares do mercado; ele permite uma manipulação do DOM de forma mais simplificada. Disponível em: https://jquery.com/. Acesso em: 17 dez. 2021.
-LINHA 448
+"Resolução do Estudo de Caso"
