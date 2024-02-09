@@ -1,30 +1,23 @@
-Aula 2 - APIs de navegador – manipulando áudio e gráfico
-49 minutos
-Aula 2
-APIS DE NAVEGADOR – MANIPULANDO ÁUDIO E GRÁFICO
-Nesta aula, você aprenderá um pouco mais sobre e a construção de desenhos básicos e animações usando JavaScript.
+<html>
+<body>
+<script>
+"APIS DE NAVEGADOR – MANIPULANDO ÁUDIO E GRÁFICO"
+// Aula sobre a construção de desenhos básicos e animações usando JavaScript.
 
-49 minutos
+"INTRODUÇÃO"
+// Em HTML, um dos componentes que permitem a inserção de gráficos é a tag <canvas>.
+// Elementos <canvas> podem ser, renderizados por JavaScript; para isso, JavaScript utiliza a biblioteca WebGL (Web Graphics Library) para renderizar gráficos bidimensionais (2D) ou tridimensionais (3D) diretamente em um navegador web.
+// Aula sobre e a construção de desenhos básicos e animações usando JavaScript.
 
+"INTRODUÇÃO AO CANVAS"
+// O Canvas é um elemento HTML usado para renderização de gráficos, construção de desenhos, construção de jogos em HTML5. realizados por linguagens como JavaScrip. 
 
-INTRODUÇÃO
-Olá, estudante!
-Ao adentrar no mercado de trabalho como desenvolvedor web, você poderá se deparar com momentos em que será necessário renderizar componentes gráficos em suas páginas. Em HTML, um dos componentes que permitem a inserção de gráficos é a tag <canvas>.
-Elementos <canvas> podem ser, por exemplo, renderizados por JavaScript; para isso, JavaScript utiliza a biblioteca WebGL (Web Graphics Library) para renderizar gráficos bidimensionais (2D) ou tridimensionais (3D) diretamente em um navegador web.
-Nesta aula, você aprenderá um pouco mais sobre e a construção de desenhos básicos e animações usando JavaScript.
-Bons estudos!
-
-INTRODUÇÃO AO CANVAS
-O é um elemento HTML usado para renderização de gráficos, ou seja, para a construção de desenhos, em especial, realizados por linguagens como JavaScrip. O canvas pode ser usado, por exemplo, para construção de jogos em HTML5.
-Observe o código a seguir:
-
-Código 1 | Código canvas
+// Código canvas:
 <canvas width="400" height="400"></canvas>
-Fonte: elaborado pelo autor.
-Esse código declara um elemento HTML do tipo Canvas, e podemos imaginar o Canvas como uma área reservada para inserção de algum desenho. Nesse exemplo, nossa área tem tamanho de 400px de altura por 400px de largura. 
-Vamos, então, ver um exemplo básico de , no entanto, vamos começar com arquivo HTML. O Canvas deve estar declarado dentro da tag , e note que aplicamos um id para nossa tag, que passou a ser denominada “desenho”, tendo 400x400px de tamanho.
 
-index.html
+// Esse código declara um elemento HTML do tipo Canvas, e podemos imaginar o Canvas como uma área reservada para inserção de algum desenho. Nesse exemplo, nossa área tem tamanho de 400px de altura por 400px de largura.
+// O Canvas deve estar declarado dentro da tag , e aplicar uma id para tag, que passou a ser denominada “desenho”.
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +30,11 @@ index.html
   <script src="script.js"></script>
 </body>
 </html>
-Ao abrir esse código em seu navegador, você não verá nada além de uma tela em branco. Vamos criar um arquivo CSS para inserir margens ao redor da área de desenho do e, na sequência, observe a Figura 1.
+
+<html>
+Ao abrir esse código em seu navegador, verá uma tela em branco. 
+Criar um arquivo CSS para inserir margens ao redor da área de desenho do canvas
+
 
 estilo.css
 canvas{
@@ -410,3 +407,5 @@ Disponível em: https://bit.ly/3t9INJP. Acesso em: 17 dez.21.
 Capítulo de livro – Canvas
 Aprenda a manipular áudio com Canvas. 
 Disponível em: https://bit.ly/3JWJR9P. Acesso em: 17 dez. 21.
+
+LINHAS 414
