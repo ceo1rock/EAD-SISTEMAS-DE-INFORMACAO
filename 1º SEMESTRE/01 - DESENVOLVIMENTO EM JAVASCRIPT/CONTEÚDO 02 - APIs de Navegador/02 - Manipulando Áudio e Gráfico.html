@@ -43,8 +43,10 @@ canvas{
     border: 1px grey solid;
 }
 
-Ao carregar a página, é possível ver que uma leve linha acinzentada contorna a região ao redor da área de desenho. Agora, podemos fazer desenhos na tela, e para manipular o Canvas, é necessário utilizar JavaScript. Além disso, note que a declaração do script externo é feita no fim do arquivo, imediatamente antes da tag . 
-Vamos, então, construir nosso script que fará um desenho dentro da área delimitada pelo Canvas e que renderizará um simples quadrado de 100px de altura por 100px de largura. Observe o código a seguir e a Figura 2:
+Ao carregar a página, é possível ver que uma leve linha acinzentada contorna a região ao redor da área de desenho. 
+// Para manipular o Canvas, utiliza-se o JavaScript. 
+// A declaração do script externo é feita no fim do arquivo, antes da tag. 
+// Construir um script que fará um desenho dentro da área delimitada pelo Canvas e que renderizará um simples quadrado de 100px de altura por 100px de largura.
 
 script.js
 // seleciona o elemento do canvas
@@ -55,18 +57,15 @@ var ctx = canvas.getContext('2d');
  
 // desenha um retângulo
 ctx.fillRect(20, 20, 100, 100)
-Figura 2 | Quadrado inserido no Canvas
 
-Fonte: captura de tela elaborada pelo autor.
-Perceba que nosso quadrado negro foi inserido no canto esquerdo da área de desenho do Canvas, agora, vamos entender parte por parte do código.
-Observe a linha a seguir:
+"Observe a linha a seguir:"
+var canvas = document.getElementById('desenho'); //Nela, é feita a declaração de uma variável chamada canvas, e essa variável recebe o resultado de uma consulta ao DOM, que seleciona o elemento id “desenho”. 
 
-var canvas = document.getElementById('desenho');
-Nela, é feita a declaração de uma variável chamada canvas, e essa variável recebe o resultado de uma consulta ao DOM, que seleciona o elemento id “desenho”. A seguir, declararemos uma variável chamada ctx:
+var ctx = canvas.getContext('2d'); // Antes de iniciar a renderização, o script precisa obter o contexto de renderização; é utilizado o método getContext(), que deve receber o tipo de gráfico que se deseja produzir. 
 
-var ctx = canvas.getContext('2d');
-Antes de iniciar a renderização, o script precisa obter o contexto de renderização; para isso, é utilizado o método getContext(), que deve receber o tipo de gráfico que se deseja produzir. No exemplo a seguir, apresentaremos um gráfico de duas dimensões, logo, marcamos “2d”.
-Seguindo esse contexto, podemos, então, fazer o primeiro desenho (um retângulo) utilizando o método fillRect( ), que receberá quatro parâmetros:
+// No exemplo a seguir, apresentaremos um gráfico de duas dimensões, logo, marcamos “2d”.
+
+//Seguindo esse contexto, podemos, então, fazer o primeiro desenho (um retângulo) utilizando o método "fillRect( )", que receberá quatro parâmetros:
 
 ctx.fillRect(
 distância para o eixo x,
@@ -74,23 +73,28 @@ distância para o eixo y,
 	largura,
 altura
 )
-Nesse caso, vemos que a distância para o eixo x e y é de 20px, enquanto a largura e altura do quadrado é de 100px.
+
+// A distância para o eixo x e y é de 20px, enquanto a largura e altura do quadrado é de 100px.
 
 ctx.fillRect(20, 20, 100, 100)
-Note que não especificamos a cor do quadrado, logo, ele foi desenhado em preto. No próximo bloco, você verá com mais detalhes como desenhar outras formas, aplicar estilos e alterar as cores. Até lá!
+
+// Não especificamos a cor do quadrado, logo, ele foi desenhado em preto. 
+
+
+
+
+
 
 VIDEOAULA: INTRODUÇÃO AO CANVAS
-Nesta aula, você aprenderá o que são elementos , bem como inicializá-los e criar formas básicas. 
-Bons estudos!
 
-Videoaula: Introdução ao Canvas
+
 
  
 
 
-DESENHANDO FORMAS, APLICANDO ESTILO E CORES
-No bloco anterior, você viu os fundamentos do Canvas; nesta aula, você vai aprender a aplicar estilos e a desenhar novas formas geométricas. 
-Vamos começar adicionando um segundo quadrado, próximo ao primeiro:
+  "DESENHANDO FORMAS, APLICANDO ESTILO E CORES"
+// No bloco anterior, você viu os fundamentos do Canvas; nesta aula, você vai aprender a aplicar estilos e a desenhar novas formas geométricas. 
+// Vamos começar adicionando um segundo quadrado, próximo ao primeiro:
 
 // seleciona o elemento do canvas
 var canvas = document.getElementById('desenho');
@@ -103,10 +107,10 @@ ctx.fillRect(20, 20, 100, 100)
  
 // segundo retângulo
 ctx.fillRect(30, 30, 100, 100)
-Figura 3 | Sobreposição de quadrados no Canvas
 
-Fonte: elaborada pelo autor.
-Para diferenciar os dois quadrados, é possível aplicar cores distintas usando a propriedade fillStyle. Para selecionar uma cor, é possível aplicar a função rgb entre aspas, que recebe três valores, que vão de 0 a 255, correspondentes às cores vermelho (r: red), verde (g: green) e azul (b: blue).
+
+
+// Para diferenciar os dois quadrados, é possível aplicar cores distintas usando a propriedade fillStyle. Para selecionar uma cor, é possível aplicar a função rgb entre aspas, que recebe três valores, que vão de 0 a 255, correspondentes às cores vermelho (r: red), verde (g: green) e azul (b: blue).
 
 // desenha um retângulo
 ctx.fillStyle = "rgb(180,0,0)";
@@ -115,13 +119,13 @@ ctx.fillRect(20, 20, 100, 100)
 // segundo retângulo
 ctx.fillStyle = "rgba(0,0,180,0.7)";
 ctx.fillRect(30, 30, 100, 100)
-Figura 4 | Aplicando cores. O primeiro quadrado recebe um tom de vermelho e o segundo um tom de azul (com opacidade de 70%)
 
-Fonte: elaborada pelo autor.
-Note que, no segundo quadrado, substituímos a função rgb por rgba, que insere uma quarta camada correspondente ao padrão alpha (ou índice de opacidade/transparência). O valor de 0.7 indica que queremos 70% de opacidade (ou 30% de transparência).
+// Aplicando cores. O primeiro quadrado recebe um tom de vermelho e o segundo um tom de azul (com opacidade de 70%)
 
-Desenhando um círculo
-O JavaScript possui uma série de métodos que facilitam o desenho em Canvas. Por exemplo: podemos usar as propriedades de path (caminhos) para a construção de um círculo. Observe o código a seguir:
+// No segundo quadrado, substituímos a função rgb por rgba, que insere uma quarta camada correspondente ao padrão alpha (ou índice de opacidade/transparência). O valor de 0.7 indica que queremos 70% de opacidade (ou 30% de transparência).
+
+"Desenhando um círculo"
+// O JavaScript possui uma série de métodos que facilitam o desenho em Canvas. Por exemplo: podemos usar as propriedades de path (caminhos) para a construção de um círculo. Observe o código a seguir:
 
 // seleciona o elemento do canvas e cria contexto
 var ctx=document.getElementById('desenho').getContext('2d');
@@ -141,14 +145,12 @@ ctx.arc(x, y, raio, angulo_inicio, angulo_fim);
  
 // desenha as linhas
 ctx.stroke();
-Inicialmente, instanciamos o path com o método beginPath(), e note que optamos por separar os valores de entrada necessários em variáveis cujos nomes são autoexplicativos. Uma variável digna de nota é a “angulo_fim”, que determina o valor do ângulo final (lembre-se de que a circunferência é dada por 2πr, por isso, devemos usar o método Math.PI para receber o valor de π e calcular o círculo perfeito). E para que o nosso círculo fique completo, vamos utilizar o método arc( ), que recebe como entrada: margem à esquerda (x); margem para o topo (y); raio do círculo; ângulo inicial; e ângulo final. Por fim, o método stroke( ) será usado para desenhar as linhas. 
-Este é o resultado final (vide Figura 5):
 
-Figura 5 | Criando um círculo
+// Inicialmente, instanciamos o path com o método beginPath(), e note que optamos por separar os valores de entrada necessários em variáveis cujos nomes são autoexplicativos. Uma variável digna de nota é a “angulo_fim”, que determina o valor do ângulo final (lembre-se de que a circunferência é dada por 2πr, por isso, devemos usar o método Math.PI para receber o valor de π e calcular o círculo perfeito). E para que o nosso círculo fique completo, vamos utilizar o método arc( ), que recebe como entrada: margem à esquerda (x); margem para o topo (y); raio do círculo; ângulo inicial; e ângulo final. Por fim, o método stroke( ) será usado para desenhar as linhas. 
 
-Fonte: elaborada pelo autor.
-Desenhando texto
-Pode parecer estranho, mas, em alguns casos, pode ser necessário “desenhar” blocos de texto em elementos <canvas>. Podemos fazer isso usando o método filltext().
+  "Criando um círculo"
+  "Desenhando texto"
+// Pode parecer estranho, mas, em alguns casos, pode ser necessário “desenhar” blocos de texto em elementos <canvas>. Podemos fazer isso usando o método filltext().
 
 var ctx=document.getElementById('desenho').getContext('2d');
  
@@ -163,16 +165,26 @@ ctx.font = '72px serif';
 ctx.fillText("Olá mundo!", x, y);
 Figura 6 | Inserindo texto no Canvas
 
-Fonte: elaborada pelo autor.
-Salvando como imagens
-Você pode salvar qualquer imagem clicando com o botão direito sobre a área do Canvas (conforme Figura 7) e, depois, em “salvar imagem como...”.
+  "Salvando como imagens"
+// Você pode salvar qualquer imagem clicando com o botão direito sobre a área do Canvas (conforme Figura 7) e, depois, em “salvar imagem como...”.
 
 Figura 7 | Por padrão, Canvas salva imagens como PNG
 
-Fonte: elaborada pelo autor.
-Infelizmente, Canvas não salva as imagens em formato vetorial, o que gera uma grande perda de qualidade.
+// Infelizmente, Canvas não salva as imagens em formato vetorial, o que gera uma grande perda de qualidade.
+
+
+
+
 
 VIDEOAULA: DESENHANDO FORMAS, APLICANDO ESTILO E CORES
+
+
+
+
+
+
+
+
 Nesta aula, você aprenderá a realizar desenhos básicos de formas geométricas usando <canvas>. 
 Bons estudos!
 
