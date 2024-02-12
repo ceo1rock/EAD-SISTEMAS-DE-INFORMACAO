@@ -185,16 +185,12 @@ VIDEOAULA: DESENHANDO FORMAS, APLICANDO ESTILO E CORES
 
 
 
-Nesta aula, você aprenderá a realizar desenhos básicos de formas geométricas usando <canvas>. 
-Bons estudos!
+// Realizar desenhos básicos de formas geométricas usando <canvas>. Desenhar formas, aplicando estilo e cores
 
-Videoaula: Desenhando formas, aplicando estilo e cores
-
- 
-
-
-APLICANDO ANIMAÇÃO E ÁUDIO
-Podemos, ainda, fazer animações usando Canvas e JS. Vamos começar com um exemplo simples: uma barra de progresso. Observe o código a seguir:
+  "APLICANDO ANIMAÇÃO E ÁUDIO"
+// Fazer animações usando Canvas e JS. 
+// Exemplo simples: 
+"Barra de progresso."
 
 // iniciando o canvas
 var canvas = document.getElementById('desenho')
@@ -205,31 +201,32 @@ var x = 0;
 var y = 0;
 var altura = 50;
 var largura = 0;
-Aqui, declaramos um novo desenho 2D usando canvas. Nas configurações, delimitamos a posição x e y (ambas 0), além da altura e largura da barra 50px e 0, respectivamente. 
-Para construir uma animação, é preciso criar uma função que desenhe os objetos na tela e, a seguir, chamar essa função repetidamente a cada período de tempo. Veja:
+
+
+// Foi declarado um novo desenho 2D usando canvas. 
+// Nas configurações, delimitamos a posição x e y (ambas 0), além da altura e largura da barra 50px e 0, respectivamente. 
+// Para construir uma animação, é preciso criar uma função que desenhe os objetos na tela e chame a função repetidamente a cada período de tempo. Veja:
 
 function animacao(){
    ctx.fillRect(x, y, largura++, altura)
 }
  
 setInterval(animacao, 100)
-Esse código irá produzir a seguinte animação:
-
-Figura 8 | Animação com Canvas: barra de progresso
-Início	Após 10 segundos	Após 30 segundos
 
 
+// Animação com Canvas: barra de progresso. Início	Após 10 segundos	Após 30 segundos
+// No código acima, criamos a função “animacao” cujo único comando é desenhar um novo retângulo na tela. 
+// Esse retângulo começa da posição x e y (ambas equivalentes a 0), e altura inicial é de 50px, que é mantida durante toda execução. O segredo da animação está no terceiro argumento passado à função fillRect: largura++. Esse comando pega o valor atual de largura e o incrementa em 1 a cada chamada da função animacao( ), ou seja, se, na primeira chamada, ele equivale a 0, na segunda, ele vale 1, na terceira, recebe o valor 2, depois 3, 4, 5 e assim sucessivamente. 
 
-Fonte: elaborada pelo autor.
-No código acima, criamos a função “animacao” cujo único comando é desenhar um novo retângulo na tela. Esse retângulo começa da posição x e y (ambas equivalentes a 0), e altura inicial é de 50px, que é mantida durante toda execução. O segredo da animação está no terceiro argumento passado à função fillRect: largura++. Esse comando pega o valor atual de largura e o incrementa em 1 a cada chamada da função animacao( ), ou seja, se, na primeira chamada, ele equivale a 0, na segunda, ele vale 1, na terceira, recebe o valor 2, depois 3, 4, 5 e assim sucessivamente. 
-As chamadas recursivas são feitas no comando:
-
+//As chamadas recursivas são feitas no comando:
 setInterval(animacao, 100)
-A função setInterval recebe como entrada outra função que será executada indefinidamente por períodos de tempo explicitados no segundo argumento (em milissegundos). No exemplo, usamos 100 milissegundos, o que indica que, a cada segundo, a barra cresce 10px.
 
-Movendo objetos
-No exemplo anterior, usamos o script para aumentar o tamanho da barra, no entanto, se, em vez de aumentar o tamanho da forma geométrica, quiséssemos movê-la pela tela, isso seria possível utilizando um truque simples: a cada rodada de interação, precisaríamos apagar a forma geométrica previamente criada. Podemos fazer isso com o comando clearRect( ), que recebe quatro parâmetros: x, y, largura e altura, e esses dois últimos correspondem às medidas do elemento HTML .
-Neste caso, vamos começar aumentando as medidas do nosso retângulo:
+// A função "setInterval" recebe como entrada outra função que será executada indefinidamente por períodos de tempo explicitados no segundo argumento (em milissegundos). 
+// No exemplo, usamos 100 milissegundos, o que indica que, a cada segundo, a barra cresce 10px.
+
+  "Movendo objetos"
+// Mover o objeto pela tela é possível utilizando rodadas de interação, é preciso apagar a forma geométrica previamente criada. ~
+// Podemos fazer isso com o comando "clearRect( )", que recebe quatro parâmetros: x, y, largura e altura, e esses dois últimos correspondem às medidas do elemento HTML .
 
 // iniciando o canvas
 var canvas = document.getElementById('desenho')
@@ -240,7 +237,8 @@ var x = 0;
 var y = 0;
 var altura = 100;
 var largura = 100;
-Agora, vamos implementar a função mova( ), e é importante que o nome das nossas funções represente o que elas realmente fazem.
+
+// Implementar a função "mova( )". (É importante que o nome das nossas funções represente o que elas fazem)
 
 function animacao(){
    // apagando o retangulo
