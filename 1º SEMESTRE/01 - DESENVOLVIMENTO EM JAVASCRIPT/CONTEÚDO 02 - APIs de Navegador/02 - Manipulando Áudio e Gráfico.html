@@ -108,8 +108,6 @@ ctx.fillRect(20, 20, 100, 100)
 // segundo retângulo
 ctx.fillRect(30, 30, 100, 100)
 
-
-
 // Para diferenciar os dois quadrados, é possível aplicar cores distintas usando a propriedade fillStyle. Para selecionar uma cor, é possível aplicar a função rgb entre aspas, que recebe três valores, que vão de 0 a 255, correspondentes às cores vermelho (r: red), verde (g: green) e azul (b: blue).
 
 // desenha um retângulo
@@ -175,12 +173,7 @@ Figura 7 | Por padrão, Canvas salva imagens como PNG
 
 
 
-
 VIDEOAULA: DESENHANDO FORMAS, APLICANDO ESTILO E CORES
-
-
-
-
 
 
 
@@ -248,28 +241,23 @@ function animacao(){
    ctx.fillRect(x++, y, largura, altura)
 }
 setInterval(animacao, 100)
-Observe, na Figura 9, o que acontece se executarmos o código:
 
 Figura 9 | Animação usando Canvas: movendo um quadrado
-Início	Após 10 segundos	Após 30 segundos
+// Início	Após 10 segundos	Após 30 segundos
 
-
-
-Fonte: elaborada pelo autor.
-Observe como pegamos a largura e a altura <canvas> do na função clearRect( ): usando canvas. width e canvas.height, respectivamente. Na função fillRect( ), alteramos o posicionamento do elemento usando x++, ou seja, ele se movimentou apenas no eixo x. Se quisermos mover o objeto em outros sentidos, basta alterarmos a variável que incrementamos:
+// Observe como pegamos a largura e a altura "<canvas>" do na função "clearRect( ):" usando "canvas.width" e "canvas.height". Na função "fillRect()", alteramos o posicionamento do elemento usando "x++", ou seja, ele se movimentou apenas no eixo x. Se quisermos mover o objeto em outros sentidos, basta alterarmos a variável que incrementamos:
 
 Figura 10 | Movendo itens nos eixos x e y
 x, y++
 (após 10 segundos)	X++, y++
 (após 10 segundos)
 
+// Caso deseje acelerar/reduzir a velocidade da animação, reduza ou aumente o valor do segundo argumento enviado para "setInterval()".
 
-Fonte: elaborada pelo autor.
-Caso deseje acelerar a velocidade da animação, reduza o valor do segundo argumento enviado para setInterval() ou, caso deseje reduzir a velocidade, aumente esse valor.
-
-Manipulando áudio
-Apesar do Canvas não fornecer uma API para manipulação direta de áudio, ele permite que você faça manipulações de áudios usando JavaScript e a tag <audio>, por meio dos objetos HTMLAudioElement (FULTON; FULTON, 2011). 
-Vamos começar declarando um arquivo de áudio no HTML. Primeiro, precisamos de um arquivo de áudio, logo, para o exemplo, utilizaremos um pequeno arquivo com, aproximadamente, 2 segundos de duração, chamado “som.mp3”, e o colocaremos no mesmo diretório que o arquivo “index.html” e “script.js”. Agora, temos que fazer algumas pequenas alterações no arquivo HTML:
+  "Manipulando áudio"
+// Apesar do Canvas não fornecer uma API para manipulação direta de áudio, ele permite que você faça manipulações de áudios usando JavaScript e a tag <audio>, por meio dos objetos "HTMLAudioElement". 
+// Declarar um arquivo de áudio no HTML. Para o exemplo, utilizaremos um pequeno arquivo com, aproximadamente, 2 segundos de duração, chamado “som.mp3”, e o colocaremos no mesmo diretório que o arquivo “index.html” e “script.js”. Agora, temos que fazer algumas pequenas alterações no arquivo HTML:
+</script>
 
 index.html
 <!DOCTYPE html>
@@ -293,13 +281,14 @@ index.html
  
 </body>
 </html>
-O HTML5 permite que você inclua um arquivo de áudio usando a tag <audio>, e, ao abrir esse arquivo, seu navegador, provavelmente, lhe mostrará um player interativo de áudio similar a este:
+
+<script> 
+
+// O HTML5 permite que você inclua um arquivo de áudio usando a tag <audio>, e, ao abrir esse arquivo, seu navegador, provavelmente, lhe mostrará um player interativo de áudio similar a este:
 
 Figura 11 | Tag de áudio
-
-Fonte: elaborada pelo autor.
-Note que alteramos o id do canvas para “detalhes”. Nesse exemplo simples, vamos apenas ler o arquivo MP3 com o Canvas e extrair algumas propriedades básicas, como a duração da música. 
-No “script.js”, inclua o seguinte código:
+// Alteramos o id do canvas para "detalhes". Nesse exemplo simples, vamos apenas ler o arquivo MP3 com o Canvas e extrair algumas propriedades básicas, como a duração da música. 
+// No “script.js”, inclua o seguinte código:
 
 script.js
 // inicia o canvas
@@ -311,22 +300,21 @@ var musica = document.getElementById("musica");
  
 // exibe a duração da música
 ctx.fillText("Duração:"+musica.duration+" segundos.", 10, 10);
-Figura 12 | Exibindo dados de uma tag <audio> usando Canvas
 
-Fonte: elaborada pelo autor.
-Nesse exemplo, a propriedade duration armazena o tempo em segundos da música, e podemos, ainda, manipular outras propriedades, como: currentTime (posição atual), loop (modo repetição), autoplay (analisa se o arquivo está iniciando automaticamente quando carregado), muted (muta o áudio), controls (mostra controles), volume (deve estar entre 0 e 1), paused (pausa a música), ended (verifica se o áudio tocou por completo), currentSrc (indica o endereço do arquivo de áudio), entre outros (FULTON; FULTON, 2011).
+// Figura 12 | Exibindo dados de uma tag <audio> usando Canvas
+
+// A propriedade "duration" armazena o tempo em segundos da música, e podemos manipular outras propriedades, como: "currentTime" (posição atual), "loop" (modo repetição), "autoplay" (analisa se o arquivo está iniciando automaticamente quando carregado), "muted" (muta o áudio), "controls" (mostra controles), "volume" (deve estar entre 0 e 1), "paused" (pausa a música), "ended" (verifica se o áudio tocou por completo), "currentSrc" (indica o endereço do arquivo de áudio), entre outros.
+
+
+
 
 VIDEOAULA: APLICANDO ANIMAÇÃO E ÁUDIO
-Nesta aula, você verá alguns exemplos de como implementar animações básicas usando Canvas e JavaScript. 
-Bons estudos!
-
-Videoaula: Aplicando animação e áudio
-
- 
 
 
-ESTUDO DE CASO
-A equipe de desenvolvimento da Empresa A está muito satisfeita com o trabalho que você tem realizado como desenvolvedor front-end, por isso, decidiram passar um novo desafio para que resolva.
+
+
+  "ESTUDO DE CASO"
+  // A equipe de desenvolvimento da Empresa A está muito satisfeita com o trabalho que você tem realizado como desenvolvedor front-end, por isso, decidiram passar um novo desafio para que resolva.
 O time de marketing responsável pela gestão da marca da Empresa B percebeu que a maior parte dos websites dos concorrentes apresentava um recurso interessante: uma barra de progresso que surgia no topo da tela enquanto os itens eram carregados na tela. Por isso, decidiram pedir ao time de desenvolvimento que implementasse o mesmo recurso.
 Nessa tarefa, você irá trabalhar em colaboração com um outro desenvolvedor do time. Sua função será a de cuidar dos aspectos visuais desse efeito, enquanto o outro desenvolvedor deverá cuidar da parte funcional da barra de tarefas. Vocês combinaram que o efeito deve ter uma taxa de atualização a cada 10 milissegundos, entretanto, a velocidade será definida por uma variável fator que será calculada pelo script que será desenvolvido por outro desenvolvedor. Não se preocupe com como esse valor será calculado; para testes, defina o valor de fator = 50 e realize testes para a resolução de 1280px de largura. 
 Além disso, a equipe de design também pediu que a barra de carregamento tenha a cor "#4169E1" (um tom de azul), por isso, usando seu editor de códigos, construa um arquivo JavaScript que carregue a interface de uma barra de carregamento usando <canvas> e utilize, como base, os arquivos HTML e CSS a seguir:
