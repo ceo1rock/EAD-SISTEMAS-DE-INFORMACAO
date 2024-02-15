@@ -83,15 +83,11 @@ ctx.fillRect(20, 20, 100, 100)
 
 
 
-
-
 VIDEOAULA: INTRODUÇÃO AO CANVAS
 
 
 
  
-
-
   "DESENHANDO FORMAS, APLICANDO ESTILO E CORES"
 // No bloco anterior, você viu os fundamentos do Canvas; nesta aula, você vai aprender a aplicar estilos e a desenhar novas formas geométricas. 
 // Vamos começar adicionando um segundo quadrado, próximo ao primeiro:
@@ -195,7 +191,6 @@ var y = 0;
 var altura = 50;
 var largura = 0;
 
-
 // Foi declarado um novo desenho 2D usando canvas. 
 // Nas configurações, delimitamos a posição x e y (ambas 0), além da altura e largura da barra 50px e 0, respectivamente. 
 // Para construir uma animação, é preciso criar uma função que desenhe os objetos na tela e chame a função repetidamente a cada período de tempo. Veja:
@@ -205,7 +200,6 @@ function animacao(){
 }
  
 setInterval(animacao, 100)
-
 
 // Animação com Canvas: barra de progresso. Início	Após 10 segundos	Após 30 segundos
 // No código acima, criamos a função “animacao” cujo único comando é desenhar um novo retângulo na tela. 
@@ -314,12 +308,12 @@ VIDEOAULA: APLICANDO ANIMAÇÃO E ÁUDIO
 
 
   "ESTUDO DE CASO"
-  // A equipe de desenvolvimento da Empresa A está muito satisfeita com o trabalho que você tem realizado como desenvolvedor front-end, por isso, decidiram passar um novo desafio para que resolva.
-O time de marketing responsável pela gestão da marca da Empresa B percebeu que a maior parte dos websites dos concorrentes apresentava um recurso interessante: uma barra de progresso que surgia no topo da tela enquanto os itens eram carregados na tela. Por isso, decidiram pedir ao time de desenvolvimento que implementasse o mesmo recurso.
-Nessa tarefa, você irá trabalhar em colaboração com um outro desenvolvedor do time. Sua função será a de cuidar dos aspectos visuais desse efeito, enquanto o outro desenvolvedor deverá cuidar da parte funcional da barra de tarefas. Vocês combinaram que o efeito deve ter uma taxa de atualização a cada 10 milissegundos, entretanto, a velocidade será definida por uma variável fator que será calculada pelo script que será desenvolvido por outro desenvolvedor. Não se preocupe com como esse valor será calculado; para testes, defina o valor de fator = 50 e realize testes para a resolução de 1280px de largura. 
-Além disso, a equipe de design também pediu que a barra de carregamento tenha a cor "#4169E1" (um tom de azul), por isso, usando seu editor de códigos, construa um arquivo JavaScript que carregue a interface de uma barra de carregamento usando <canvas> e utilize, como base, os arquivos HTML e CSS a seguir:
-Código fonte do HTML:
-
+  // Uma barra de progresso que surgia no topo da tela enquanto os itens eram carregados na tela. 
+// Sua função será de cuidar dos aspectos visuais desse efeito, outro desenvolvedor deverá cuidar da parte funcional da barra de tarefas. O efeito deve ter uma taxa de atualização a cada 10 milissegundos, entretanto, a velocidade será definida por uma variável fator que será calculada pelo script que será desenvolvido por outro desenvolvedor. Não se preocupe com como esse valor será calculado; para testes, defina o valor de fator = 50 e realize testes para a resolução de 1280px de largura. 
+// Cor da barra de carregamento: "#4169E1" (um tom de azul).
+// Construa um arquivo JavaScript que carregue a interface de uma barra de carregamento usando <canvas> e utilize, como base, os arquivos HTML e CSS a seguir:
+</script>
+  
 <!doctype html>
 <html>
 <head>
@@ -337,17 +331,27 @@ Código fonte do HTML:
  
   <script src="script.js"></script>
 </body>
-</html>
-Código fonte do CSS:
+</html> 
+
+"Código fonte do CSS:"
 
 *{ margin: 0; padding: 0; }
  
 #carregamento{
     position: fixed;
     background-color: #ccc;6.	}
-RESOLUÇÃO DO ESTUDO DE CASO
-Para a solução do problema proposto, podemos usar <canvas>; já a barra de progresso será preenchida a partir do JavaScript.
-O código a seguir apresenta uma solução para o problema em questão:
+
+
+   
+
+
+"RESOLUÇÃO DO ESTUDO DE CASO"
+
+
+
+<script>
+// Para a solução do problema proposto, podemos usar <canvas>; já a barra de progresso será preenchida a partir do JavaScript.
+// O código a seguir apresenta uma solução para o problema em questão:
 
 // iniciando o canvas
 var canvas = document.getElementById('carregamento')
@@ -377,33 +381,12 @@ function animacao(){
  
 // atualiza a barra a cada 10 milissegundos
 var atualiza = setInterval(animacao, 10)
-Note que esse código rodará de maneira bastante rápida. Em menos de um segundo, toda a barra estará carregada nesse exemplo. De fato, a velocidade do carregamento dependerá do script criado por outro funcionário da equipe e será definida pela variável “fator”. Por padrão, usamos fator = 50, mas essa variável deve estar disponível para que o outro colaborador a altere de acordo com cada caso. 
-Note que a movimentação da barra é definida pela função animacao( ), descrita das linhas 17 a 25, e que o intervalo de atualização é dado pela função setInterval( ), definida na linha 28. Por fim, note que aproveitamos para incluir uma função avançada (linhas 20 a 24) que interrompe a execução de setInterval quando a barra atinge o tamanho máximo da largura da página (no exemplo, de 1280px). 
-Ao executar o código acima, você obterá um resultado próximo a este:
 
-Figura 13 | Barra de carregamento à medida que o conteúdo é carregado: a atualização completa pode ocorrer em menos de um segundo. (A) início do carregamento; (B) parte do conteúdo foi carregado; (C) metade do conteúdo foi carregado; (D) carregamento quase concluído; (E) carregamento concluído
-(A)
-
-(B)
-
-(C)
-
-(D)
-
-(E)
-
-Fonte: elaborada pelo autor.
-Resolução do Estudo de Caso
-
- 
-
-
-Saiba mais
-Biblioteca de áudios
-Você pode conseguir arquivos de áudio gratuitos diretamente na biblioteca de áudio do YouTube.
-Disponível em: https://bit.ly/3t9INJP. Acesso em: 17 dez.21. 
-Capítulo de livro – Canvas
-Aprenda a manipular áudio com Canvas. 
-Disponível em: https://bit.ly/3JWJR9P. Acesso em: 17 dez. 21.
+// Esse código rodará de maneira bastante rápida. 
+// Em menos de um segundo, toda a barra estará carregada nesse exemplo. 
+// De fato, a velocidade do carregamento dependerá do script e será definida pela variável “fator”. 
+// Por padrão, usamos fator = 50.
+// A movimentação da barra é definida pela função "animacao( )", e que o intervalo de atualização é dado pela função "setInterval( )". 
+// Aproveitamos para incluir uma função avançada que interrompe a execução de "setInterval" quando a barra atinge o tamanho máximo da largura da página (no exemplo, de 1280px). 
 
 LINHAS 414
