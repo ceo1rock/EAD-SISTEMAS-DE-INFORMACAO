@@ -8,19 +8,45 @@
 // Aula sobre o objeto XHR e sobre AJAX.
 
     "MÉTODOS E PROPRIEDADES XMLHTTPREQUEST"
-Antes de adentrarmos no mundo do XMLHttpRequest, precisamos relembrar um conceito básico em desenvolvimento web: o paradigma cliente-servidor. Nesse paradigma, computadores com grande poder computacional fornecem um serviço que pode ser requisitado por clientes pela internet, como no caso dos servidores web, que hospedam páginas de internet (Figura 1).
+// Antes de adentrarmos no mundo do XMLHttpRequest, precisamos relembrar um conceito básico em desenvolvimento web: o paradigma cliente-servidor. Nesse paradigma, computadores com grande poder computacional fornecem um serviço que pode ser requisitado por clientes pela internet, como no caso dos servidores web, que hospedam páginas de internet (Figura 1).
 
-Figura 1 | Paradigma cliente-servidor. No exemplo, um servidor web fornece acesso a uma série de sites hospedados e os clientes podem fazer requisições HTTP/HTTPS pela internet e receber, como resposta, documentos web
+// Paradigma cliente-servidor. Um servidor web fornece acesso a uma série de sites hospedados e os clientes podem fazer requisições HTTP/HTTPS pela internet e receber, como resposta, documentos web
 
-Fonte: Wikimedia Commons.
-Entretanto, esse processo de requisição de um site a um servidor remoto pode ser feito de forma síncrona ou assíncrona. Nas requisições síncronas, cada operação deve ser concluída para que uma nova operação possa ser realizada, já nas requisições assíncronas, não é necessário aguardar o fim de uma operação. Podemos ver a diferença na prática, por exemplo, quando preenchemos um formulário de cadastro e enviamos informações para um servidor remoto. Na requisição síncrona, o navegador precisará recarregar a página após enviar os dados, já na requisição assíncrona, isso não será necessário. À medida que os dados são digitados, o navegador envia as informações para o servidor sem a necessidade de recarregar a página (na prática, não seria necessário um botão de salvar, por exemplo). Se bem projetados, sistemas assíncronos tendem a ter uma performance maior, uma vez que reduzem o fluxo de dados na rede (o servidor não precisa enviar os dados de uma página inteira a cada requisição, pois apenas uma fração de dados precisa ser enviada). Na Figura 2, isso é ilustrado pelos caminhões carregando os documentos pesados enquanto os carrinhos de mão são usados para transportar dados.
+// Esse processo de requisição de um site a um servidor remoto pode ser feito de forma síncrona ou assíncrona. 
+// Requisições síncronas: 
+        // Cada operação deve ser concluída para que uma nova operação possa ser realizada.
+// Requisições assíncronas:
+        // Não é necessário aguardar o fim de uma operação. 
 
-Figura 2 | Abstração da comunicação síncrona (A) versus comunicação assíncrona (B)
+// Diferença, exemplo:
+        // Ao preencher um formulário de cadastro e enviamos informações para um servidor remoto. 
+                // Síncrona: O navegador precisará recarregar a página após enviar os dados.
 
-Na comunicação assíncrona não é necessário aguardar que a comunicação esteja concluída para envio de dados, podendo ser feita em paralelo. Na comunicação síncrona, há muito mais dados trafegados pela rede, e essa figura não leva em consideração o cache produzido nos navegadores.
-Fonte: Wikimedia Commons.
-Observe como a comunicação síncrona exige menos conexões, entretanto, há a necessidade de envio de arquivos mais “pesados”, que tendem a ocupar uma maior largura de banda (Figura 2 A). Enquanto isso, na comunicação assíncrona, há uma maior quantidade de conexões, mas elas podem ser feitas em paralelo, transmitindo uma menor quantidade de dados e reduzindo as etapas de envio de arquivos “pesados” (Figura 2 B).
-Em sistemas que requerem alto grau de processamento (como e-commerces com milhões de acessos diários), a comunicação assíncrona pode reduzir o tráfego da rede e garantir que mais pessoas acessem ao mesmo tempo. Entretanto, as comunicações assíncronas podem não representar grandes vantagens para sistemas de pequeno porte (sites com acessos na casa das centenas ou milhares por dia), e isso se deve ao fato de requisitarem uma complexidade maior de implementação, especialmente no que diz respeito à segurança e à garantia de que os dados foram entregues.
+                // Assíncrona: À medida que os dados são digitados, o navegador envia as informações para o servidor sem a necessidade de recarregar a página (não seria necessário um botão de salvar, por exemplo), tendem a ter uma performance maior, uma vez que reduzem o fluxo de dados na rede (o servidor não precisa enviar os dados de uma página inteira a cada requisição, pois apenas uma fração de dados precisa ser enviada). 
+
+</script><script SRC = "03.01 - Figura.jpg"> // Ilustração dos caminhões carregando os documentos pesados enquanto os carrinhos de mão são usados para transportar dados.
+// Abstração da comunicação síncrona (A) versus comunicação assíncrona (B)
+
+
+// NA comunicação assíncrona, há uma MAIOR quantidade de conexões, mas elas podem ser feitas em paralelo, transmitindo uma menor quantidade de dados e reduzindo as etapas de envio de arquivos "pesados".
+
+
+// A comunicação síncrona exige MENOS conexões, entretanto, há a necessidade de envio de arquivos mais “pesados”, que tendem a ocupar uma maior largura de banda, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+onde requerem alto grau de processamento, como ecommerces, reduzindo o tráfego da rede e garantir que mais pessoas acessem ao mesmo tempo
+/// as comunicações assíncronas podem não representar grandes vantagens para sistemas de pequeno porte (sites com acessos na casa das centenas ou milhares por dia), e isso se deve ao fato de requisitarem uma complexidade maior de implementação, especialmente no que diz respeito à segurança e à garantia de que os dados foram entregues.
 Assim, surgiu o XMLHttpRequest (XHR), um objeto ou uma API implementada em navegadores que facilitou a comunicação assíncrona com servidores. A ideia do XHR é permitir que dados sejam comunicados por meio de requisições HTTP (ou HTTPS) e arquivos no formato XML (na prática, outros formatos também podem ser usados, como JSON).
 Veja, a seguir, como instanciar um objeto XHR para comunicações assíncronas com o servidor:
 
