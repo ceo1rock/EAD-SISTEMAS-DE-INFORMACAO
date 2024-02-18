@@ -28,54 +28,49 @@
 // Abstração da comunicação síncrona (A) versus comunicação assíncrona (B)
 
 
-// NA comunicação assíncrona, há uma MAIOR quantidade de conexões, mas elas podem ser feitas em paralelo, transmitindo uma menor quantidade de dados e reduzindo as etapas de envio de arquivos "pesados".
+// Comunicação assíncrona:
+    // Há uma MAIOR quantidade de conexões, mas elas podem ser feitas em paralelo, transmitindo uma menor quantidade de dados e reduzindo as etapas de envio de arquivos "pesados". Requisitam uma complexidade maior de implementação, especialmente no que diz respeito à segurança e à garantia de que os dados foram entregues. Requerem alto grau de processamento, reduz o tráfego da rede e garante que mais pessoas acessem ao mesmo tempo
 
+// comunicação síncrona:
+    // Exige MENOS conexões, entretanto, há a necessidade de envio de arquivos mais “pesados”, que tendem a ocupar uma maior largura de banda. Grandes vantagens para sistemas de pequeno porte
 
-// A comunicação síncrona exige MENOS conexões, entretanto, há a necessidade de envio de arquivos mais “pesados”, que tendem a ocupar uma maior largura de banda, 
+// Assim, surgiu o "XMLHttpRequest" (XHR), um objeto ou uma API implementada em navegadores que facilitou a comunicação assíncrona com servidores. A ideia é permitir que dados sejam comunicados por meio de requisições HTTP/HTTPS e arquivos no formato XML (outros formatos também podem ser usados, como JSON).
 
-
-
-
-
-
-
-
-
-
-
-
-
-onde requerem alto grau de processamento, como ecommerces, reduzindo o tráfego da rede e garantir que mais pessoas acessem ao mesmo tempo
-/// as comunicações assíncronas podem não representar grandes vantagens para sistemas de pequeno porte (sites com acessos na casa das centenas ou milhares por dia), e isso se deve ao fato de requisitarem uma complexidade maior de implementação, especialmente no que diz respeito à segurança e à garantia de que os dados foram entregues.
-Assim, surgiu o XMLHttpRequest (XHR), um objeto ou uma API implementada em navegadores que facilitou a comunicação assíncrona com servidores. A ideia do XHR é permitir que dados sejam comunicados por meio de requisições HTTP (ou HTTPS) e arquivos no formato XML (na prática, outros formatos também podem ser usados, como JSON).
-Veja, a seguir, como instanciar um objeto XHR para comunicações assíncronas com o servidor:
+// Como instanciar um objeto XHR para comunicações assíncronas com o servidor:
 
 var xhr = new XMLHttpRequest();
-Entre os principais métodos e propriedades desse objeto, podemos citar, entre outras:
 
-open( ): abre a conexão.
-readyState: verifica o estado da conexão.
-responseText: contém a resposta da conexão.
-responseType: formato da resposta esperado (exemplo, json).
-send( ): envia a requisição.
-status: estado da requisição.
-Agora que você já conhecer o objeto XMLHttpRequest, podemos, finalmente, falar sobre a implementação mais comum dele com JavaScript: a tecnologia AJAX. Você verá mais detalhes no próximo bloco.
+// Entre os principais métodos e propriedades desse objeto, podemos citar, entre outras:
+
+open( ):        // abre a conexão.
+readyState:     // verifica o estado da conexão.
+responseText:   // contém a resposta da conexão.
+responseType:   // formato da resposta esperado (exemplo, json).
+send( ):        // envia a requisição.
+status:         // estado da requisição.
+
+// Implementação mais comum do objeto XMLHttpRequest com JavaScript: a tecnologia AJAX.
+
+
+
 
 VIDEOAULA: MÉTODOS E PROPRIEDADES XMLHTTPREQUEST
-Nesta aula, você vai aprender um pouco mais sobre conexões síncronas e assíncronas e conhecer o objeto XMLHttpRequest. 
-Bons estudos!
-
-Videoaula: Métodos e propriedades XMLHttpRequest
 
  
 
 
-INTRODUÇÃO AO AJAX
-AJAX é um acrônimo para Asynchronous Javascript and XML ou, em português, "Javascript Assíncrono e XML". Apesar do nome, a maior parte das implementações AJAX em sites modernos costumam usar JSON no lugar de XML para transferência de dados. Uma das principais características do AJAX é o uso de scripts HTTP/HTTPS para iniciar conexões com servidores remotos sem a necessidade de refresh (FLANAGAN, 2011). 
-Com AJAX, é possível realizar requisições em segundo plano, sem a necessidade de recarregar a página. Isso tem sido a base das chamadas Single Page Applications (SPA) ou aplicações de página única, que são páginas que não precisam recarregar para apresentar componentes novos. Por exemplo, quando você usa o serviço de e-mails da Google, o Gmail, ou quando você realiza um post no Facebook ou no Twitter, note que apenas regiões específicas da página são recarregadas, fazendo com que a experiência de uso seja mais suave e agradável. Isso ocorre pois são feitas requisições assíncronas.
-Note que AJAX é uma tecnologia ou apenas uma terminação para indicar conexões assíncronas com JavaScript, independentemente da linguagem usada no servidor. Na prática, AJAX utiliza a API XMLHttpRequest para comunicação entre cliente e servidor, e, nessa requisição, o JavaScript é responsável por checar, constantemente, o objeto que mantém o status da comunicação. Quando concluída essa tarefa, dados são transferidos usando-se XML ou JSON, mas como implementar isso na prática?
+    "INTRODUÇÃO AO AJAX"
+// AJAX: Asynchronous Javascript and XML (Javascript Assíncrono e XML). Apesar do nome, a maior parte das implementações AJAX em sites modernos costumam usar JSON no lugar de XML para transferência de dados. Uma das principais características do AJAX é o uso de scripts HTTP/HTTPS para iniciar conexões com servidores remotos sem a necessidade de refresh.
 
-AJAX na prática
+// O AJAX pode realizar requisições em segundo plano, sem a necessidade de recarregar a página. Que é a base das chamadas "Single Page Applications" (SPA) ou "aplicações de página única", que são páginas que não precisam recarregar para apresentar componentes novos. 
+// Exemplos: quando você usa o serviço de e-mails, post em redes social, apenas regiões específicas da página são recarregadas, fazendo com que a experiência de uso seja mais suave e agradável. Isso ocorre pois são feitas requisições assíncronas.
+
+// Note que AJAX é uma tecnologia ou apenas uma terminação para indicar conexões assíncronas com JavaScript, independentemente da linguagem usada no servidor. Na prática, AJAX utiliza a API XMLHttpRequest para comunicação entre cliente e servidor, e, nessa requisição, o JavaScript é responsável por checar, constantemente, o objeto que mantém o status da comunicação. Quando concluída essa tarefa, dados são transferidos usando-se XML ou JSON, mas como implementar isso na prática?
+
+"AJAX na prática"
+
+
+
 Vimos, no bloco anterior, que é possível instanciar um objeto XHR usando o método XMLHttpRequest( ); dessa forma:
 
 var xhr = new XMLHttpRequest();
