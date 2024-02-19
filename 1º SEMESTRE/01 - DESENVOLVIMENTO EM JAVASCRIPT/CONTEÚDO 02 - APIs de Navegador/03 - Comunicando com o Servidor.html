@@ -60,10 +60,10 @@ VIDEOAULA: MÉTODOS E PROPRIEDADES XMLHTTPREQUEST
 
 
     "INTRODUÇÃO AO AJAX"
-// AJAX: Asynchronous Javascript and XML (Javascript Assíncrono e XML). Apesar do nome, a maior parte das implementações AJAX em sites modernos costumam usar JSON no lugar de XML para transferência de dados. Uma das principais características do AJAX é o uso de scripts HTTP/HTTPS para iniciar conexões com servidores remotos sem a necessidade de refresh.
+// AJAX: Asynchronous Javascript and XML (Javascript Assíncrono e XML). A maior parte das implementações AJAX em sites modernos costumam usar JSON, no lugar de XML, para transferência de dados. AJAX faz uso de scripts HTTP/HTTPS para iniciar conexões com servidores remotos sem a necessidade de refresh.
 
 // O AJAX pode realizar requisições em segundo plano, sem a necessidade de recarregar a página. Que é a base das chamadas "Single Page Applications" (SPA) ou "aplicações de página única", que são páginas que não precisam recarregar para apresentar componentes novos. 
-// Exemplos: quando você usa o serviço de e-mails, post em redes social, apenas regiões específicas da página são recarregadas, fazendo com que a experiência de uso seja mais suave e agradável. Isso ocorre pois são feitas requisições assíncronas.
+// Exemplos: quando você usa o serviço de e-mails, post em redes social, apenas regiões específicas da página são recarregadas, requisições assíncronas.
 
 // Note que AJAX é uma tecnologia ou apenas uma terminação para indicar conexões assíncronas com JavaScript, independentemente da linguagem usada no servidor. Na prática, AJAX utiliza a API XMLHttpRequest para comunicação entre cliente e servidor, e, nessa requisição, o JavaScript é responsável por checar, constantemente, o objeto que mantém o status da comunicação. Quando concluída essa tarefa, dados são transferidos usando-se XML ou JSON, mas como implementar isso na prática?
 
@@ -71,10 +71,22 @@ VIDEOAULA: MÉTODOS E PROPRIEDADES XMLHTTPREQUEST
 
 
 
-Vimos, no bloco anterior, que é possível instanciar um objeto XHR usando o método XMLHttpRequest( ); dessa forma:
+//É possível instanciar um objeto XHR usando o método XMLHttpRequest( ); dessa forma:
 
 var xhr = new XMLHttpRequest();
-Após instanciar um objeto XHR, é preciso prestar atenção em algumas propriedades e métodos. O método open( ) abre a conexão com o servidor remoto, para isso, ele recebe um verbo HTTP, como GET (usado para requisição de dados) e POST (usado para envio de dados), além de uma URL. Por fim, a requisição é enviada usando-se o método send( ).
+
+// Após instanciar um objeto XHR, prestar atenção em propriedades e métodos. 
+// O método "open( )" abre a conexão com o servidor remoto, ele recebe um verbo HTTP, como GET (usado para requisição de dados) e P
+
+
+
+
+
+
+
+
+
+OST (usado para envio de dados), além de uma URL. Por fim, a requisição é enviada usando-se o método send( ).
 
 xhr.open("GET", "https://um-site-qualquer.com.br")
 xhr.send()
