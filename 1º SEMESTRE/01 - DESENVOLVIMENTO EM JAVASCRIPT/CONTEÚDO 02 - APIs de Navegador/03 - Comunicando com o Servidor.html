@@ -76,83 +76,69 @@ VIDEOAULA: MÉTODOS E PROPRIEDADES XMLHTTPREQUEST
 var xhr = new XMLHttpRequest();
 
 // Após instanciar um objeto XHR, prestar atenção em propriedades e métodos. 
-// O método "open( )" abre a conexão com o servidor remoto, ele recebe um verbo HTTP, como GET (usado para requisição de dados) e P
-
-
-
-
-
-
-
-
-
-OST (usado para envio de dados), além de uma URL. Por fim, a requisição é enviada usando-se o método send( ).
+// O método "open( )" abre a conexão com o servidor remoto, ele recebe um verbo HTTP, como GET (usado para requisição de dados) e POST (usado para envio de dados), além de uma URL. Por fim, a requisição é enviada usando-se o método "send( )".
 
 xhr.open("GET", "https://um-site-qualquer.com.br")
 xhr.send()
-Para verificar se a comunicação com servidor remoto está funcionando, é preciso vigiar as propriedades onreadystatechange e suas outras propriedades (informalmente, dizemos que estamos “escutando” a conexão). Entre as principais, estão as propriedades response e responseText, que irão conter a resposta da requisição, mas também há outras propriedades de grande importância, como a propriedade readyState, que retorna o cabeçalho da requisição, ou seja, se a conexão já está aberta ou não (Tabela 1).
 
-Tabela 1 - Estados da propriedade readyState
-Código	Descrição
-0	Requisição ainda não iniciada.
-1	Requisição com o servidor estabelecida.
-2	Pedido foi recebido.
-3	Pedido sendo processado.
-4	Solicitação concluída.
-Fonte: adaptada de MDN Web Docs (2021).
-Outra que vale a pena citar é a propriedade status, que retorna se já temos uma resposta para a requisição, em geral, como um código de três dígitos (Tabela 2).
+// Para verificar se a comunicação com servidor remoto está funcionando, é preciso vigiar as propriedades "onreadystatechange" e suas outras propriedades (informalmente, dizemos que estamos “escutando” a conexão). Entre as principais, estão as propriedades "response" e "responseText", que irão conter a resposta da requisição, outras propriedades importância, como a "readyState" que retorna o cabeçalho da requisição, se a conexão já está aberta ou não.
 
-Tabela 2 | Mensagens HTTP
+"Estados da propriedade readyState" /*
 Código	Descrição
+0	    Requisição ainda não iniciada.
+1	    Requisição com o servidor estabelecida.
+2	    Pedido foi recebido.
+3	    Pedido sendo processado.
+4	    Solicitação concluída.
+Fonte: adaptada de MDN Web Docs (2021). */
+
+// Outra que vale a pena citar é a propriedade "status", retorna se já há uma resposta para a requisição, em geral, como um código de três dígitos.
+
+"Mensagens HTTP" /*
+Código	    Descrição
 100 - 199	Respostas de informação.
 200 - 299	Respostas de sucesso.
 300 - 399	Redirecionamentos.
 400 - 499	Erros do cliente.
-500-599	Erros do servidor.
-Fonte: adaptada de MDN Web Docs (2021).
-Entre os códigos mais conhecidos, estão:
+500-599	    Erros do servidor. 
+Fonte: adaptada de MDN Web Docs (2021). */
+
+"Entre os códigos mais conhecidos, estão:" /* 
 
 200 (tudo ok).
 401 (acesso não autorizado).
 403 (acesso proibido).
 404 (page not found: página não encontrada).
-500 (erro interno no servidor).
-Veja como onreadystatechange pode ser usada para escutar se alguma outra propriedade foi alterada:
+500 (erro interno no servidor). */
 
-Código 1 | Código onreadystatechange
+// "onreadystatechange" pode ser usada para escutar se alguma outra propriedade foi alterada:
+
 var xhr = new XMLHttpRequest(); // cria objeto xhr
- 
 xhr.responseType = "json";  // tipo da resposta
  
 // conecta ao site
 xhr.open("GET", "https://um-site-qualquer.com");  
 xhr.send()  // envia requisição
- 
 var i = 0;  // um simples contador
  
 // verifia se o estado da conexão mudou
 xhr.onreadystatechange = ()=>{
- 
-  var pronto = xhr.readyState;  // a conexão foi feita?
-  var estado = xhr.status;  // status da requisição?
-  var resposta = xhr.response;  // qual a resposta?
- 
-  i++;  // contador de mudanças
- 
-  console.log("#", i)  // contador de mudanças
- 
-  // como está a conexão
-  console.log("Status da conexão:", pronto); 
- 
-  // qual o código da resposta
-  console.log("Código da resposta:", estado);  
- 
-  // mostre a resposta
-  console.log(resposta);  
- 
+    var pronto = xhr.readyState;  // a conexão foi feita?
+    var estado = xhr.status;  // status da requisição?
+    var resposta = xhr.response;  // qual a resposta? 
+    i++;  // contador de mudanças
+    
+    console.log("#", i)  // contador de mudanças
+    console.log("Status da conexão:", pronto);  // como está a conexão
+    console.log("Código da resposta:", estado);  // qual o código da resposta
+    console.log(resposta);  // mostre a resposta 
 }
-Fonte: elaborado pelo autor.
-O código apresentado acima declara um objeto xhr na linha 1; já na linha 3, é declarado o tipo de resposta esperado (json); na linha 6, é aberta a conexão do tipo GET a um servidor remoto (esse site de exemplo não existe); na linha 7, a conexão é enviada; na linha 12, verificamos se houve alguma mudança do estado da conexão; na linha 14, coletamos o estado da conexão, bem como o estado da resposta na linha 15. A resposta, em si, foi recebida na linha 16, e nas linhas seguintes, apenas exibimos o resultado no console. 
+
+
+
+
+
+O código declara um objeto xhr na linha 1; já na linha 3, é declarado o tipo de resposta esperado (json); na linha 6, é aberta a conexão do tipo GET a um servidor remoto (esse site de exemplo não existe); na linha 7, a conexão é enviada; na linha 12, verificamos se houve alguma mudança do estado da conexão; na linha 14, coletamos o estado da conexão, bem como o estado da resposta na linha 15. A resposta, em si, foi recebida na linha 16, e nas linhas seguintes, apenas exibimos o resultado no console. 
 Para o site em questão, não teremos uma resposta, pois se trata de um site inexistente (Figura 3).
 
 Figura 3 | Resposta obtida para um site não existente
@@ -167,8 +153,18 @@ Note que podemos ver várias mudanças de estado. Lembre-se que o código de res
 Fonte: elaborada pelo autor.
 Assim, podemos perceber que a tecnologia AJAX tem um grande potencial no desenvolvimento de aplicações web, entretanto, ela deve ser usada com cuidado, uma vez que depende das conexões com os servidores remotos e da forma como eles manipulam os dados. Nesse caso, servidores podem fazer uso das tecnologias de banco de dados para armazenamento, e veremos mais detalhes disso no próximo bloco.
 
+
+
+
 VIDEOAULA: INTRODUÇÃO AO AJAX
+
+
+
 Nesta aula, você aprenderá como fazer uma conexão AJAX usando o objeto XMLHttpRequest. Bons estudos!
+
+
+
+
 
 Videoaula: Introdução ao Ajax
 
