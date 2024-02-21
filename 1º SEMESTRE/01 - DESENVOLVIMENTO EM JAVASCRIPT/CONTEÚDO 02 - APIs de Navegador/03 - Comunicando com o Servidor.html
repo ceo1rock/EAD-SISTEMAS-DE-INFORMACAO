@@ -148,17 +148,19 @@ VIDEOAULA: INTRODUÇÃO AO AJAX
 
 
 
-AJAX E BANCO DE DADOS
-No bloco anterior, você aprendeu a realizar uma conexão AJAX com um servidor remoto. Você viu que, ao realizar uma conexão com um site que não existe, retorna um erro de acesso, e isso ocorre pois é necessário que o site que desejamos acessar forneça uma API (application programming interface) de acesso, que, em geral, é feita usando-se tecnologias web services e pode ser construída a partir de diversas linguagens de programação. Podemos, aliás, construir APIs web services usando JavaScript, entretanto, para isso, devemos utilizar um servidor que permita executar JavaScript diretamente no back-end, como Node.js (LECHETA, 2018). Não é objetivo desta aula mostrar como fazer isso; em vez disso, vamos falar do que acontece com os dados enviados ou recebidos por conexões assíncronas.
-A consulta a um serviço remoto, em geral, é feita usando-se formatos de armazenamento padronizado, como XML ou JSON, mas raramente esses arquivos ficam salvos nesses formatos nos servidores. É mais comum que o armazenamento de dados em servidores seja feito pelo uso de sistemas de gerenciamento de bancos de dados (SGBD), que possuem ferramentas mais robustas para armazenamento, consulta, atualização e deleção de dados, como os bancos de dados relacionais MySQL, MariaDB e Postgree. Assim, computadores servidores podem fornecer diferentes serviços de acesso a websites e de banco de dados, que devem comunicar-se entre si para que haja troca de informações (Figura 5). Cabe ao serviço web gerenciar essa conexão e determinar quais dados podem ser acessados e como dados podem ser gravados, alterados ou deletados.
+    "AJAX E BANCO DE DADOS"
+// Ao realizar uma conexão com um site que não existe, retorna um erro de acesso, e isso ocorre pois é necessário que o site que forneça uma API (application programming interface) de acesso, que é feita usando-se tecnologias "web services" e pode ser construída a partir de diversas linguagens de programação. Podemos construir "APIs web services" usando JavaScript, para isso, devemos utilizar um servidor que permita executar JavaScript diretamente no back-end, como Node.js. 
+// O acontece com os dados enviados ou recebidos por conexões assíncronas?
+// A consulta a um serviço remoto, é feita usando-se formatos de armazenamento padronizado, como XML ou JSON, mas raramente esses arquivos ficam salvos nesses formatos nos servidores. É mais comum que o armazenamento de dados em servidores seja feito pelo uso de sistemas de gerenciamento de bancos de dados (SGBD), que possuem ferramentas mais robustas para armazenamento, consulta, atualização e deleção de dados, como os bancos de dados relacionais MySQL, MariaDB e Postgree. 
+// Computadores servidores podem fornecer diferentes serviços de acesso a websites e de banco de dados, que devem comunicar-se entre si para que haja troca de informações. O serviço web gerencia essa conexão e determinar quais dados podem ser acessados e como dados podem ser gravados, alterados ou deletados.
 
-Figura 5 | Requisição e resposta entre cliente e servidor
+//Exemplo: Requisição e resposta entre cliente e servidor
 
-No exemplo, o computador servidor pode fornecer dois serviços: web e banco de dados (esses serviços podem estar em computadores distintos também); os clientes podem fazer requisições HTTP/HTTPS pela internet e receber, como resposta, documentos web; e o serviço web pode consultar o serviço de banco de dados para busca ou armazenamento de informações.
-Fonte: Adaptado, Wikimedia Commons.
-Como esse processo de construção de uma API web services é um pouco complexo e foge do escopo desta aula, vamos ilustrar esse processo utilizando o método POST para enviar dados para um servidor remoto (vamos continuar usando a ferramenta {JSON} Placeholder). Observe o código a seguir:
+// O computador servidor pode fornecer dois serviços: web e banco de dados (podem estar em computadores distintos); os clientes podem fazer requisições HTTP/HTTPS pela internet e receber, como resposta, documentos web; e o serviço web pode consultar o serviço de banco de dados para busca ou armazenamento de informações.
 
-Código 2 | ferramenta {JSON} Placeholder
+// Esse processo de construção de uma API web services é um pouco complexo, ilustrando esse processo utilizando o método POST para enviar dados para um servidor remoto, continuando com o uso da ferramenta {JSON} Placeholder). Observe:
+
+// Ferramenta {JSON} Placeholder
 var xhr = new XMLHttpRequest(); // cria objeto xhr
  
 var doc = {
@@ -179,7 +181,6 @@ xhr.onreadystatechange = ()=>{
     console.log("Código da resposta:", estado);  
     console.log(resposta);  
   }
- 
 }
  
 xhr.open(
@@ -187,8 +188,9 @@ xhr.open(
   "https://jsonplaceholder.typicode.com/posts"
 );  
 xhr.send(doc);  // envia requisição
-Fonte: elaborado pelo autor.
-Nas linhas 2 a 6, criamos uma variável (doc) para receber um objeto com as propriedades userId (identificador do usuário), title (título da mensagem) e body (conteúdo da mensagem). Esses serão os dados que iremos enviar para o servidor (para descobrir essas propriedades, tivemos que consultar a documentação da web service em questão, e cada web service tem sua especificação, então, não se preocupe com esses nomes). Da linha 8 à linha 20, apenas imprimimos os status do andamento do envio dos dados, e note que, a partir disso, decidimos imprimir a resposta apenas se o status da conexão fosse 4, ou seja, a solicitação já estava concluída (Figura 6).
+
+
+// Nas linhas 2 a 6, criamos uma variável (doc) para receber um objeto com as propriedades userId (identificador do usuário), title (título da mensagem) e body (conteúdo da mensagem). Esses serão os dados que iremos enviar para o servidor (para descobrir essas propriedades, tivemos que consultar a documentação da web service em questão, e cada web service tem sua especificação, então, não se preocupe com esses nomes). Da linha 8 à linha 20, apenas imprimimos os status do andamento do envio dos dados, e note que, a partir disso, decidimos imprimir a resposta apenas se o status da conexão fosse 4, ou seja, a solicitação já estava concluída (Figura 6).
 
 Figura 6 | Status do andamento do envio dos dados
 
