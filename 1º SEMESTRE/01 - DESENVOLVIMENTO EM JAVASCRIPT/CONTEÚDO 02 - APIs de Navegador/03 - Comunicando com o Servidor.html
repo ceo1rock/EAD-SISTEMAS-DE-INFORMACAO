@@ -134,41 +134,18 @@ xhr.onreadystatechange = ()=>{
     console.log(resposta);  // mostre a resposta 
 }
 
+// O código declara um objeto xhr na linha 1; já na linha 3, é declarado o tipo de resposta esperado (json); na linha 6, é aberta a conexão do tipo GET a um servidor remoto (site do exemplo não existe); na linha 7, a conexão é enviada; na linha 12, verificamos se houve alguma mudança do estado da conexão; na linha 14, coletamos o estado da conexão, bem como o estado da resposta na linha 15. A resposta, em si, foi recebida na linha 16, e nas linhas seguintes, apenas exibimos o resultado no console. Não há uma resposta, pois se trata de um site inexistente. Apenas uma resposta foi obtida e possui código de conexão 4 (a conexão foi aberta e já possui resposta), mas não há um código de resposta (0) e nem valores na propriedade response.
 
-
-
-
-O código declara um objeto xhr na linha 1; já na linha 3, é declarado o tipo de resposta esperado (json); na linha 6, é aberta a conexão do tipo GET a um servidor remoto (esse site de exemplo não existe); na linha 7, a conexão é enviada; na linha 12, verificamos se houve alguma mudança do estado da conexão; na linha 14, coletamos o estado da conexão, bem como o estado da resposta na linha 15. A resposta, em si, foi recebida na linha 16, e nas linhas seguintes, apenas exibimos o resultado no console. 
-Para o site em questão, não teremos uma resposta, pois se trata de um site inexistente (Figura 3).
-
-Figura 3 | Resposta obtida para um site não existente
-
-Note que apenas uma resposta foi obtida e possui código de conexão 4 (a conexão foi aberta e já possui resposta), mas não há um código de resposta (0) e nem valores na propriedade response.
-Fonte: elaborada pelo autor.
-Caso estivéssemos acessando uma API de web services real (como a ferramenta {JSON} Placeholder, disponível em https://bit.ly/3faOpLu), poderíamos ter uma resposta assim (Figura 4):
-
-Figura 4 | Resposta para consulta ao endereço https://jsonplaceholder.typicode.com/todos
-
-Note que podemos ver várias mudanças de estado. Lembre-se que o código de resposta 200 indica que deu tudo certo (confira a Tabela 1 e a Tabela 2 para entender o significado de cada código). Por fim, a resposta retorna um arquivo JSON com 200 itens.
-Fonte: elaborada pelo autor.
-Assim, podemos perceber que a tecnologia AJAX tem um grande potencial no desenvolvimento de aplicações web, entretanto, ela deve ser usada com cuidado, uma vez que depende das conexões com os servidores remotos e da forma como eles manipulam os dados. Nesse caso, servidores podem fazer uso das tecnologias de banco de dados para armazenamento, e veremos mais detalhes disso no próximo bloco.
+// Caso estivéssemos acessando uma API de web services real (como a ferramenta {JSON} Placeholder, disponível em 
+"https://bit.ly/3faOpLu)", 
+// Resposta para consulta ao endereço 
+"https://jsonplaceholder.typicode.com/todos"
 
 
 
 
 VIDEOAULA: INTRODUÇÃO AO AJAX
 
-
-
-Nesta aula, você aprenderá como fazer uma conexão AJAX usando o objeto XMLHttpRequest. Bons estudos!
-
-
-
-
-
-Videoaula: Introdução ao Ajax
-
- 
 
 
 AJAX E BANCO DE DADOS
