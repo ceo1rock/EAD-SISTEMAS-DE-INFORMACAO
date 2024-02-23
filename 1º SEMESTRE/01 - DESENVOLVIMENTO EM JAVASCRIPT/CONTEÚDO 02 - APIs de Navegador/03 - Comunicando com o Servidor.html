@@ -194,42 +194,49 @@ xhr.send(doc);  // envia requisição
 
 Figura 6 | Status do andamento do envio dos dados
 
-Note que o código 201 indica que os dados foram enviados com sucesso. O id que aparece na resposta indica que um novo dado foi gravado na posição 101.
-Fonte: elaborada pelo autor.
-Agora, devemos prestar atenção nas linhas 23 a 26. Nelas, foram feitas as requisições do tipo POST; já na linha 27, enviamos os dados presentes na variável doc. O servidor remoto deve receber dados pela URL passada e decidir o que fazer com eles. Nesse caso, o servidor pode gravar as informações em um banco de dados ou apenas gravá-las em um arquivo JSON. Note que, como consumidores de uma web service, não sabemos o que é feito com esse dado (o que insere uma camada extra de proteção ao servidor); obtemos, apenas, a resposta indicando se o que era esperado foi feito ou não. No exemplo, sabemos que deu certo, pois recebemos o status 201 e obtivemos, como resposta, um id indicando que o dado foi gravado.
+// O código 201 indica que os dados foram enviados com sucesso. O id que aparece na resposta indica que um novo dado foi gravado na posição 101.
+/// Prestar atenção nas linhas 23 a 26, Foram feitas as requisições do tipo POST; já na linha 27, enviamos os dados presentes na variável doc. O servidor remoto recebe os dados pela URL passada e decidi o que fazer. Nesse caso, o servidor grava as informações em um banco de dados ou apenas grava em um arquivo JSON. 
+// Como consumidores de uma web service, não sabemos o que é feito com esse dado (camada extra de proteção ao servidor); obtemos, apenas, a resposta indicando se o que era esperado foi feito ou não. No exemplo, deu certo, pois recebeu o status 201 e obtivemos, como resposta, um id indicando que o dado foi gravado.
+
+
+
 
 VIDEOAULA: AJAX E BANCO DE DADOS
-Nesta aula, você aprenderá um pouco mais sobre conexões assíncronas AJAX e sua interligação com os processos de consulta e gravação em bancos de dados. 
-Bons estudos!
+
+
+
+
+"Conexões assíncronas AJAX e sua interligação com os processos de consulta e gravação em bancos de dados."
+
+
+
 
 Videoaula: Ajax e banco de dados
+
+
+
 
  
 
 
-ESTUDO DE CASO
-A Empresa A, empresa de marketing e desenvolvimento de sites, está crescendo cada vez mais no mercado. Por isso, novos trabalhos vêm surgindo e exigindo mais da sua participação como desenvolvedor front-end.
-A Empresa B está preocupada com a concorrência, por isso, a equipe de desenvolvedores back-end da Empresa A desenvolveu um sistema de consulta de preços para as principais concorrentes do mercado, bem como uma web service que permite consultas remotas para que outros sistemas da empresa possam consultar. O sistema de consulta funciona por meio de POST e requer, como entrada, os seguintes dados:
+"ESTUDO DE CASO"
+// O sistema de consulta funciona por meio de POST e requer, como entrada, os seguintes dados:
 
-Quadro 1 | Dados de entrada
-Campo	Descrição	Exemplo
-user	Nome do usuário	jsadmin
-auth_code	Código de autenticação (senha única de cada usuário).	132fiauiw1yhd821klaslf
-product	Nome do produto a ser pesquisado (o sistema possui um algoritmo avançado de detecção de processamento de linguagem natural).	Blusa de estampa da marca BluSA (coleção do verão)
-Fonte: elaborado pelo autor.
-Por fim, a web service retorna os preços de todas as concorrentes para produtos similares, por exemplo:
+"Dados de entrada"
+</script><script SRC = "03.02 - Figura.png"></script>
+<script>
 
-Código 3 | Web service
+// A web service retorna os preços de todas as concorrentes para produtos similares, por exemplo:
+
 {
     "id":1,
     "product":"Blusa estampada BluS.A. coleção verão",
     "store":"BlusaXique",
     "preco":25.99
 }
-Fonte: elaborado pelo autor.
-A web service está localizada neste endereço: https://bit.ly/3HI8aq6, entretanto, o servidor ainda apresenta instabilidades. Por isso, quando for chamar a função que envia os dados, função xhr.send(), deixe-a comentada e crie uma função chamada imprimirRespostaTeste(), que deverá, apenas, imprimir formatado, em uma tabela na tela, o seguinte array:
 
-Código 4 | Array
+// A web service está localizada neste endereço: https://bit.ly/3HI8aq6, o servidor ainda apresenta instabilidades. Por isso, quando for chamar a função que envia os dados, "função xhr.send()", deixe-a comentada e crie uma função chamada "imprimirRespostaTeste()", que deverá imprimir formatadO, em uma tabela na tela, o seguinte array:
+
 var respostaTeste = [
   {
       "id":1,
@@ -262,18 +269,14 @@ var respostaTeste = [
       "price":39.99
   },
 ]
-Fonte: elaborado pelo autor.
-Assim, usando o seu editor de códigos favorito e um navegador web para testes, construa um sistema que faça uma consulta ao servidor remoto e imprima o resultado na tela. A consulta deve ser feita por uma função chamada buscar( ) e a função send( ) deve estar comentada; além disso, no lugar dela, você deverá chamar a função imprimirRespostaTeste( ).
 
-Dica
-Para lhe ajudar, a equipe de design preparou os arquivos index.html e estilo.css, que constroem a seguinte interface:
+// Construa um sistema que faça uma consulta ao servidor remoto e imprima o resultado na tela. A consulta deve ser feita por uma função chamada "buscar( )" e a "função send( )" deve estar comentada; além disso, no lugar dela, você deverá chamar a função imprimirRespostaTeste( ).
 
-Figura 7 | Interface de consulta modelo
+"Dica"
+// Ajudar, os arquivos index.html e estilo.css prontos.
+</script>
 
-Fonte: Lorem ipsum dolor sit amet.
-Fique à vontade para usá-los ou não.
-
-Código 5 | index.html
+    // index.html:
 <!doctype html>
 <html>
 <head>
@@ -292,8 +295,10 @@ Código 5 | index.html
    <script src="script.js"></script>
 </body>
 </html>
-Fonte: elaborado pelo autor.
-Código 6 | estilo.css
+
+<script>
+
+    // estilo.css
 h1{
     text-align: center;
     padding: 20px 0 30px 0;
@@ -340,9 +345,34 @@ td{
     border-top: 1px #ccc solid;
     padding: 10px; 
 }
-Fonte: elaborado pelo autor.
-RESOLUÇÃO DO ESTUDO DE CASO
-O protótipo apresentado neste código possui um código HTML funcional. Se o usuário digitar algo e realizar uma busca, deverá obter uma tabela como resposta, entretanto, a consulta ao web service não deverá funcionar, pois a linha com a função send( ) deverá estar comentada. 
+
+
+
+
+
+"RESOLUÇÃO DO ESTUDO DE CASO"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* O protótipo apresentado neste código possui um código HTML funcional. Se o usuário digitar algo e realizar uma busca, deverá obter uma tabela como resposta, entretanto, a consulta ao web service não deverá funcionar, pois a linha com a função send( ) deverá estar comentada. 
 Caso tenha construído o sistema baseado no modelo proposto (CSS e HTML), sua página final ficará semelhante a esta:
 
 Figura 8 | Consulta de exemplo
@@ -441,7 +471,9 @@ function imprimirRespostaTeste(){
  
     saida.innerHTML = gravar;
 }
-Fonte: elaborado pelo autor.
+*/
+
+
 O código acima seleciona os valores presentes na caixa de texto (campo de id “produto”); em seguida, esse valor é colocado em um objeto (linha 9 a 13) que será usado na consulta assíncrona (linhas 15 a 30).
 Observe que a linha 37, que envia os dados para o servidor remoto, está comentada. No lugar dela, chamamos a função imprimirRespostaTeste( ), na linha 39. Observe, ainda, que a função que simplesmente imprime uma mensagem teste foi implementada da linha 43 a 89. 
 Ao executar a página e abrir o console de navegação, é possível ver que a linha 18 foi impressa, logo, o status da conexão assíncrona foi verificado pelo menos uma vez.
